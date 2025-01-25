@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Verbin taivutus</title>
+  <meta name="author" content="Xenia" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      --section-color: rgb(0 128 0);
+      --preesens-section-color: rgb(255 0 0);
+      --imperfekti-section-color: rgb(0 0 255);
+      --verb-type-marker-color: rgb(0 128 0);
+      --verb-type-marker-bg-color: rgb(0 200 0 / 50%);
+    }
+
+    body {
+      font-family: Poppins;
+    }
+
+    h1 {
+      text-align: center;
+      border: 2px solid var(--section-color);
+      border-radius: 10px;
+    }
+
+    details {
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      padding: 0.5em 0.5em 0;
+      margin: 5px;
+    }
+
+    summary {
+      font-weight: bold;
+      margin: -0.5em -0.5em 0;
+      padding: 0.5em;
+    }
+
+    details[open] {
+      padding: 0.5em;
+    }
+
+    span {
+      font-family: monospace, monospace;
+    }
+
+    span.und {
+      text-decoration: underline;
+    }
+
+    span.verb-type-marker {
+      border: 2px solid var(--verb-type-marker-color);
+      border-radius: 8px;
+      padding: 2px;
+      background-color: var(--verb-type-marker-bg-color);
+    }
+
+    .verb-types-container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+      align-content: stretch;
+    }
+
+    .section {
+      border: 2px solid var(--section-color);
+      border-radius: 10px;
+      margin: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      /* flex-grow: 1;
+      flex-shrink: 1000;
+      flex: 1; */
+    }
+
+    .section-a {
+      flex-grow: 1;
+    }
+
+    .section-b {
+      flex: 1;
+    }
+
+    .preesens-section, .imperfekti-section {
+      border-radius: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .preesens-section {
+      border: 2px solid var(--preesens-section-color);
+    }
+
+    .imperfekti-section {
+      border: 2px solid var(--imperfekti-section-color);
+    }
+
+    .usual-table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin: 10px;
+    }
+
+    .usual-table td, th {
+      padding: 2px;
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Verbin taivutus suomen kielessä</h1>
+
+  <p>
+    Lyhennökset:
+    <ul>
+      <li><span>V</span> on (viimeinen) vokaali</li>
+      <li><span>A</span> on <span>a</span> tai <span>ä</span></li>
+      <li><span>O</span> on <span>o</span> tai <span>ö</span></li>
+      <li><span>U</span> on <span>u</span> tai <span>y</span></li>
+      <li>Var. on vartalo</li>
+    </ul>
+  </p>
+
+  <details open>
+    <summary>Persoonamuodot</summary>
+
+    <div class="verb-types-container">
+      <div class="section section-b">
+        <h2>KPT-vaihtelun verbeissä yhteenveto</h2>
+        <table class="usual-table">
+          <tr><th>Verbityyppi</th><th>infinitiivissä</th><th>1., 2. persoonassa</th><th>3. persoonassa</th></tr>
+          <tr><th>1</th>      <td>vahva</td> <td>heikko</td><td>vahva</td></tr>
+          <tr><th>2, 5</th>   <td>-</td>     <td>-</td>     <td>-</td></tr>
+          <tr><th>3, 4, 6</th><td>heikko</td><td>vahva</td> <td>vahva</td></tr>
+        </table>
+      </div>
+
+      <div class="section section-b">
+        <h2>Positiivisessa virkkeessä</h2>
+        <table class="usual-table">
+          <tr><td>Var.<span>-n</span></td><td>Var.<span>-mme</span></td></tr>
+          <tr><td>Var.<span>-t</span></td><td>Var.<span>-tte</span></td></tr>
+          <tr><td>Var.<span>-(V)</span>*</td><td>Var.<span>-vAt</span></td></tr>
+        </table>
+        <p>
+          *vain preesensissä jos viimeinen vokaali on lyhyt (esim. teke- &rarr; tekee, osaa- &rarr; osaa, puhui- &rarr; puhui)
+        </p>
+      </div>
+
+      <div class="section section-b">
+        <h2>Negatiivisessa virkkeessä preesensissä</h2>
+        <p>
+          Kieltomuoto (klt.) on <span>minä</span>-muoto ilman <span>n</span>:ä (esim. lentää &rarr; lennän &rarr; lennä)
+        </p>
+        <table class="usual-table">
+          <tr><td>en + klt.</td><td>emme + klt.</td></tr>
+          <tr><td>et + klt.</td><td>ette + klt.</td></tr>
+          <tr><td>ei + klt.</td><td>eivät + klt.</td></tr>
+        </table>
+      </div>
+
+      <div class="section section-b">
+        <h2>KPT-vaihtelu</h2>
+        <table class="usual-table">
+          <tr><th>vahva</th><th>heikko</th></tr>
+          <tr><td><span>kk</span></td><td><span>k</span></td></tr>
+          <tr><td><span>pp</span></td><td><span>p</span></td></tr>
+          <tr><td><span>tt</span></td><td><span>t</span></td></tr>
+          <tr><td><span>nt</span></td><td><span>nn</span></td></tr>
+          <tr><td><span>nk</span></td><td><span>ng</span></td></tr>
+          <tr><td><span>mp</span></td><td><span>mm</span></td></tr>
+          <tr><td><span>lt</span></td><td><span>ll</span></td></tr>
+          <tr><td><span>rt</span></td><td><span>rr</span></td></tr>
+          <tr><td><span>t</span></td><td><span>d</span></td></tr>
+          <tr><td><span>k</span></td><td><span>&empty;</span></td></tr>
+          <tr><td><span>p</span></td><td><span>v</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Verbityyppien preesensin ja imperfektin vartalot</summary>
+    <div class="verb-types-container">
+      <div class="section section-a">
+        <h2>1. verbityyppi <span class="verb-type-marker">-VA</span></h2>
+        <div class="preesens-section">
+          <h3>Preseens</h3>
+          <ul>
+            <li><span>-V</span><span class="und">A</span> &rarr; <span>-V-</span></li>
+          </ul>
+        </div>
+        <div class="imperfekti-section">
+          <h3>Imperfekti</h3>
+          <ul>
+            <li><span>a&hellip;-</span><span class="und">aa</span> &rarr; <span>a&hellip;-</span><span class="und">oi</span><span>-</span></li>
+            <li><span>-(l/n/r)</span><span class="und">tAA</span>* &rarr; <span>-(l/n/r)</span><span class="und">si-</span></li>
+            <li><span>-</span><span class="und">(A/e/i)A</span> &rarr; <span>-</span><span class="und">i</span><span>-</span></li>
+            <li><span>-(U/O)</span><span class="und">A</span> &rarr; <span>-(U/O)</span><span class="und">i</span><span>-</span></li>
+          </ul>
+          <p>
+            *ja verbit tietää, pyytää, löytää, huutaa, tuntea
+          </p>
+        </div>
+      </div>
+
+      <div class="section section-a">
+        <h2>2. verbityyppi <span class="verb-type-marker">-dA</span></h2>
+        <p>Yleiset poikkeusverbit: tehdä, nähdä, käydä</p>
+        <div class="preesens-section">
+          <h3>Preesens</h3>
+          <ul>
+            <li><span>-</span><span class="und">dA</span> &rarr; <span>-</span><span class="und">&empty;</span><span>-</span></li>
+          </ul>
+        </div>
+        <div class="imperfekti-section">
+          <h3>Imperfekti</h3>
+          <ul>
+            <li><span>-i</span><span class="und">dA</span> &rarr; <span>-i-</span></li>
+            <li><span>-</span><span class="und">V&#8321V&#8322dA</span> &rarr; <span>-</span><span class="und">V&#8322i</span><span>-</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section section-a">
+        <h2>3. verbityyppi <span class="verb-type-marker">-(ll/nn/rr/st)A</span></h2>
+        <p>Yleinen poikkeusverbi: juosta</p>
+        <div class="preesens-section">
+          <h3>Preseens</h3>
+          <ul>
+            <li><span>-(l</span><span class="und">l</span><span>/n</span><span class="und">n</span><span>/r</span><span class="und">r</span><span>/s</span><span class="und">t</span><span>)</span><span class="und">A</span> &rarr; <span>-(l/n/r/s)</span><span class="und">e</span><span>-</span></li>
+          </ul>
+        </div>
+        <div class="imperfekti-section">
+          <h3>Imperfekti</h3>
+          <ul>
+            <li><span>-(l</span><span class="und">l</span><span>/n</span><span class="und">n</span><span>/r</span><span class="und">r</span><span>/s</span><span class="und">t</span><span>)</span><span class="und">A</span> &rarr; <span>-(l/n/r/s)</span><span class="und">i</span><span>-</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section section-a">
+        <h2>4. verbityyppi <span class="verb-type-marker">-(A/O/U)tA</span></h2>
+        <div class="preesens-section">
+          <h3>Preseens</h3>
+          <ul>
+            <li><span>-(A/O/U)</span><span class="und">ta</span> &rarr; <span>-(A/O/U)</span><span class="und">A</span><span>-</span></li>
+          </ul>
+        </div>
+        <div class="imperfekti-section">
+          <h3>Imperfekti</h3>
+          <ul>
+            <li><span>-(A/O/U)</span><span class="und">ta</span> &rarr; <span>-(A/O/U)</span><span class="und">si</span><span>-</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section section-a">
+        <h2>5. verbityyppi <span class="verb-type-marker">-itA</span></h2>
+        <div class="preesens-section">
+          <h3>Preesens</h3>
+          <ul>
+            <li><span>-it</span><span class="und">A</span> &rarr; <span>-it</span><span class="und">se</span><span>-</span></li>
+          </ul>
+        </div>
+        <div class="imperfekti-section">
+          <h3>Imperfekti</h3>
+          <ul>
+            <li><span>-it</span><span class="und">A</span> &rarr; <span>-it</span><span class="und">si</span><span>-</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section section-a">
+        <h2>6. verbityyppi <span class="verb-type-marker">-etA</span></h2>
+        <div class="preesens-section">
+          <h3>Preesens</h3>
+          <ul>
+            <li><span>-e</span><span class="und">tA</span> &rarr; <span>-e</span><span class="und">ne</span><span>-</span></li>
+          </ul>
+        </div>
+        <div class="imperfekti-section">
+          <h3>Imperfekti</h3>
+          <ul>
+            <li><span>-e</span><span class="und">tA</span> &rarr; <span>-e</span><span class="und">ni</span><span>-</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </details>
+</body>
+</html>
