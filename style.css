@@ -1,0 +1,99 @@
+* {
+  --section-color: rgb(0 128 0);
+  --preesens-section-color: rgb(255 0 0);
+  --imperfekti-section-color: rgb(0 0 255);
+  --verb-type-marker-color: rgb(0 128 0);
+  --verb-type-marker-bg-color: rgb(0 200 0 / 50%);
+}
+
+body {
+  font-family: Poppins;
+}
+
+h1 {
+  text-align: center;
+  border: 2px solid var(--section-color);
+  border-radius: 10px;
+}
+
+details {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 0.5em 0.5em 0;
+  margin: 5px;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+span.und {
+  text-decoration: underline;
+}
+
+span.verb-type-marker {
+  border: 2px solid var(--verb-type-marker-color);
+  border-radius: 8px;
+  padding: 2px;
+  background-color: var(--verb-type-marker-bg-color);
+}
+
+.verb-types-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.section {
+  border: 2px solid var(--section-color);
+  border-radius: 10px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* flex-grow: 1;
+  flex-shrink: 1000;
+  flex: 1; */
+}
+
+.section-a {
+  flex-grow: 1;
+}
+
+.section-b {
+  flex: 1;
+}
+
+.preesens-section, .imperfekti-section {
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.preesens-section {
+  border: 2px solid var(--preesens-section-color);
+}
+
+.imperfekti-section {
+  border: 2px solid var(--imperfekti-section-color);
+}
+
+.usual-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+.usual-table td, th {
+  padding: 2px;
+  border: 1px solid #000000;
+}
