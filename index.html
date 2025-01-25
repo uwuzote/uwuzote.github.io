@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Verbin taivutus</title>
+  <title>Verbien taivutus</title>
   <meta name="author" content="Xenia" />
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <style>
@@ -45,10 +45,6 @@
 
     details[open] {
       padding: 0.5em;
-    }
-
-    span {
-      font-family: monospace, monospace;
     }
 
     span.und {
@@ -118,10 +114,10 @@
   </style>
 </head>
 <body>
-  <h1>Verbin taivutus suomen kielessä</h1>
+  <h1>Verbien taivutus suomen kielessä</h1>
 
-  <p>
-    Lyhennökset:
+  <details>
+    <summary>Lyhennökset</summary>
     <ul>
       <li><span>V</span> on (viimeinen) vokaali</li>
       <li><span>A</span> on <span>a</span> tai <span>ä</span></li>
@@ -129,7 +125,7 @@
       <li><span>U</span> on <span>u</span> tai <span>y</span></li>
       <li>Var. on vartalo</li>
     </ul>
-  </p>
+  </details>
 
   <details open>
     <summary>Persoonamuodot</summary>
@@ -138,10 +134,14 @@
       <div class="section section-b">
         <h2>KPT-vaihtelun verbeissä yhteenveto</h2>
         <table class="usual-table">
-          <tr><th>Verbityyppi</th><th>infinitiivissä</th><th>1., 2. persoonassa</th><th>3. persoonassa</th></tr>
-          <tr><th>1</th>      <td>vahva</td> <td>heikko</td><td>vahva</td></tr>
-          <tr><th>2, 5</th>   <td>-</td>     <td>-</td>     <td>-</td></tr>
-          <tr><th>3, 4, 6</th><td>heikko</td><td>vahva</td> <td>vahva</td></tr>
+          <!-- <tr><th>Verbityyppi</th><th>infinitiivissä</th><th>1., 2. persoonassa</th><th>3. persoonassa</th></tr> -->
+          <!-- <tr><th>1</th>      <td>vahva</td> <td>heikko</td><td>vahva</td></tr> -->
+          <!-- <tr><th>2, 5</th>   <td>-</td>     <td>-</td>     <td>-</td></tr> -->
+          <!-- <tr><th>3, 4, 6</th><td>heikko</td><td>vahva</td> <td>vahva</td></tr> -->
+          <tr><th>Verbityyppi</th><td>1.</td><td>2., 5.</td><td>3., 4., 6.</td></tr>
+          <tr><th>Infinitiivissä</th><td>vahva</td><td>&horbar;</td><td>heikko</td></tr>
+          <tr><th>1. ja 2. persoonassa</th><td>heikko</td><td>&horbar;</td><td>vahva</td></tr>
+          <tr><th>3. persoonassa</th><td>vahva</td><td>&horbar;</td><td>vahva</td></tr>
         </table>
       </div>
 
