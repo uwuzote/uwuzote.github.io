@@ -63,12 +63,12 @@ span.verb-type-marker {
   flex: 1; */
 }
 
-.section-a {
-  flex-grow: 1;
+.section-a, .section-b {
+  flex: 1;
 }
 
-.section-b {
-  flex: 1;
+.section-a h2 {
+  white-space: pre;
 }
 
 .preesens-section, .imperfekti-section {
