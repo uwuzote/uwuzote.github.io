@@ -4,275 +4,318 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <link rel="stylesheet" href="init.css" />
+  <!-- <link rel="stylesheet" href="reset.css" /> -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <title>Verbien taivutus</title>
 </head>
 <body>
-  <h1>Verbien taivutus suomen kielessä <span class="version">(versio 1.3.1)</span></h1>
+  <header>
+    <h1>Verbitaivutus suomen kielessä</h1>
+    <h2>Versio 2.0</h2>
+  </header>
+  <main>
+    <nav>
+      <h1 id="contents">Sisältö</h1>
+      <p>Voidaan avata osat nuolten kanssa<p>
+      <menu>
+        <li><a href="#abbrs">Lyhennökset</a></li>
+        <li>
+          <label for="nt-finite">Persoonamuodot <a href="#finite-forms" class="ampersand-link">&darr;</a></label>
+          <input type="checkbox" checked id="nt-finite" />
+          <menu>
+            <li>
+              <label for="nt-indicative">Indikatiivi <a href="#indicative" class="ampersand-link">&darr;</a></label>
+              <input type="checkbox" checked id="nt-indicative" />
+              <menu>
+                <li><a href="#indicative-present">Preesens</a></li>
+                <li><a href="#indicative-past">Imperfekti</a></li>
+                <li><a href="#indicative-perfect">&dagger; Perfekti</a></li>
+                <li><a href="#indicative-pluperfect">&dagger; Pluskvamperfekti</a></li>
+              </menu>
+            </li>
+            <li>
+              <label for="nt-conditional">&dagger; Konditionaali <a href="#conditional" class="ampersand-link">&darr;</a></label>
+              <input type="checkbox" id="nt-conditional" />
+              <menu>
+                <li><a href="#conditional-present">&dagger; Preesens</a></li>
+                <li><a href="#conditional-perfect">&dagger; Perfekti</a></li>
+              </menu>
+            </li>
+            <li>
+              <label for="nt-imperative">&dagger; Imperatiivi <a href="#imperative" class="ampersand-link">&darr;</a></label>
+              <input type="checkbox" id="nt-imperative" />
+              <menu>
+                <li><a href="#imperative-present">&dagger; Preesens</a></li>
+                <li><a href="#imperative-perfect">&dagger; Perfekti</a></li>
+              </menu>
+            </li>
+            <li>
+              <label for="nt-potential">&dagger; Potentiaali <a href="#potential" class="ampersand-link">&darr;</a></label>
+              <input type="checkbox" id="nt-potential" />
+              <menu>
+                <li><a href="#potential-present">&dagger; Preesens</a></li>
+                <li><a href="#potential-perfect">&dagger; Perfekti</a></li>
+              </menu>
+            </li>
+          </menu>
+        </li>
+        <li>
+          <label for="nt-infinite">&dagger; Infiniitivit <a href="#infinitives" class="ampersand-link">&darr;</a></label>
+          <input type="checkbox" id="nt-infinite" />
+          <menu>
+            <li><a href="#infinitive-1">&dagger; 1. A-infinitiivi</a></li>
+            <li><a href="#infinitive-1-long">&dagger; Pitkä 1. infinitiivi</a></li>
+            <li><a href="#infinitive-2">&dagger; 2. e-infinitiivi</a></li>
+            <li><a href="#infinitive-3">&dagger; 3. mA-infinitiivi</a></li>
+            <li><a href="#infinitive-4">&dagger; 4. minen-infinitiivi</a></li>
+            <li><a href="#infinitive-5">&dagger; 5. mAinen-infinitiivi</a></li>
+          </menu>
+        </li>
+        <li>
+          <label for="nt-participles">&dagger; Partisiipit <a href="#participles" class="ampersand-link">&darr;</a></label>
+          <input type="checkbox" id="nt-participles" />
+          <menu>
+            <li>
+              <label for="nt-active">&dagger; Aktiivi</label>
+              <input type="checkbox" checked id="nt-active" />
+              <menu>
+                <li><a href="#participle-active-present">&dagger; Preesens -vA</a></li>
+                <li><a href="#participle-active-perfect">&dagger; Perfekti -nUt</a></li>
+              </menu>
+            </li>
+            <li>
+              <label for="nt-passive">&dagger; Passiivi</label>
+              <input type="checkbox" checked id="nt-passive" />
+              <menu>
+                <li><a href="#participle-passive-present">&dagger; Preesens -tAvA</a></li>
+                <li><a href="#participle-passive-perfect">&dagger; Perfekti -tU</a></li>
+              </menu>
+            </li>
+            <li><a href="#participle-agent">&dagger; Agentti -mA</a></li>
+            <li><a href="#participle-negative">&dagger; Kielteinen agentti -mAtOn</a></li>
+          </menu>
+        </li>
+      </menu>
+    </nav>
+    <div class="hr-like">&#9829</div>
+    <article>
+      <section>
+        <h1 id="abbrs">Lyhennökset <a href="#" class="up-link">&uarr;</a></h1>
+        <ul>
+          <li>V on (viimeinen) vokaali</li>
+          <li>A on a tai ä</li>
+          <li>O on o tai ö</li>
+          <li>U on u tai y</li>
+          <li>Var. on vartalo</li>
+        </ul>
+      </section>
+      <section>
+        <h1 id="finite-forms">Persoonamuodot <a href="#" class="up-link">&uarr;</a></h1>
 
-  <details>
-    <summary>Lyhennökset</summary>
-    <ul>
-      <li>V on (viimeinen) vokaali</li>
-      <li>A on a tai ä</li>
-      <li>O on o tai ö</li>
-      <li>U on u tai y</li>
-      <li>Var. on vartalo</li>
-    </ul>
-  </details>
+        <table>
+          <caption>KPT-vaihtelun verbeissä yhteenveto</caption>
+          <thead>
+            <tr><th colspan=2>verbityyppi</th><th>1.</th><th>2., 5.</th><th>3., 4., 6.</th></tr>
+          </thead>
+          <tbody>
+            <tr><th colspan=2>infinitiivissä</th><td><b>vahva</b></td><td>&horbar;</td><td><i>heikko</i></td></tr>
+            <tr><th rowspan=3>preesensissä ja<br>imperfektissä</th><th>1. ja 2. persoonassa</th><td><i>heikko</i></td><td>&horbar;</td><td><b>vahva</b></td></tr>
+            <tr><th>3. persoonassa</th><td><b>vahva</b></td><td>&horbar;</td><td><b>vahva</b></td></tr>
+            <tr><th>kieltomuoto</th><td><i>heikko</i></td><td>&horbar;</td><td><b>vahva</b></td></tr>
+            <tr><th colspan=2>passiivissa</th><td colspan=3><i>heikko</i></td></tr>
+          </tbody>
+        </table>
 
-  <details open>
-    <summary>Verbit</summary>
+        <table>
+          <caption>Persoonapäätteet myönteisessä preesensissä ja imperfektissä</caption>
+          <thead><tr>
+            <th></th><th>yksikkö</th><th>monikko</th>
+          </tr></thead>
+          <tbody>
+            <tr><th>1. persoona</th><td>-n</td><td>-mme</td></tr>
+            <tr><th>2. persoona</th><td>-t</td><td>-tte</td></tr>
+            <tr><th>3. persoona</th><td>-(V)*</td><td>-vAt</td></tr>
+          </tbody>
+        </table>
+        <p>
+          *vain preesensissä jos viimeinen vokaali on lyhyt
+        </p>
 
-    <details open>
-      <summary>Persoonamuodot</summary>
+        <table>
+          <caption>Ei-verbin persoonamuodot</caption>
+          <thead><tr>
+            <th></th><th>yksikkö</th><th>monikko</th>
+          </tr></thead>
+          <tbody>
+            <tr><th>1. persoona</th><td>en</td><td>emme</td></tr>
+            <tr><th>2. persoona</th><td>et</td><td>ette</td></tr>
+            <tr><th>3. persoona</th><td>ei</td><td>eivät</td></tr>
+          </tbody>
+        </table>
 
-      <div class="verb-types-container">
-        <div class="section section-b">
-          <h2>KPT-vaihtelun verbeissä yhteenveto</h2>
-          <table class="usual-table">
-            <tr><th>Verbityyppi</th><td>1.</td><td>2., 5.</td><td>3., 4., 6.</td></tr>
-            <tr><th>Infinitiivissä</th><td>vahva</td><td>&horbar;</td><td>heikko</td></tr>
-            <tr><th>1. ja 2. persoonassa</th><td>heikko</td><td>&horbar;</td><td>vahva</td></tr>
-            <tr><th>3. persoonassa</th><td>vahva</td><td>&horbar;</td><td>vahva</td></tr>
-            <tr><th>Passiivissa</th><td colspan=3>heikko</td></tr>
-          </table>
-        </div>
+        <section>
+          <h2 id="indicative">Indikatiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <section>
+            <h3 id="indicative-present">Indikatiivin preesens <a href="#" class="up-link">&uarr;</a></h3>
 
-        <div class="section section-b">
-          <h2>Positiivisessa virkkeessä</h2>
-          <table class="usual-table">
-            <tr><td>Var.-n</td><td>Var.-mme</td></tr>
-            <tr><td>Var.-t</td><td>Var.-tte</td></tr>
-            <tr><td>Var.-(V)*</td><td>Var.-vAt</td></tr>
-          </table>
-          <p>
-            *vain preesensissä jos viimeinen vokaali on lyhyt (esim. teke- &rarr; tekee, osaa- &rarr; osaa, puhui- &rarr; puhui)
-          </p>
-        </div>
+            <section>
+              <h4>Myönteinen</h4>
+              <p><u>Persoonamuodot</u>:</p>
+              <ol>
+                <li>-V<u>A</u> &rarr; -V-</li>
+                <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
+                <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>e</u>-</li>
+                <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>A</u>-</li>
+                <li>-it<u>A</u> &rarr; -it<u>se</u>-</li>
+                <li>-e<u>tA</u> &rarr; -e<u>ne</u>-</li>
+              </ol>
+              <p><u>Passiivi</u>:</p>
+              <ol>
+                <li>-(e/i/O/U)<u>A</u> &rarr; -(e/i/O/U)<u>tAAn</u></li>
+                <li value=1>-<u>AA</u> &rarr; -<u>etAAn</u></li>
+                <li id="patch1">-A &rarr; -A<u>An</u>
+              </ol>
+            </section>
+            <section>
+              <h4>Kielteinen</h4>
+              <p><u>Persoonamuodot</u>: ei-verbi + kieltomuoto (vartalo)</p>
+              <p><u>Passiivi</u>: ei + myönteinen passiivi ilman viimeistä An:ää</p>
+            </section>
+          </section>
 
-        <div class="section section-b">
-          <h2>Negatiivisessa virkkeessä preesensissä</h2>
-          <p>
-            Kieltomuoto (klt.) on minä-muoto ilman n:ää (esim. lentää &rarr; lennän &rarr; lennä)
-          </p>
-          <table class="usual-table">
-            <tr><td>en + klt.</td><td>emme + klt.</td></tr>
-            <tr><td>et + klt.</td><td>ette + klt.</td></tr>
-            <tr><td>ei + klt.</td><td>eivät + klt.</td></tr>
-          </table>
-        </div>
+          <section>
+            <h3 id="indicative-past">Indikatiivin imperfekti <a href="#" class="up-link">&uarr;</a></h3>
 
-        <div class="section section-b">
-          <h2>KPT-vaihtelu</h2>
-          <table class="usual-table">
-            <tr><th>vahva</th><th>heikko</th></tr>
-            <tr><td>kk</td><td>k</td></tr>
-            <tr><td>pp</td><td>p</td></tr>
-            <tr><td>tt</td><td>t</td></tr>
-            <tr><td>nt</td><td>nn</td></tr>
-            <tr><td>nk</td><td>ng</td></tr>
-            <tr><td>mp</td><td>mm</td></tr>
-            <tr><td>lt</td><td>ll</td></tr>
-            <tr><td>rt</td><td>rr</td></tr>
-            <tr><td>t</td><td>d</td></tr>
-            <tr><td>k</td><td>&empty;</td></tr>
-            <tr><td>p</td><td>v</td></tr>
-          </table>
-        </div>
-      </div>
-    </details>
+            <section>
+              <h4>Myönteinen</h4>
+              <p><u>Persoonamuodot</u>:</p>
+              <ol>
+                <li value=1>a&hellip;-<u>aa</u> (2 tavua) &rarr; a&hellip;-<u>oi</u>-</li>
+                <li value=1>-(l/n/r)<u>tAA</u>* &rarr; -(l/n/r)<u>si-</u></li>
+                <li value=1>-<u>(A/e/i)A</u> &rarr; -<u>i</u>-</li>
+                <li value=1>-(U/O)<u>A</u> &rarr; -(U/O)<u>i</u>-</li>
+                <li value=2>-i<u>dA</u> &rarr; -i-</li>
+                <li value=2>-<u>V&#8321V&#8322dA</u> &rarr; -<u>V&#8322i</u>-</li>
+                <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>i</u>-</li>
+                <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>si</u>-</li>
+                <li>-it<u>A</u> &rarr; -it<u>si</u>-</li>
+                <li>-e<u>tA</u> &rarr; -e<u>ni</u>-</li>
+              </ol>
+              <p>
+                *ja verbit <strong>huutaa</strong>, <strong>löytää</strong>, <strong>pyytää</strong>,
+                <strong>tietää</strong>, <strong>tuntea</strong>, <strong>taitaa</strong>
+              </p>
+              <p><u>Passiivi</u></p>
+              <p><i>Käynnissä...</i></p>
+            </section>
+            <section>
+              <h4>Kielteinen</h4>
+              <p><u>Persoonamuodot</u>: ei-verbi + <span class="accent">nUt</span>-partisiippi</p>
+              <p><u>Passiivi</u>: ei + passiivin partisiipin perfekti <span class="accent">-tU</span></p>
+            </section>
+          </section>
 
-    <details open>
-      <summary>Verbityyppien preesensin ja imperfektin vartalot</summary>
-      <div class="verb-types-container">
-        <div class="section section-a">
-          <h2>1. verbityyppi <span class="verb-type-marker">-VA</span></h2>
-          <div class="preesens-section">
-            <h3>Preseens</h3>
-            <ul>
-              <li>-V<u>A</u> &rarr; -V-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): puhua &rarr; puhun, oppia &rarr; opin
-            </p>
-          </div>
-          <div class="imperfekti-section">
-            <h3>Imperfekti</h3>
-            <ul>
-              <li>a&hellip;-<u>aa</u> &rarr; a&hellip;-<u>oi</u>-</li>
-              <li>-(l/n/r)<u>tAA</u>* &rarr; -(l/n/r)<u>si-</u></li>
-              <li>-<u>(A/e/i)A</u> &rarr; -<u>i</u>-</li>
-              <li>-(U/O)<u>A</u> &rarr; -(U/O)<u>i</u>-</li>
-            </ul>
-            <p>
-              *ja verbit <strong>huutaa</strong>, <strong>löytää</strong>, <strong>pyytää</strong>,
-              <strong>tietää</strong>, <strong>tuntea</strong>, <strong>taitaa</strong>
-            </p>
-            <p>
-              Esim. (minä-persoona): maksaa &rarr; maksoin, suomentaa &rarr; suomensin, tuntea &rarr; tunsin,
-              käyttää &rarr; käytin, puhua &rarr; puhuin
-            </p>
-          </div>
-        </div>
-
-        <div class="section section-a">
-          <h2>2. verbityyppi <span class="verb-type-marker">-dA</span></h2>
-          <p>Yleiset poikkeusverbit: <strong>käydä</strong> (preesensin var. käy-, imperfektin var. kävi-), <strong>nähdä</strong> (preesensin var. näke-, imperfektin var. näki-), <strong>tehdä</strong> (preesensin var. teke-, imperfektin teki-)</p>
-          <div class="preesens-section">
-            <h3>Preesens</h3>
-            <ul>
-              <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): juoda &rarr; juon
-            </p>
-          </div>
-          <div class="imperfekti-section">
-            <h3>Imperfekti</h3>
-            <ul>
-              <li>-i<u>dA</u> &rarr; -i-</li>
-              <li>-<u>V&#8321V&#8322dA</u> &rarr; -<u>V&#8322i</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): imuroida &rarr; imuroin, juoda &rarr; join
-            </p>
-          </div>
-        </div>
-
-        <div class="section section-a">
-          <h2>3. verbityyppi <span class="verb-type-marker">-(ll/nn/rr/st)A</span></h2>
-          <p>Yleinen poikkeusverbi: <strong>juosta</strong> (preesensin var. juokse-, imperfektin var. juoksi-)</p>
-          <div class="preesens-section">
-            <h3>Preseens</h3>
-            <ul>
-              <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>e</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): mennä &rarr; menen, tulla &rarr; tulen, nousta &rarr; nousen,
-              purra &rarr; puren, jutella &rarr; juttelen
-            </p>
-          </div>
-          <div class="imperfekti-section">
-            <h3>Imperfekti</h3>
-            <ul>
-              <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>i</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): mennä &rarr; menin, tulla &rarr; tulin, nousta &rarr; nousin,
-              purra &rarr; purin, jutella &rarr; juttelin
-            </p>
-          </div>
-        </div>
-
-        <div class="section section-a">
-          <h2>4. verbityyppi <span class="verb-type-marker">-(A/O/U)tA</span></h2>
-          <div class="preesens-section">
-            <h3>Preseens</h3>
-            <ul>
-              <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>A</u>-</li>
-            </ul>
-            <p>
-              Esim (minä-persoona): vastata &rarr; vastaan, tykätä &rarr; tykkään
-            </p>
-          </div>
-          <div class="imperfekti-section">
-            <h3>Imperfekti</h3>
-            <ul>
-              <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>si</u>-</li>
-            </ul>
-            <p>
-              Esim (minä-persoona): vastata &rarr; vastasin, tykätä &rarr; tykkäsin
-            </p>
-          </div>
-        </div>
-
-        <div class="section section-a">
-          <h2>5. verbityyppi <span class="verb-type-marker">-itA</span></h2>
-          <div class="preesens-section">
-            <h3>Preesens</h3>
-            <ul>
-              <li>-it<u>A</u> &rarr; -it<u>se</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): häiritä &rarr; häiritsen, valita &rarr; valitsen
-            </p>
-          </div>
-          <div class="imperfekti-section">
-            <h3>Imperfekti</h3>
-            <ul>
-              <li>-it<u>A</u> &rarr; -it<u>si</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): häiritä &rarr; häiritsin, valita &rarr; valitsin
-            </p>
-          </div>
-        </div>
-
-        <div class="section section-a">
-          <h2>6. verbityyppi <span class="verb-type-marker">-etA</span></h2>
-          <div class="preesens-section">
-            <h3>Preesens</h3>
-            <ul>
-              <li>-e<u>tA</u> &rarr; -e<u>ne</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): vanheta &rarr; vanhenen, lämmetä &rarr; lämpenen
-            </p>
-          </div>
-          <div class="imperfekti-section">
-            <h3>Imperfekti</h3>
-            <ul>
-              <li>-e<u>tA</u> &rarr; -e<u>ni</u>-</li>
-            </ul>
-            <p>
-              Esim. (minä-persoona): vanheta &rarr; vanhenin, lämmetä &rarr; lämpenin
-            </p>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <details open>
-      <summary>Preesensin passiivi</summary>
-
-      <div class="verb-types-container">
-        <div class="section section-b">
-          <h2>Positiivisessa virkkeessä</h2>
-
-          <p>
-            Preesensin passiivi on aina <strong>heikossa asteessa</strong>
-          </p>
-          <p>
-            1. verbityyppi <span class="verb-type-marker">-VA</span>:
-            <ul>
-              <li>-(e/i/O/U)<u>A</u> &rarr; -(e/i/O/U)<u>tAAn</u></li>
-              <li>-<u>AA</u> &rarr; -<u>etAAn</u></li>
-            </ul>
-            2-6. verbityypit:
-            <ul>
-              <li>-A &rarr; -A<u>An</u></li>
-            </ul>
-            Esim.: oppia &rarr; opitaan, maksaa &rarr; maksetaan, voida &rarr; voidaan
-          </p>
-        </div>
-
-        <div class="section section-b">
-          <h2>Negatiivisessa virkkeessä</h2>
-
-          <p>
-            <!-- Negatiivinen passivi on positiivinen passiivi ilman viimeistä An:ää (joo, 2-6. negatiiviset passivit ovat infinitiivit) -->
-            1. verbityyppi: 'ei' + positiivinen passiivi ilman viimeistä An:ää<br>
-            2-6. verbityypit: 'ei' + infinitiivi
-          </p>
-          <p>
-            Esim.: oppia &rarr; opita, maksaa &rarr; makseta, voida &rarr; voida
-          </p>
-        </div>
-      </div>
-    </details>
-  </details>
+          <section>
+            <h3 id="indicative-perfect">Indikatiivin perfekti <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+          <section>
+            <h3 id="indicative-pluperfect">Indikatiivin pluskvamperfekti <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+        </section>
+        <section>
+          <h2 id="conditional">Konditionaali <a href="#" class="up-link">&uarr;</a></h2>
+          <section>
+            <h3 id="conditional-present">Konditionaalin preesens <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+          <section>
+            <h3 id="conditional-perfect">Konditionaalin perfekti <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+        </section>
+        <section>
+          <h2 id="imperative">Imperatiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <section>
+            <h3 id="imperative-present">Imperatiivin preesens <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+          <section>
+            <h3 id="imperative-perfect">Imperatiivin perfekti <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+        </section>
+        <section>
+          <h2 id="potential">Potentiaali <a href="#" class="up-link">&uarr;</a></h2>
+          <section>
+            <h3 id="potential-present">Potentiaalin preesens <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+          <section>
+            <h3 id="potential-perfect">Potentiaalin perfekti <a href="#" class="up-link">&uarr;</a></h3>
+            <p><i>Käynnissä...</i></p>
+          </section>
+        </section>
+      </section>
+      <section>
+        <h1 id="infinitives">Infinitiivit <a href="#" class="up-link">&uarr;</a></h1>
+        <section>
+          <h2 id="infinitive-1">1. <span class="accent">A</span>-infinitiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-1-long">Pitkä 1. infinitiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-2">2. <span class="accent">e</span>-infinitiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-3">3. <span class="accent">mA</span>-infinitiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-4">4. <span class="accent">minen</span>-infinitiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-5">5. <span class="accent">mAinen</span>-infinitiivi <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+      </section>
+      <section>
+        <h1 id="participles">Partisiipit</h1>
+        <section>
+          <h2 id="participle-active-present">Aktiivin partisiipin preesens <span class="accent">-vA</span> <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="participle-active-perfect">Aktiivin partisiipin perfekti <span class="accent">-nUt</span> <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="participle-passive-present">Passiivin partisiipin preesens <span class="accent">-tAvA</span> <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="participle-passive-perfect">Passiivin partisiipin perfekti <span class="accent">-tU</span> <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="participle-agent">Agenttipartisiippi <span class="accent">-mA</span> <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+        <section>
+          <h2 id="participle-negative">Kielteinen agenttipartisiippi <span class="accent">-mAtOn</span> <a href="#" class="up-link">&uarr;</a></h2>
+          <p><i>Käynnissä...</i></p>
+        </section>
+      </section>
+    </article>
+  </main>
 </body>
 </html>

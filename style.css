@@ -1,99 +1,233 @@
+/* 1. General */
 * {
-  --section-color: rgb(0 128 0);
-  --preesens-section-color: rgb(255 0 0);
-  --imperfekti-section-color: rgb(0 0 255);
-  --verb-type-marker-color: rgb(0 128 0);
-  --verb-type-marker-bg-color: rgb(0 200 0 / 50%);
+  --accent-color-solid: rgb(0 128 0);
+  --accent-color-bg: rgb(0 200 0 / 25%);
 }
 
 body {
   font-family: Poppins;
 }
 
-h1 {
+i { font-style: italic; }
+b { font-weight: bold; }
+
+/* 2. Header */
+
+header > * {
   text-align: center;
-  border: 2px solid var(--section-color);
-  border-radius: 10px;
 }
 
-details {
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  padding: 0.5em 0.5em 0;
-  margin: 5px;
-}
-
-summary {
+header > h1 {
+  margin: 1em 0.5em 0 0.5em;
+  font-size: 2.5em;
   font-weight: bold;
-  margin: -0.5em -0.5em 0;
-  padding: 0.5em;
 }
 
-details[open] {
-  padding: 0.5em;
+header > h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
-span.version {
-  font-size: 0.5em;
+main {
+  margin: 0 5% 5em 5%;
 }
 
-span.verb-type-marker {
-  border: 2px solid var(--verb-type-marker-color);
-  border-radius: 8px;
-  padding: 2px;
-  background-color: var(--verb-type-marker-bg-color);
+/* 3. Navigation menu */
+
+a.ampersand-link {
+  color: var(--accent-color-solid);
+  font-weight: bold;
+  display: none;
+
+  :hover > & {
+    display: inline;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.verb-types-container {
+nav {
+  border: 2px solid var(--accent-color-solid);
+  border-radius: 0.5em;
+  margin: 0 5% 1em 5%;
+  padding: 1em;
+}
+
+nav h1 {
+  font-size: 2.0em;
+}
+
+nav menu {
+  padding-left: 1.5em;
+
+  & input:not(:checked) + menu {
+    display: none;
+  }
+
+  & label, a {
+    text-decoration: underline;
+  }
+
+  & input[type=checkbox] {
+    display: none;
+  }
+
+  & li:has(> input:checked)::marker {
+    content: "\2193  ";
+  }
+
+  & li:has(> input:not(:checked))::marker {
+    content: "\2192  ";
+  }
+
+  & li:not(:has(> input))::marker {
+    content: "\2022  ";
+  }
+
+  & :is(label:hover, label:hover > a, a:hover) {
+    text-decoration: none;
+  }
+}
+
+/* 4. hr */
+
+.hr-like {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: stretch;
-  align-content: stretch;
+  align-items: center;
+  text-align: center;
+  margin: 5em auto;
+  width: 75%;
+
+  &::before, &::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #000;
+  }
+
+  &:not(:empty)::before {
+    margin-right: .25em;
+  }
+
+  &:not(:empty)::after {
+    margin-left: .25em;
+  }
 }
 
-.section {
-  border: 2px solid var(--section-color);
-  border-radius: 10px;
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  /* flex-grow: 1;
-  flex-shrink: 1000;
-  flex: 1; */
+/* 5. Main content */
+article h1 {
+  font-size: 2.0em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+  
+  &::before {
+    content: "> ";
+  }
+
+  &:not(#abbrs) {
+    margin-top: 2em;
+  }
 }
 
-.section-a, .section-b {
-  flex: 1;
+article h2 {
+  font-size: 1.7em;
+  font-weight: bold;
 }
 
-.section-a {
-  min-width: max(25%, 300px);
+article :not(h1 + *) > h2 {
+  margin-top: 1em;
 }
 
-.preesens-section, .imperfekti-section {
-  border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+article h3 {
+  font-size: 1.4em;
 }
 
-.preesens-section {
-  border: 2px solid var(--preesens-section-color);
+article :not(h2 + *) > h3 {
+  margin-top: 0.5em;
 }
 
-.imperfekti-section {
-  border: 2px solid var(--imperfekti-section-color);
+article h4 {
+  font-size: 1.2em;
 }
 
-.usual-table {
-  table-layout: fixed;
+article :not(h3 + *) > h4 {
+  margin-top: 0.3em;
+}
+
+article ul {
+  list-style-type: disc;
+
+}
+
+article ol {
+  list-style-type: decimal;
+
+}
+
+article li {
+  margin-left: 2em;
+}
+
+span.accent {
+  font-weight: inherit;
+  border: 2px solid var(--accent-color-solid);
+  background-color: var(--accent-color-bg);
+  border-radius: 0.5em;
+  padding: 0 0.1em 0 0.1em;
+  white-space: nowrap;
+}
+
+a.up-link {
+  color: var(--accent-color-solid);
+  display: none;
+
+  :hover > & {
+    display: inline;
+  }
+}
+
+/* 6. tables */
+table {
   border-collapse: collapse;
-  margin: 10px;
+  display: block;
+  overflow-x: auto;
+  overflow-y: clip;
+  white-space: nowrap;
+  margin: 1em 0 1em 0;
+
+  & td, & th {
+    border: 2px solid var(--accent-color-solid);
+    padding: 0.5em;
+    text-align: center;
+  }
+
+  & th, & caption {
+    font-weight: bold;
+  }
+
+  & caption {
+    margin-bottom: 0.5em;
+    white-space: wrap;
+  }
 }
 
-.usual-table td, th {
-  padding: 2px;
-  border: 1px solid #000000;
+@counter-style circled-decimal {
+  system: fixed 0;
+  symbols: '\24EA' '\2460' '\2461' '\2462' '\2463' '\2464' '\2465' '\2466' '\2467' '\2468' '\2469' '\246A' '\246B' '\246C' '\246D' '\246E' '\246F' '\2470' '\2471' '\2472' '\2473' '\3251' '\3252' '\3253' '\3254' '\3255' '\3256' '\3257' '\3258' '\3259' '\325a' '\325b' '\325c' '\325d' '\325e' '\325f' '\32b1' '\32b2' '\32b3' '\32b4' '\32b5' '\32b6' '\32b7' '\32b8' '\32b9' '\32ba' '\32bb' '\32bc' '\32bd' '\32be' '\32bf';
+  suffix: ' ';
 }
+
+ol.circled-decimal {
+  list-style: circled-decimal;
+
+  & li::marker {
+    font-size: 1.2em;
+  }
+}
+
+/* 7. Patches */
+#patch1 {
+  list-style-type: "2-6. ";
+}
+
