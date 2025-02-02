@@ -67,8 +67,8 @@ span.verb-type-marker {
   flex: 1;
 }
 
-.section-a h2 {
-  white-space: pre;
+.section-a {
+  min-width: max(25%, 300px);
 }
 
 .preesens-section, .imperfekti-section {
