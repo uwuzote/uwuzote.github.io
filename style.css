@@ -206,6 +206,10 @@ table {
     text-align: center;
   }
 
+  & td.small {
+    padding: 0.05em;
+  }
+
   & th, & caption {
     font-weight: bold;
   }
