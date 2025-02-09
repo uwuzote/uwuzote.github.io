@@ -33,8 +33,8 @@ header > * {
 }
 
 header > h1 {
-  margin: 1em 0.5em 0 0.5em;
-  font-size: 2.5em;
+  margin: 0.5em 0.5em 0 0.5em;
+  font-size: 3em;
   font-weight: bold;
 }
 
@@ -127,74 +127,86 @@ nav menu {
 }
 
 /* 5. Main content */
-article h1 {
-  font-size: 2.0em;
-  font-weight: bold;
-  margin-bottom: 0.25em;
-  
-  &::before {
-    content: "> ";
-  }
-
-  &:not(#abbrs) {
+article {
+  & h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 0.25em;
     margin-top: 2em;
+
+    &::before {
+      content: "> ";
+    }
   }
-}
 
-article h2 {
-  font-size: 1.7em;
-  font-weight: bold;
-}
+  & h2 {
+    font-size: 2em;
+    font-weight: bold;
+  }
 
-article :not(h1 + *) > h2 {
-  margin-top: 1em;
-}
+  & :not(h1 + *) > h2 {
+    margin-top: 1em;
+  }
 
-article h3 {
-  font-size: 1.4em;
-}
+  & h3 {
+    font-size: 1.7em;
+    font-weight: bold;
+  }
 
-article :not(h2 + *) > h3 {
-  margin-top: 0.5em;
-}
+  & :not(h2 + *) > h3 {
+    margin-top: 0.7em;
+  }
 
-article h4 {
-  font-size: 1.2em;
-}
+  & h4 {
+    font-size: 1.4em;
+    text-decoration: underline;
+  }
 
-article :not(h3 + *) > h4 {
-  margin-top: 0.3em;
-}
+  & :not(h3) + h4 {
+    margin-top: 0.5em;
+  }
 
-article ul {
-  list-style-type: disc;
+  & h5 {
+    font-size: 1.2em;
+    font-style: italic;
+  }
 
-}
+  & :not(h4) + h5 {
+    margin-top: 0.3em;
+  }
 
-article ol {
-  list-style-type: decimal;
+  & ul {
+    list-style-type: disc;
+  }
 
-}
+  & ol {
+    list-style-type: decimal;
+  }
 
-article li {
-  margin-left: 2em;
-}
+  & li {
+    margin-left: 2em;
+  }
 
-span.accent {
-  font-weight: inherit;
-  border: 2px solid var(--accent-color-solid);
-  background-color: var(--accent-color-bg);
-  border-radius: 0.5em;
-  padding: 0 0.1em 0 0.1em;
-  white-space: nowrap;
-}
+  li > span.marker {
+    display: none;
+  }
 
-a.up-link {
-  color: var(--accent-color-solid);
-  display: none;
+  & span.accent {
+    font-weight: inherit;
+    border: 2px solid var(--accent-color-solid);
+    background-color: var(--accent-color-bg);
+    border-radius: 0.5em;
+    padding: 0 0.1em 0 0.1em;
+    white-space: nowrap;
+  }
 
-  :hover > & {
-    display: inline;
+  & a.up-link {
+    color: var(--accent-color-solid);
+    display: none;
+
+    :hover > & {
+      display: inline;
+    }
   }
 }
 
@@ -232,6 +244,6 @@ table {
   list-style-type: "2-6. ";
 }
 
-#patch2 {
+#patch2, #patch3 {
   list-style-type: "4-6. ";
 }
