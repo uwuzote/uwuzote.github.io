@@ -73,31 +73,21 @@ nav h1 {
 nav menu {
   padding-left: 1.5em;
 
-  & input:not(:checked) + menu {
-    display: none;
-  }
-
-  & input[type=checkbox] {
-    display: none;
-  }
-
-  & label {
+  & summary {
     color: var(--link-color);
 
-    &:hover {
-      text-decoration: underline;
-    }
+    &:hover { text-decoration: underline; }
   }
 
-  & li:has(> input:checked)::marker {
+  & li:has(> details:is(:open, [open]))::marker {
     content: "\25BE  "; /* opened item */
   }
 
-  & li:has(> input:not(:checked))::marker {
+  & li:has(> details:not(:is(:open, [open])))::marker {
     content: "\25B8  "; /* closed item */
   }
 
-  & li:not(:has(> input))::marker {
+  & li:not(:has(> details))::marker {
     content: ""; /* non-interactable item */
   }
 }
