@@ -14,7 +14,7 @@ body {
 i { font-style: italic; }
 b { font-weight: bold; }
 
-a:not(.up-link, .ampersand-link) {
+a:not(.ampersand-link) {
   color: var(--link-color);
 
   &:hover {
@@ -90,6 +90,18 @@ nav menu {
   & li:not(:has(> details))::marker {
     content: ""; /* non-interactable item */
   }
+}
+
+#up-button {
+  position: fixed;
+  bottom: 0.75em;
+  right: 0.75em;
+  font-size: 2em;
+  border: 2px solid var(--accent-color-solid);
+  border-radius: 100%;
+  background-color: var(--accent-color-bg);
+  width: 1.2em;
+  height: 1.2em;
 }
 
 /* 4. hr */
@@ -186,7 +198,7 @@ article {
     border: 2px solid var(--accent-color-solid);
     background-color: var(--accent-color-bg);
     border-radius: 0.5em;
-    padding: 0 0.1em 0 0.1em;
+    padding: 0.15em;
     white-space: nowrap;
   }
 
