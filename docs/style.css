@@ -7,7 +7,7 @@
   --link-color: rgb(48, 86, 169);
 }
 
-body {
+body, #up-button {
   font-family: Comfortaa, serif;
 }
 
@@ -96,12 +96,13 @@ nav menu {
   position: fixed;
   bottom: 0.75em;
   right: 0.75em;
+  width: 1.3em;
+  height: 1.3em;
+
   font-size: 2em;
   border: 2px solid var(--accent-color-solid);
   border-radius: 100%;
   background-color: var(--accent-color-bg);
-  width: 1.2em;
-  height: 1.2em;
 }
 
 /* 4. hr */
@@ -212,7 +213,7 @@ article {
   }
 }
 
-/* 6. tables */
+/* 6. Tables */
 table {
   border-collapse: collapse;
   display: block;
@@ -225,6 +226,10 @@ table {
     border: 2px solid var(--accent-color-solid);
     padding: 0.5em;
     text-align: center;
+  }
+
+  & th {
+    background-color: var(--accent-color-bg);
   }
 
   & td.small {
