@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 /* 1. General */
 * {
   --accent-color-solid: rgb(0 128 0);
@@ -6,12 +8,20 @@
 }
 
 body {
-  font-family: Poppins;
+  font-family: Comfortaa, serif;
+  font-weight: 150 !important;
 }
 
 i { font-style: italic; }
 b { font-weight: bold; }
-a { color: var(--link-color); }
+
+a:not(.up-link, .ampersand-link) {
+  color: var(--link-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
 main {
   margin: 0 5% 5em 5%;
@@ -72,8 +82,12 @@ nav menu {
     display: none;
   }
 
-  & label, a {
+  & label {
     color: var(--link-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   & li:has(> input:checked)::marker {
@@ -86,10 +100,6 @@ nav menu {
 
   & li:not(:has(> input))::marker {
     content: ""; /* non-interactable item */
-  }
-
-  & :is(label:hover, label:hover > a, a:hover) {
-    text-decoration: underline;
   }
 }
 
@@ -109,11 +119,11 @@ nav menu {
   }
 
   &:not(:empty)::before {
-    margin-right: .25em;
+    margin-right: 1em;
   }
 
   &:not(:empty)::after {
-    margin-left: .25em;
+    margin-left: 1em;
   }
 }
 
@@ -187,10 +197,6 @@ a.up-link {
   :hover > & {
     display: inline;
   }
-}
-
-article a:not(.up-link) {
-  text-decoration: underline;
 }
 
 /* 6. tables */
