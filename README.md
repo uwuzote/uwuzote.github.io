@@ -2,6 +2,7 @@
 ## A compact, opinionated guide to the inflection of Finnish
 
 Hosted with Github Pages at <https://uwuzote.github.io/taivutus/#>.
+Issues and pull-requests are welcome :3
 
 ## Checklist
 - [ ] Moods
@@ -16,10 +17,10 @@ Hosted with Github Pages at <https://uwuzote.github.io/taivutus/#>.
   - [ ] Third mA-infinitive
   - [ ] Fourth minen-infinitive
   - [ ] Fifth mAinen-infinitive
-- [ ] Participles
+- [x] Participles
   - [x] Active present vA-participle
   - [x] Active past nUt-participle
   - [x] Passive present tAvA-participle
   - [x] Passive perfect tU-participle
   - [x] Agent mA-participle
-  - [ ] Negative agent mAtOn-participle
+  - [x] Negative agent mAtOn-participle
