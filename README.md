@@ -21,5 +21,5 @@ Hosted with Github Pages at <https://uwuzote.github.io/taivutus/#>.
   - [x] Active past nUt-participle
   - [x] Passive present tAvA-participle
   - [x] Passive perfect tU-participle
-  - [ ] Agent mA-participle
+  - [x] Agent mA-participle
   - [ ] Negative agent mAtOn-participle
