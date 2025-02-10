@@ -14,7 +14,7 @@ body, #up-button {
 i { font-style: italic; }
 b { font-weight: bold; }
 
-a:not(.ampersand-link) {
+a:not(.ampersand-link), summary {
   color: var(--link-color);
 
   &:hover {
@@ -82,18 +82,12 @@ nav h1 {
 nav menu {
   padding-left: 1.5em;
 
-  & summary {
-    color: var(--link-color);
-
-    &:hover { text-decoration: underline; }
+  & li:has(> details)::marker {
+    content: "\25B8  "; /* closed item */
   }
 
   & li:has(> details:is(:open, [open]))::marker {
-    content: "\25BE  "; /* opened item */
-  }
-
-  & li:has(> details:not(:is(:open, [open])))::marker {
-    content: "\25B8  "; /* closed item */
+    content: "\25BE  "; /* open item */
   }
 
   & li:not(:has(> details))::marker {
@@ -209,6 +203,30 @@ article {
 
     :hover > & {
       display: inline;
+    }
+  }
+
+  & details {
+    padding: 0.5em;
+    margin-top: 1em;
+    border: 2px solid var(--accent-color-solid);
+    border-radius: 0.5em;
+    background-color: var(--accent-color-bg);
+
+    & > summary::before {
+      content: "\25B8  "; /* closed */
+    }
+
+    &:is([open], :open) > summary {
+      border-bottom: 2px solid var(--accent-color-solid);
+
+      &::before {
+        content: "\25BE  "; /* open */
+      }
+    }
+
+    & > summary + * {
+      margin-top: 0.5em;
     }
   }
 }
