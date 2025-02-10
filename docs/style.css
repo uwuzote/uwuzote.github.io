@@ -4,6 +4,7 @@
 * {
   --accent-color-solid: rgb(0 128 0);
   --accent-color-bg: rgb(0 200 0 / 25%);
+  --accent-color-bg-solidified: rgb(191, 241, 191);
   --link-color: rgb(48, 86, 169);
 }
 
@@ -105,7 +106,7 @@ nav menu {
   font-size: 2em;
   border: 2px solid var(--accent-color-solid);
   border-radius: 100%;
-  background-color: var(--accent-color-bg);
+  background-color: var(--accent-color-bg-solidified);
 }
 
 /* 4. hr */
