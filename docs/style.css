@@ -8,7 +8,7 @@
   --link-color: rgb(48, 86, 169);
 }
 
-body, #up-button {
+html {
   font-family: Comfortaa, serif;
 }
 
@@ -107,6 +107,7 @@ nav menu {
   border: 2px solid var(--accent-color-solid);
   border-radius: 100%;
   background-color: var(--accent-color-bg-solidified);
+  text-align: center;
 }
 
 /* 4. hr */
@@ -213,6 +214,11 @@ article {
     border: 2px solid var(--accent-color-solid);
     border-radius: 0.5em;
     background-color: var(--accent-color-bg);
+    cursor: default;
+
+    & > summary {
+      cursor: pointer;
+    }
 
     & > summary::before {
       content: "\25B8  "; /* closed */
@@ -233,6 +239,19 @@ article {
 
   & ol {
     margin-top: 0.25em;
+  }
+}
+
+.ru {
+  display: none;
+}
+
+:has(#ru-button:checked) * {
+  &.ru {
+    display: inherit;
+  }
+  &.no-ru {
+    display: none;
   }
 }
 
