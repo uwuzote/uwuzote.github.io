@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="init.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="static/init.css" />
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="icon" href="static/favicon.ico" />
 
   <title>Verbitaivutus</title>
 </head>
@@ -14,18 +14,14 @@
   <header>
     <hgroup>
       <h1>Verbitaivutus suomen kielessä</h1>
-      <!-- <h1>Спряжение в финском языке</h1> -->
-      <h2>Versio 2.8</h2>
+      <h2>Versio 2.9</h2>
+      <h3><a href="/taivutus/index.ru.html">По-русски</a></h3>
     </hgroup>
   </header>
   <main>
     <nav>
-      <h1 id="contents">
-        <span>Sisältö</span>
-        <!-- <span>Содержание</span> -->
-      </h1>
+      <h1 id="contents">Sisältö</h1>
       <p>Voidaan avata osat nuolten kanssa<p>
-      <!-- <p>Можно раскрыть пункты со стрелочками</p> -->
       <menu>
         <li><a href="#foreword">Esisana</a></li>
         <li><a href="#abbrs">Lyhennökset</a></li>
@@ -79,7 +75,7 @@
         <li><details>
           <summary>Partisiipit <a href="#participles" class="ampersand-link">&darr;</a></summary>
           <menu>
-            <li><a href="#p-active-present">Aktiivin preesens <span class="accent">-vA</span></a> (<a href="p-active-present-usage" class="up-link">käyttö</a>)</li>
+            <li><a href="#p-active-present">Aktiivin preesens <span class="accent">-vA</span></a> (<a href="#p-active-present-usage" class="up-link">käyttö</a>)</li>
             <li><a href="#p-active-perfect">Aktiivin perfekti <span class="accent">-nUt</span></a> (<a href="#p-active-perfect-declension">taivutus</a>)</li>
             <li><a href="#p-passive-present">Passiivin preesens <span class="accent">-tAvA</span></a></li>
             <li><a href="#p-passive-perfect">Passivin perfekti <span class="accent">-tU</span></a></li>
@@ -93,24 +89,11 @@
     <article>
       <section>
         <h1 id="foreword">Esisana <a href="#foreword" class="up-link">&</a></h1>
-        <p>
-          Tässä sivustossa voi olla virheet. Jos näet yhden, kirjoita
-          <a href="https://github.com/uwuzote/taivutus">GitHub</a>:iini, kiitos!
-        </p>
-        <p>
-          Käytin <a href="https://uusikielemme.fi">uudenkielemme.fi</a>,
+        <p>Tässä sivustossa voi olla virheet. Jos näet yhden, kirjoita
+            <a href="https://github.com/uwuzote/taivutus">GitHub</a>:iini, kiitos!</p>
+        <p>Käytin <a href="https://uusikielemme.fi">uudenkielemme.fi</a>,
           <a href="https://fi.wiktionary.org">wikisanakirjan</a>
-          (<a href="https://en.wiktionary.org">englanniksi</a>) ja <i>Suomen Mestari</i>-oppikirjan.
-        </p>
-        <!-- <p> -->
-          <!-- На этой странице могут быть ошибки. Можете сообщить о них на мой -->
-          <!-- <a href="https://github.com/uwuzote/taivutus">GitHub</a>, спасибо! -->
-        <!-- </p> -->
-        <!-- <p> -->
-          <!-- Использованные ресурсы: <a href="https://uusikielemme.fi">uusikielemme.fi</a>, -->
-          <!-- <a href="https://ru.wiktionary.org">викисловарь</a> -->
-          <!-- (<a href="https://en.wiktionary.org">англ.</a>) и учебники <i>Suomen Mestari</i>. -->
-        <!-- </p> -->
+          (<a href="https://en.wiktionary.org">englanniksi</a>) ja <i>Suomen Mestari</i>-oppikirjat.</p>
       </section>
       <section>
         <h1 id="abbrs">Lyhennökset <a href="#abbrs" class="up-link">&</a></h1>
@@ -194,26 +177,25 @@
             <tr><th>3.</th><td>-(V)*</td><td>-vAt</td></tr>
           </tbody>
         </table>
-        <p>
-          *vain preesensissä 1. tai 3-6. verbityypissä jos viimeinen vokaali on lyhyt
-        </p>
-
-        <table>
-          <caption>Ei-verbin persoonamuodot indikatiivissa</caption>
-          <thead><tr>
-            <th>persoona</th><th>yksikkö</th><th>monikko</th>
-          </tr></thead>
-          <tbody>
-            <tr><th>1.</th><td>en</td><td>emme</td></tr>
-            <tr><th>2.</th><td>et</td><td>ette</td></tr>
-            <tr><th>3.</th><td>ei</td><td>eivät</td></tr>
-          </tbody>
-        </table>
+        <p>*vain preesensissä 1. tai 3-6. verbityypissä jos viimeinen vokaali on lyhyt</p>
       </section>
       <section>
         <h1 id="finite-forms">Tapaluokat (modukset) <a href="#finite-forms" class="up-link">&</a></h1>
         <section>
           <h2 id="indicative">Indikatiivi <a href="#indicative" class="up-link">&</a></h2>
+
+          <table>
+            <caption>Ei-verbin persoonamuodot</caption>
+            <thead><tr>
+              <th>persoona</th><th>yksikkö</th><th>monikko</th>
+            </tr></thead>
+            <tbody>
+              <tr><th>1.</th><td>en</td><td>emme</td></tr>
+              <tr><th>2.</th><td>et</td><td>ette</td></tr>
+              <tr><th>3.</th><td>ei</td><td>eivät</td></tr>
+            </tbody>
+          </table>
+
           <section>
             <h3 id="present">Indikatiivin preesens <a href="#present" class="up-link">&</a></h3>
             <h4 id="present-affirmative">Myönteinen <a href="#present-affirmative" class="up-link">&</a></h4>
@@ -239,7 +221,6 @@
             <h4 id="present-negative">Kielteinen <a href="#present-negative" class="up-link">&</a></h4>
             <h5 id="present-negative-active">Aktiivimuodot <a href="#present-negative-active" class="up-link">&</a></h5>
             <p>&rarr; ei-verbi + kieltomuoto (sama kuin vartalo + KPT-vaihtelu)</p>
-
             <h5 id="present-negative-passive">Passiivi <a href="#present-negative-passive" class="up-link">&</a></h5>
             <p>&rarr; ei + myönteinen passiivi ilman viimeistä An:ää</p>
 
@@ -345,7 +326,7 @@
             <p>
               &rarr; olla-verbi +
               <a href="#p-active-perfect"><span class="accent">nUt</span>-partisiippi</a>
-                (yksikkö ja kohtelias Te <u>-nUt</u> tai monikko <u>-neet</u>)
+              (yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)
             </p>
 
             <h4 id="perfect-passive">Passiivi <a href="#perfect-passive" class="up-link">&</a></h4>
@@ -360,7 +341,7 @@
             <p>
               &rarr; olla-verbi imperfektimuodossa +
               <a href="#p-active-perfect"><span class="accent">nUt</span>-partisiippi</a>
-                (yksikkö ja kohtelias Te <u>-nUt</u> tai monikko <u>-neet</u>)
+              (yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)
             </p>
 
             <h4 id="pluperfect-passive">Passiivi <a href="#pluperfect-passive" class="up-link">&</a></h4>
@@ -408,7 +389,7 @@
         <h1 id="infinitives">Infinitiivit <a href="#infinitives" class="up-link">&</a></h1>
         <section>
           <h2 id="infinitive-1">1. <span class="accent">A</span>-infinitiivi <a href="#infinitive-1" class="up-link">&</a></h2>
-          <p>1. infiniitivi on sama kuin sanan sanakirjamuoto</p>
+          <p>1. infiniitivi on sanakirjamuoto</p>
         </section>
         <section>
           <h2 id="infinitive-1-long">Pitkä 1. infinitiivi <a href="#infinitive-1-long" class="up-link">&</a></h2>
@@ -449,6 +430,7 @@
           </details>
 
           <h3 id="p-active-present-usage"><span class="accent">vA</span>-partisiipin käyttö <a href="#p-active-present-usage" class="up-link">&</a></h3>
+
           <p>1. Adjektiivina (<i>joka</i>-lauseen asemesta)</p>
           <ol>
             <li>itkevä lapsi = lapsi joka itkee</li>

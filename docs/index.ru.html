@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="static/init.css" />
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="icon" href="static/favicon.ico" />
+
+  <title>Спряжение в финском</title>
+</head>
+<body>
+  <header>
+    <hgroup>
+      <h1>Спряжение в финском языке</h1>
+      <h2>Версия 2.9</h2>
+      <h3><a href="/taivutus/">Suomeksi</a></h3>
+    </hgroup>
+  </header>
+  <main>
+    <nav>
+      <h1 id="contents">Содержание</h1>
+      <p>Можно раскрывать пункты со стрелочками<p>
+      <menu>
+        <li><a href="#foreword">Предысловие</a></li>
+        <li><a href="#abbrs">Сокращения</a></li>
+        <li><a href="#general">Общая информация</a></li>
+        <li><details open>
+          <summary>Наклонения <a href="#finite-forms" class="ampersand-link">&darr;</a></summary>
+          <menu>
+            <li><details open>
+              <summary>Индикатив <a href="#indicative" class="ampersand-link">&darr;</a></summary>
+              <menu>
+                <li><a href="#present">Презенс</a></li>
+                <li><a href="#past">Имперфект</a></li>
+                <li><a href="#perfect">Перфект</a></li>
+                <li><a href="#pluperfect">Плюсквамперфект</a></li>
+              </menu>
+            </details></li>
+            <li><details>
+              <summary>&empty; Кондиционалис <a href="#conditional" class="ampersand-link">&darr;</a></summary>
+              <menu>
+                <li><a href="#conditional-present">&empty; Презенс</a></li>
+                <li><a href="#conditional-perfect">&empty; Перфект</a></li>
+              </menu>
+            </details></li>
+            <li><details>
+              <summary>&empty; Императив <a href="#imperative" class="ampersand-link">&darr;</a></summary>
+              <menu>
+                <li><a href="#imperative-present">&empty; Прензенс</a></li>
+                <li><a href="#imperative-perfect">&empty; Перфект</a></li>
+              </menu>
+            </details></li>
+            <li><details>
+              <summary>&empty; Потенциалис <a href="#potential" class="ampersand-link">&darr;</a></summary>
+              <menu>
+                <li><a href="#potential-present">&empty; Презенс</a></li>
+                <li><a href="#potential-perfect">&empty; Перфект</a></li>
+              </menu>
+            </details></li>
+          </menu>
+        </details></li>
+        <li><details>
+          <summary>&empty; Инфинитивы <a href="#infinitives" class="ampersand-link">&darr;</a></summary>
+          <menu>
+            <li><a href="#infinitive-1">1. или <span class="accent">A</span>-инфинитив</a></li>
+            <li><a href="#infinitive-1-long">&empty; Длинный 1. инфинитив</a></li>
+            <li><a href="#infinitive-2">&empty; 2. или <span class="accent">e</span>-инфинитив</a></li>
+            <li><a href="#infinitive-3">&empty; 3. или <span class="accent">mA</span>-инфинитив</a></li>
+            <li><a href="#infinitive-4">&empty; 4. или <span class="accent">minen</span>-инфинитив</a></li>
+            <li><a href="#infinitive-5">&empty; 5. или <span class="accent">mAinen</span>-инфинитив</a></li>
+          </menu>
+        </details></li>
+        <li><details>
+          <summary>Причастия <a href="#participles" class="ampersand-link">&darr;</a></summary>
+          <menu>
+            <li><a href="#p-active-present">Активное настоящего времени <span class="accent">-vA</span></a> (<a href="#p-active-present-usage" class="up-link">использование</a>)</li>
+            <li><a href="#p-active-perfect">Активное прошлого времени <span class="accent">-nUt</span></a> (<a href="#p-active-perfect-declension">склонение</a>)</li>
+            <li><a href="#p-passive-present">Пассивное настоящего времени <span class="accent">-tAvA</span></a></li>
+            <li><a href="#p-passive-perfect">Пассивное прошлого времени <span class="accent">-tU</span></a></li>
+            <li><a href="#p-agent">Агентное <span class="accent">-mA</span></a></li>
+            <li><a href="#p-negative">Отрицательное <span class="accent">-mAtOn</span></a> (<a href="#p-negative-declension">склонение</a>)</li>
+          </menu>
+        </details></li>
+      </menu>
+    </nav>
+    <div class="hr-like">&#9829;</div>
+    <article>
+      <section>
+        <h1 id="foreword">Предыслове <a href="#foreword" class="up-link">&</a></h1>
+        <p>На этой странице могут быть ошибки. Можете сообщить о них на мой
+            <a href="https://github.com/uwuzote/taivutus">GitHub</a>, спасибо!
+        </p>
+        <p>Использованные ресурсы: <a href="https://uusikielemme.fi">uusikielemme.fi</a>,
+          <a href="https://ru.wiktionary.org">викисловарь</a>
+          (<a href="https://en.wiktionary.org">англ.</a>) и учебники <i>Suomen Mestari</i>.
+        </p>
+      </section>
+      <section>
+        <h1 id="abbrs">Сокращения <a href="#abbrs" class="up-link">&</a></h1>
+        <ul>
+          <li>V &mdash; (последняя) гласная</li>
+          <li>A &mdash; a или ä</li>
+          <li>O &mdash; o или ö</li>
+          <li>U &mdash; u или y</li>
+        </ul>
+      </section>
+      <section>
+        <h1 id="general">Общая информация <a href="#general" class="up-link">&</a></h1>
+
+        <table>
+          <caption>Резюме KPT-чередования в глаголах</caption>
+          <thead>
+            <tr><th colspan=2>тип глагола</th><th>1.</th><th>2., 5.</th><th>3., 4., 6.</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th colspan=2>
+                начальная форма,
+                <br><a href="#p-active-perfect"><span class="accent">nUt</span>-причастие</a>
+              </th>
+              <td><b>сильная</b></td>
+              <td>&horbar;</td>
+              <td><i>слабая</i></td>
+            </tr>
+            <tr>
+              <th rowspan=3>индикатив</th>
+              <th>
+                1. и 2. лицо,
+                <br>отрицание
+              </th>
+              <td><i>слабая</i></td>
+              <td>&horbar;</td>
+              <td><b>сильная</b></td>
+            </tr>
+            <tr>
+              <th>3. лицо</th>
+              <td><b>сильная</b></td>
+              <td>&horbar;</td>
+              <td><b>сильная</b></td>
+            </tr>
+            <tr>
+              <th>пассив</th>
+              <td><i>слабая</i></td>
+              <td>&horbar;</td>
+              <td><i>слабая</i></td>
+            </tr>
+            <tr>
+              <th colspan=2>
+                <a href="#p-active-present"><span class="accent">vA</span>-причастие</a>,
+                <br><a href="#p-agent"><span class="accent">mA</span>-причастие</a>,
+                <br><a href="#p-negative"><span class="accent">mAtOn</span>-причастие</a>
+              </th>
+              <td><b>сильная</b></td>
+              <td>&horbar;</td>
+              <td><b>сильная</b></td>
+            </tr>
+            <tr>
+              <th colspan=2>
+                <a href="#p-passive-present"><span class="accent">tAvA</span>-причастие</a>,
+                <br><a href="#p-passive-perfect"><span class="accent">tU</span>-причастие</a>
+              </th>
+              <td><i>слабая</i></td>
+              <td>&horbar;</td>
+              <td><i>слабая</i></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <caption>Личные окончания</caption>
+          <thead><tr>
+            <th>лицо</th><th>ед. ч.</th><th>мн. ч.</th>
+          </tr></thead>
+          <tbody>
+            <tr><th>1.</th><td>-n</td><td>-mme</td></tr>
+            <tr><th>2.</th><td>-t</td><td>-tte</td></tr>
+            <tr><th>3.</th><td>-(V)*</td><td>-vAt</td></tr>
+          </tbody>
+        </table>
+        <p>*только в презенсе в 1. и 3-6. типах глаголов если последняя гласная короткая
+        </p>
+      </section>
+      <section>
+        <h1 id="finite-forms">Наклонения <a href="#finite-forms" class="up-link">&</a></h1>
+        <section>
+          <h2 id="indicative">Индикатив (изъявительное наклонение) <a href="#indicative" class="up-link">&</a></h2>
+
+          <table>
+            <caption>Спряжение отрицательной частицы ei</caption>
+            <thead><tr>
+              <th>лицо</th><th>ед. ч.</th><th>мн. ч.</th>
+            </tr></thead>
+            <tbody>
+              <tr><th>1.</th><td>en</td><td>emme</td></tr>
+              <tr><th>2.</th><td>et</td><td>ette</td></tr>
+              <tr><th>3.</th><td>ei</td><td>eivät</td></tr>
+            </tbody>
+          </table>
+
+          <section>
+            <h3 id="present">Презенс индикатива <a href="#present" class="up-link">&</a></h3>
+            <h4 id="present-affirmative">Утвердительный <a href="#present-affirmative" class="up-link">&</a></h4>
+            <h5 id="present-affirmative-active">Активный залог <a href="#present-affirmative-active" class="up-link">&</a></h5>
+            <ol>
+              <li>-V<u>A</u> &rarr; -V-</li>
+              <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
+              <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>e</u>-</li>
+              <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>A</u>-</li>
+              <li>-it<u>A</u> &rarr; -it<u>se</u>-</li>
+              <li>-e<u>tA</u> &rarr; -e<u>ne</u>-</li>
+            </ol>
+
+            <h5 id="present-affirmative-passive">Пассивный залог <a href="#present-affirmative-passive" class="up-link">&</a></h5>
+            <ol>
+              <li><span class="marker">1. тип: </span>-(e/i/O/U)<u>A</u>
+                &rarr; -(e/i/O/U)<u>tAAn</u>
+                <br>-<u>AA</u> &rarr; -<u>etAAn</u>
+              </li>
+              <li id="patch1" value=26><span class="marker">2-6. типы: </span>-A &rarr; -A<u>An</u>
+            </ol>
+
+            <h4 id="present-negative">Отрицание <a href="#present-negative" class="up-link">&</a></h4>
+            <h5 id="present-negative-active">Активный залог <a href="#present-negative-active" class="up-link">&</a></h5>
+            <p>&rarr; частица ei + соотрицательная форма (такая же как и основа + KPT-чередование)
+            </p>
+            <h5 id="present-negative-passive">Пассивный залог <a href="#present-negative-passive" class="up-link">&</a></h5>
+            <p>&rarr; ei + утвердительный пассив без конечного An
+            </p>
+
+            <details><summary>Примеры</summary>
+              <p>Активный залог:</p>
+              <ol>
+                <li>oppia &rarr; minä opin, hän oppii, hän ei opi</li>
+                <li>voida &rarr; &hellip; voin, &hellip; voi, &hellip; voi</li>
+                <li>jutella &rarr; &hellip; juttelen, &hellip; juttelee, &hellip; juttele</li>
+                <li>pelätä &rarr; &hellip; pelkään, &hellip; pelkää, &hellip; pelkää</li>
+                <li>tarvita &rarr; &hellip; tarvitsen, &hellip; tarvitsee, &hellip; tarvitse</li>
+                <li>pidetä &rarr; &hellip; pitenen, &hellip; pitenee, &hellip; pitene</li>
+              </ol>
+              <p>Пассивный залог:</p>
+              <ol>
+                <li>oppia &rarr; opitaan, ei opita
+                <br>alkaa &rarr; aletaan, ei aleta</li>
+                <li>voida &rarr; voidaan, ei voida</li>
+                <li>jutella &rarr; jutellaan, ei jutella</li>
+                <li>pelätä &rarr; pelätään, ei pelätä</li>
+                <li>tarvita &rarr; tarvitaan, ei tarvita</li>
+                <li>pidetä &rarr; pidetään, ei pidetä</li>
+              </ol>
+            </details>
+          </section>
+
+          <section>
+            <h3 id="past">Имперфект индикатива <a href="#past" class="up-link">&</a></h3>
+            <h4 id="past-affirmative">Утвердительный <a href="#past-affirmative" class="up-link">&</a></h4>
+            <h5 id="past-affirmative-active">Активный залог <a href="#past-affirmative-active" class="up-link">&</a></h5>
+            <ol>
+              <li>a&hellip;-<u>aa</u> (2 слога) &rarr; a&hellip;-<u>oi</u>-
+              <br>-(l/n/r)<u>tAA</u>* &rarr; -(l/n/r)<u>si-</u>
+              <br>-<u>(A/e/i)A</u> &rarr; -<u>i</u>-
+              <br>-(U/O)<u>A</u> &rarr; -(U/O)<u>i</u>-</li>
+
+              <li>-i<u>dA</u> &rarr; -i-
+              <br>-<u>V&#8321;V&#8322;dA</u> &rarr; -<u>V&#8322;i</u>-</li>
+
+              <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>i</u>-</li>
+              <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>si</u>-</li>
+              <li>-it<u>A</u> &rarr; -it<u>si</u>-</li>
+              <li>-e<u>tA</u> &rarr; -e<u>ni</u>-</li>
+            </ol>
+            <p>
+              *и глаголы <strong>huutaa</strong>, <strong>löytää</strong>, <strong>pyytää</strong>,
+              <strong>tietää</strong>, <strong>tuntea</strong>, <strong>taitaa</strong>
+            </p>
+            <h5 id="past-affirmative-passive">Пассивный залог <a href="#past-affirmative-passive" class="up-link">&</a></h5>
+            <ol>
+              <li>-(e/i/O/U)<u>A</u> &rarr; -(e/i/O/U)<u>ttiin</u>
+              <br>-<u>AA</u> &rarr; -<u>ettiin</u></li>
+              <li>-<u>dA</u> &rarr; -<u>tiin</u></li>
+              <li>-(<u>l</u>/<u>n</u>/<u>r</u>/<u>t</u>)<u>A</u> &rarr; -<u>tiin</u></li>
+              <li id="patch3"><span class="marker">Типы глаголов 4-6.: </span>-<u>tA</u> &rarr; -<u>ttiin</u></li>
+            </ol>
+
+            <h4 id="past-negative">Отрицание <a href="#past-negative" class="up-link">&</a></h4>
+            <h5 id="past-negative-active">Активное наклонение <a href="#past-negative-active" class="up-link">&</a></h5>
+            <p>
+              &rarr; частица ei +
+              <a href="#p-active-perfect"><span class="accent">nUt</span>-причастие</a>
+              (единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)
+              
+            </p>
+
+            <h5 id="past-negative-passive">Пассивный залог <a href="#past-negative-passive" class="up-link">&</a></h5>
+            <p>
+              &rarr; ei +
+              <a href="#p-passive-perfect"><span class="accent">tU</span>-причастие</a>
+            </p>
+
+            <details><summary>Примеры</summary>
+              <p>Активное наклонение:</p>
+              <ol>
+                <li>alkaa &rarr; minä aloin, hän alkoi
+                <br>lentää &rarr; &hellip; lensin, &hellip; lensi
+                <br>tuntea &rarr; &hellip; tunsin, &hellip; tunsi
+                <br>käyttää &rarr; &hellip; käytin, &hellip; käytti
+                <br>uskoa &rarr; &hellip; uskoin, &hellip; uskoi</li>
+                <li>voida &rarr; &hellip; voin, &hellip; voi
+                <br>juoda &rarr; &hellip; join, &hellip; joi</li>
+                <li>jutella &rarr; &hellip; juttelin, &hellip; jutteli</li>
+                <li>pelätä &rarr; &hellip; pelkäsin, &hellip; pelkäsi</li>
+                <li>tarvita &rarr; &hellip; tarvitsin, &hellip; tarvitsi</li>
+                <li>pidetä &rarr; &hellip; pitenin, &hellip; piteni</li>
+              </ol>
+              <p>Пассивное наклонение:<p>
+              <ol>
+                <li>oppia &rarr; opittiin
+                <br>alkaa &rarr; alettiin</li>
+                <li>voida &rarr; voitiin</li>
+                <li>jutella &rarr; juteltiin</li>
+                <li>pelätä &rarr; pelättiin</li>
+                <li>tarvita &rarr; tarvittiin</li>
+                <li>pidetä &rarr; pidettiin</li>
+              </ol>
+            </details>
+          </section>
+
+          <section>
+            <h3 id="perfect">Перфект индикатива <a href="#perfect" class="up-link">&</a></h3>
+            <h4 id="perfect-active">Активный залог <a href="#perfect-active" class="up-link">&</a></h4>
+            <p>
+              &rarr; глагол olla +
+              <a href="#p-active-perfect"><span class="accent">nUt</span>-причастие</a>
+              (единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)
+              
+            </p>
+
+            <h4 id="perfect-passive">Пассивное наклонение <a href="#perfect-passive" class="up-link">&</a></h4>
+            <p>
+              &rarr; on / ei ole +
+              <a href="#p-passive-perfect"><span class="accent">tU</span>-причастие</a>
+            </p>
+          </section>
+          <section>
+            <h3 id="pluperfect">Плюсквамперфект индикатива <a href="#pluperfect" class="up-link">&</a></h3>
+            <h4 id="pluperfect-active">Активное наклонение <a href="#pluperfect-active" class="up-link">&</a></h4>
+            <p>
+              &rarr; глагол olla в имперфекте +
+              <a href="#p-active-perfect"><span class="accent">nUt</span>-причастие</a>
+              (единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)
+              
+            </p>
+
+            <h4 id="pluperfect-passive">Пассивный залог <a href="#pluperfect-passive" class="up-link">&</a></h4>
+            <p>
+              &rarr; oli / ei ollut +
+              <a href="#p-passive-perfect"><span class="accent">tU</span>-причастие</a>
+            </p>
+          </section>
+        </section>
+        <section>
+          <h2 id="conditional">Кондиционалис (сослагательное наклонение) <a href="#conditional" class="up-link">&</a></h2>
+          <section>
+            <h3 id="conditional-present">Презенс кондиционалиса <a href="#conditional-present" class="up-link">&</a></h3>
+            <p><i>В прогрессе...</i></p>
+          </section>
+          <section>
+            <h3 id="conditional-perfect">Перфект кондиционалиса <a href="#conditional-perfect" class="up-link">&</a></h3>
+            <p><i>В прогрессе...</i></p>
+          </section>
+        </section>
+        <section>
+          <h2 id="imperative">Императив (повелительное наклонение) <a href="#imperative" class="up-link">&</a></h2>
+          <section>
+            <h3 id="imperative-present">Презенс императива <a href="#imperative-present" class="up-link">&</a></h3>
+            <p><i>В прогрессе...</i></p>
+          </section>
+          <section>
+            <h3 id="imperative-perfect">Перфект императива <a href="#imperative-perfect" class="up-link">&</a></h3>
+            <p><i>В прогрессе...</i></p>
+          </section>
+        </section>
+        <section>
+          <h2 id="potential">Потенциалис (возможное наклонение) <a href="#potential" class="up-link">&</a></h2>
+          <section>
+            <h3 id="potential-present">Презенс потенциалиса <a href="#potential-present" class="up-link">&</a></h3>
+            <p><i>В прогрессе...</i></p>
+          </section>
+          <section>
+            <h3 id="potential-perfect">Перфект потенциалиса <a href="#potential-perfect" class="up-link">&</a></h3>
+            <p><i>В прогрессе...</i></p>
+          </section>
+        </section>
+      </section>
+      <section>
+        <h1 id="infinitives">Инфинитивы <a href="#infinitives" class="up-link">&</a></h1>
+        <section>
+          <h2 id="infinitive-1">1. <span class="accent">A</span>-инфинитив <a href="#infinitive-1" class="up-link">&</a></h2>
+          <p>1. инфинитив это начальная (словарная) форма
+          </p>
+        </section>
+        <section>
+          <h2 id="infinitive-1-long">Длинный 1. инфинитив <a href="#infinitive-1-long" class="up-link">&</a></h2>
+          <p><i>В прогрессе...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-2">2. <span class="accent">e</span>-инфинитив <a href="#infinitive-2" class="up-link">&</a></h2>
+          <p><i>В прогрессе...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-3">3. <span class="accent">mA</span>-инфинитив <a href="#infinitive-3" class="up-link">&</a></h2>
+          <p><i>В прогрессе...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-4">4. <span class="accent">minen</span>-инфинитив <a href="#infinitive-4" class="up-link">&</a></h2>
+          <p><i>В прогрессе...</i></p>
+        </section>
+        <section>
+          <h2 id="infinitive-5">5. <span class="accent">mAinen</span>-инфинитив <a href="#infinitive-5" class="up-link">&</a></h2>
+          <p><i>В прогрессе...</i></p>
+        </section>
+      </section>
+      <section>
+        <h1 id="participles">Причастия <a href="#participles" class="up-link">&</a></h1>
+        <section>
+          <h2 id="p-active-present">Активное причастие настоящего времени <span class="accent">-vA</span> <a href="#p-active-present" class="up-link">&</a></h2>
+          <p>Активное причастие настоящего времени это глагол в <a href="#present">форме he</a> без последней <u>t</u>
+          </p>
+
+          <details><summary>Примеры</summary>
+            <ol>
+              <li>oppia &rarr; oppiva</li>
+              <li>juoda &rarr; juova</li>
+              <li>purra &rarr; pureva</li>
+              <li>kadota &rarr; katoava</li>
+              <li>tarvita &rarr; tarvitseva</li>
+              <li>vanheta &rarr; vanheneva</li>
+            </ol>
+          </details>
+
+          <h3 id="p-active-present-usage">Использование <span class="accent">vA</span>-причастия
+           <a href="#p-active-present-usage" class="up-link">&</a></h3>
+
+          <p>1. Как прилагательное (вместо предложения с <i>joka</i>)
+          </p>
+          <ol>
+            <li>itkevä lapsi (плачущий ребёнок) = lapsi joka itkee (ребёнок, который плачет)</li>
+            <li>laulava mies (поющий мужчина) = mies joka laulaa (мужчина, который поёт)</li>
+          </ol>
+
+          <p><i>Остальные случаи в прогрессе...</i></p>
+        </section>
+        <section>
+          <h2 id="p-active-perfect">Активное причастие прошлого времени <span class="accent">-nUt</span> <a href="#p-active-perfect" class="up-link">&</a></h2>
+          <ol>
+            <li>-<u>A</u> &rarr; -<u>nUt</u></li>
+            <li>-<u>dA</u> &rarr; -<u>nUt</u></li>
+            <li>-(ll/nn/rr/s<u>t</u>)<u>A</u> &rarr; -(ll/nn/rr/s<u>s</u>)Ut</li>
+            <li id="patch2"><span class="marker">4-6. типы: </span>-<u>tA</u> &rarr; -<u>nnUt</u></li>
+          </ol>
+
+          <details><summary>Примеры</summary>
+            <ol>
+              <li>oppia &rarr; oppinut</li>
+              <li>juoda &rarr; juonut</li>
+              <li>purra &rarr; purrut</li>
+              <li>kadota &rarr; kadonnut</li>
+              <li>tarvita &rarr; tarvinnut</li>
+              <li>vanheta &rarr; vanhennut</li>
+            </ol>
+          </details>
+
+          <h3 id="p-active-perfect-declension">Склонение <span class="accent">nUt</span>-частицы <a href="#p-active-perfect-declension" class="up-link">&</a></h3>
+          <p>Нет KPT-чередования</p>
+          <p>Единственное число:</p>
+          <ul>
+            <li>Партитив: -Ut &rarr; -Ut<u>tA</u></li>
+            <li>Иллатив: -<u>Ut</u> &rarr; -<u>eeseen</u></li>
+            <li>Остальные падежи: -<u>Ut</u> &rarr; -<u>ee</u>- + окончание</li>
+          </ul>
+          <p>Множественное число:</p>
+          <ul>
+            <li>Партитив: -<u>Ut</u> &rarr; -<u>eitA</u></li>
+            <li>Генетив: -<u>Ut</u> &rarr; -<u>ei(d/tt)en</u></li>
+            <li>Иллатив: -<u>Ut</u> &rarr; -<u>ei(siin/hin)</u></li>
+            <li>Остальные падежи: -<u>Ut</u> &rarr; -<u>ei</u>- + окончание</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="p-passive-present">Пассивное причастие настоящего времени <span class="accent">-tAvA</span> <a href="#p-passive-present" class="up-link">&</a></h2>
+          <p>Из <a href="#past-affirmative-passive">пассива </a>имперфекта индикатива:</p>
+          <ul>
+            <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>AvA</u></li>
+          </ul>
+
+          <details><summary>Примеры</summary>
+            <ol>
+              <li>oppia &rarr; opittava
+              <br>alkaa &rarr; alettava</li>
+              <li>voida &rarr; voitava</li>
+              <li>jutella &rarr; juteltava</li>
+              <li>pelätä &rarr; pelättävä</li>
+              <li>tarvita &rarr; tarvittava</li>
+              <li>pidetä &rarr; pidettävä</li>
+            </ol>
+          </details>
+        </section>
+        <section>
+          <h2 id="p-passive-perfect">Пассивное причастие прошлого времени <span class="accent">-tU</span> <a href="#p-passive-perfect" class="up-link">&</a></h2>
+          <p>Из <a href="#past-affirmative-passive">пассива </a>имперфекта индикатива:</p>
+          <ul>
+            <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>U</u></li>
+          </ul>
+
+          <details><summary>Примеры</summary>
+            <ol>
+              <li>oppia &rarr; opittu
+              <br>alkaa &rarr; alettu</li>
+              <li>voida &rarr; voitu</li>
+              <li>jutella &rarr; juteltu</li>
+              <li>pelätä &rarr; pelätty</li>
+              <li>tarvita &rarr; tarvittu</li>
+              <li>pidetä &rarr; pidetty</li>
+            </ol>
+          </details>
+        </section>
+        <section>
+          <h2 id="p-agent">Агентное причастие <span class="accent">-mA</span> <a href="#p-agent" class="up-link">&</a></h2>
+          <p>Из <a href="#present">формы he</a> презенса индикатива
+          :</p>
+          <ul>
+            <li>-<u>vAt</u> &rarr; -<u>mA</u></li>
+          </ul>
+
+          <details><summary>Примеры</summary>
+            <ol>
+              <li>oppia &rarr; oppima</li>
+              <li>juoda &rarr; juoma</li>
+              <li>purra &rarr; purema</li>
+              <li>kadota &rarr; katoama</li>
+              <li>tarvita &rarr; tarvitsema</li>
+              <li>vanheta &rarr; vanhenema</li>
+            </ol>
+          </details>
+        </section>
+        <section>
+          <h2 id="p-negative">Отрицательное причастие <span class="accent">-mAtOn</span> <a href="#p-negative" class="up-link">&</a></h2>
+          <p>Из <a href="#p-agent">агентного причастия <span class="accent">-mA</span></a>
+            + -<u>tOn</u></p>
+
+          <details><summary>Примеры</summary>
+            <ol>
+              <li>oppia &rarr; oppimaton</li>
+              <li>juoda &rarr; juomaton</li>
+              <li>purra &rarr; purematon</li>
+              <li>kadota &rarr; katoamaton</li>
+              <li>tarvita &rarr; tarvitsematon</li>
+              <li>vanheta &rarr; vanhenematon</li>
+            </ol>
+          </details>
+
+          <h3 id="p-negative-declension">Склонение <span class="accent">mAtOn</span>-причастия <a href="#p-negative-declension" class="up-link">&</a></h3>
+          <p>KPT-чередование всегда  <i>tt</i> &larr; <i>t</i></p>
+          <p>Единственное число:</p>
+          <ul>
+            <li>Партитив: -tOn &rarr; -tOn<u>tA</u></li>
+            <li>Иллатив: -<u>tOn</u> &rarr; -<u>ttOmAAn</u></li>
+            <li>Остальные падежи: -<u>tOn</u> &rarr; -<u>ttOmA</u>- + окончание</li>
+          </ul>
+          <p>Множественное число:</p>
+          <ul>
+            <li>Партитив: -<u>tOn</u> &rarr; -<u>ttOmiA</u></li>
+            <li>Генетив: -<u>tOn</u> &rarr; -<u>ttOmien</u> (изредка -tOn<u>ten</u>)</li>
+            <li>Иллатив: -<u>tOn</u> &rarr; -<u>ttOmiin</u></li>
+            <li>Остальные падежи: -<u>tOn</u> &rarr; -<u>ttOmi</u>- + окончание</li>
+          </ul>
+        </section>
+      </section>
+    </article>
+  </main>
+  <form action="#"><button id="up-button" type="submit">&uarr;</button></form>
+</body>
+</html>
