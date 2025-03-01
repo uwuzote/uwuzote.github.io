@@ -10,13 +10,13 @@ Issues and pull-requests are welcome :3
   - [ ] Conditional mood (present, perfect)
   - [ ] Imperative mood (present, perfect)
   - [ ] Potential mood (present, perfect)
-- [ ] Infinitives
+- [x] Infinitives
   - [x] First A-infinitive
-  - [ ] Long first infinitive
-  - [ ] Second e-infinitive
-  - [ ] Third mA-infinitive
-  - [ ] Fourth minen-infinitive
-  - [ ] Fifth mAinen-infinitive
+  - [x] Long first infinitive
+  - [x] Second e-infinitive
+  - [x] Third mA-infinitive
+  - [x] Fourth minen-infinitive
+  - [x] Fifth mAinen-infinitive
 - [x] Participles
   - [x] Active present vA-participle
   - [x] Active past nUt-participle
