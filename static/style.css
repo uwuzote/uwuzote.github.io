@@ -157,7 +157,7 @@ article {
     font-weight: bold;
   }
 
-  & :not(h1 + *) > h2 {
+  & :not(h1) + h2 {
     margin-top: 1em;
   }
 
@@ -166,7 +166,7 @@ article {
     font-weight: bold;
   }
 
-  & :not(h2 + *) > h3 {
+  & :not(h2) + h3 {
     margin-top: 0.7em;
   }
 
