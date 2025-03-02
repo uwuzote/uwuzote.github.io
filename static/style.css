@@ -204,7 +204,7 @@ article {
     display: none;
   }
 
-  & a.up-link {
+  & a.self-link {
     color: var(--accent-color-solid);
     display: none;
 

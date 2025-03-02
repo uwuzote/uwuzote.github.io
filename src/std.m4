@@ -10,5 +10,6 @@ ifelse(
 )
 
 define([ACCENT], [<span class="accent">$1</span>])
+define([SELF_LINK], [<$1 id="$2">$3 <a href="#$2" class="self-link">&</a></$1>])
 
 divert(0)dnl
