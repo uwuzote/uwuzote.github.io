@@ -42,7 +42,7 @@
               <summary>&empty; TRANS(Konditionaali, Кондиционалис) <a href="#conditional" class="ampersand-link">&darr;</a></summary>
               <menu>
                 <li><a href="#conditional-present">&empty; TRANS(Preesens, Презенс)</a></li>
-                <li><a href="#conditional-perfect">&empty; TRANS(Perfekti, Перфект)</a></li>
+                <li><a href="#conditional-perfect">TRANS(Perfekti, Перфект)</a></li>
               </menu>
             </details></li>
             <li><details>
@@ -56,7 +56,7 @@
               <summary>&empty; TRANS(Potentiaali, Потенциалис) <a href="#potential" class="ampersand-link">&darr;</a></summary>
               <menu>
                 <li><a href="#potential-present">&empty; TRANS(Preesens, Презенс)</a></li>
-                <li><a href="#potential-perfect">&empty; TRANS(Perfekti, Перфект)</a></li>
+                <li><a href="#potential-perfect">TRANS(Perfekti, Перфект)</a></li>
               </menu>
             </details></li>
           </menu>
@@ -78,7 +78,7 @@
             <li><a href="#p-active-present">TRANS(Aktiivin preesens, Активное настоящего времени) ACCENT(-vA)</a> (<a href="#p-active-present-usage">TRANS(käyttö, использование)</a>)</li>
             <li><a href="#p-active-perfect">TRANS(Aktiivin perfekti, Активное прошлого времени) ACCENT(-nUt)</a> (<a href="#p-active-perfect-declension">TRANS(taivutus, склонение)</a>)</li>
             <li><a href="#p-passive-present">TRANS(Passiivin preesens, Пассивное настоящего времени) ACCENT(-tAvA)</a></li>
-            <li><a href="#p-passive-perfect">TRANS(Passivin perfekti, Пассивное прошлого времени) ACCENT(-tU)</a></li>
+            <li><a href="#p-passive-perfect">TRANS(Passiivin perfekti, Пассивное прошлого времени) ACCENT(-tU)</a></li>
             <li><a href="#p-agent">TRANS(Agentti, Агентное) ACCENT(-mA)</a></li>
             <li><a href="#p-negative">TRANS(Kielteinen agentti, Отрицательное) ACCENT(-mAtOn)</a> (<a href="#p-negative-declension">TRANS(taivutus, склонение)</a>)</li>
           </menu>
@@ -372,7 +372,21 @@
       <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
 
       SELF_LINK(h3, conditional-perfect, TRANS(Konditionaalin perfekti, Перфект кондиционалиса))
-      <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
+      SELF_LINK(h4, conditional-perfect-active, TRANS(Aktiivimuodot, Активный залог))
+      <p>
+        &rarr; TRANS(olla-verbi konditionaalin preesensissä, глагол olla в презенсе кондиционалиса) +
+        <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
+        TRANS(
+          [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
+          [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
+        )
+      </p>
+
+      SELF_LINK(h4, conditional-perfect-passive, TRANS(Passiivi, Пассивный залог))
+      <p>
+        &rarr; olisi / ei olisi +
+        <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+      </p>
 
       SELF_LINK(h2, imperative, TRANS(Imperatiivi, Императив (повелительное наклонение)))
       SELF_LINK(h3, imperative-present, TRANS(Imperatiivin preesens, Презенс императива))
@@ -386,7 +400,21 @@
       <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
 
       SELF_LINK(h3, potential-perfect, TRANS(Potentiaalin perfekti, Перфект потенциалиса))
-      <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
+      SELF_LINK(h4, potential-perfect-active, TRANS(Aktiivimuodot, Активный залог))
+      <p>
+        &rarr; TRANS(olla-verbi potentiaalin preesensissä, глагол olla в презенсе потенциалиса) +
+        <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
+        TRANS(
+          [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
+          [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
+        )
+      </p>
+
+      SELF_LINK(h4, potential-perfect-passive, TRANS(Passiivi, Пассивный залог))
+      <p>
+        &rarr; lienee / ei liene +
+        <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+      </p>
 
       SELF_LINK(h1, infinitives, TRANS(Infinitiivit, Инфинитивы))
       SELF_LINK(h2, infinitive-1, 1. ACCENT(A)-TRANS(infinitiivi, инфинитив))
@@ -410,25 +438,25 @@
 
       SELF_LINK(h2, infinitive-2, 2. ACCENT(e)-TRANS(infinitiivi, инфинитив))
       SELF_LINK(h3, infinitive-2-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>TRANS(Vartalo + sijapääte (inessiivi -<u>ssA</u> tai instruktiivi -<u>n</u>), Основа + падежное окончание (инессива -<u>ssA</u> или инструктива -<u>n</u>))</p>
+      <p>&rarr; TRANS(vartalo + sijapääte (inessiivi -<u>ssA</u> tai instruktiivi -<u>n</u>), основа + падежное окончание (инессива -<u>ssA</u> или инструктива -<u>n</u>))</p>
       <p>TRANS(Vartalo sanakirjamuodosta, Основа из словарной формы):</p>
       <ol>
         <li>-<u>eA</u> &rarr; -<u>ie</u>-</li>
         <li value=16 id="patch4"><span class="marker">TRANS(Tyypit, Типы) 1-6.: </span>-<u>A</u> &rarr; -<u>e</u>-</li>
       </ol>
 
-      SELF_LINK(h3, infinitive-2-passive, TRANS(Passiivimuodot, Пассивный залог))
-      <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passivista, пассива имперфекта)</a>:</p>
+      SELF_LINK(h3, infinitive-2-passive, TRANS(Passiivi, Пассивный залог))
+      <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
       <ul>
         <li>-<u>iin</u> &rarr; -<u>AessA</u></li>
       </ul>
 
       SELF_LINK(h2, infinitive-3, 3. ACCENT(mA)-TRANS(infinitiivi, инфинитив))
       SELF_LINK(h3, infinitive-3-active, TRANS(Aktiivimuodot, Активный залог))
-      <p><a href="#p-agent">ACCENT(mA)-TRANS(partisippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
+      <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
 
-      SELF_LINK(h3, infinitive-3-passive, TRANS(Passiivimuodot, Пассивный залог))
-      <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passivista, пассива имперфекта)</a>:</p>
+      SELF_LINK(h3, infinitive-3-passive, TRANS(Passiivi, Пассивный залог))
+      <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
       <ul>
         <li>-<u>iin</u> &rarr; -<u>AmAn</u></li>
       </ul>
@@ -440,12 +468,12 @@
       </ol>
 
       SELF_LINK(h2, infinitive-5, 5. ACCENT(mAinen)-TRANS(infinitiivi, инфинитив))
-      <p><a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a> + -<u>isillA</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
+      <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a> + -<u>isillA</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
 
       SELF_LINK(h1, participles, TRANS(Partisiipit, Причастия))
       SELF_LINK(h2, p-active-present, TRANS(Aktiivin partisiipin preesens, Активное причастие настоящего времени) ACCENT(-vA))
       <p>TRANS(
-        [Akitiivin partiisipin preesens on sama kuin verbin <a href="#present">he-muoto</a> indikatiivin preesensissä ilman viimeistä <u>t</u>:tä],
+        [Aktiivin partiisipin preesens on sama kuin verbin <a href="#present">he-muoto</a> indikatiivin preesensissä ilman viimeistä <u>t</u>:tä],
         [Активное причастие настоящего времени это глагол в <a href="#present">форме he</a> без последней <u>t</u>]
       )</p>
 
