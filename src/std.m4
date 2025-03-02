@@ -3,6 +3,9 @@ divert(-1)
 changequote([,])
 changecom([##])
 
+ifdef([DATETIME], [], [errprint([Not defined: DATETIME])m4exit(1)])
+ifdef([LANG], [], [errprint([Not defined: LANG])m4exit(1)])
+
 ifelse(
   LANG, FI, [define([TRANS], [$1])],
   LANG, RU, [define([TRANS], [$2])],
