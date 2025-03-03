@@ -14,7 +14,7 @@
   <header>
     <hgroup>
       <h1>TRANS(Verbitaivutus suomen kielessä, Спряжение в финском языке)</h1>
-      <h2>TRANS(Versio, Версия) 2.11</h2>
+      <h2>TRANS(Versio, Версия) 2.12</h2>
       <h3>TRANS(<a href="/taivutus/index.ru.html">По-русски</a>, <a href="/taivutus/">Suomeksi</a>)</h3>
     </hgroup>
   </header>
@@ -39,9 +39,9 @@
               </menu>
             </details></li>
             <li><details>
-              <summary>&empty; TRANS(Konditionaali, Кондиционалис) <a href="#conditional" class="ampersand-link">&darr;</a></summary>
+              <summary>TRANS(Konditionaali, Кондиционалис) <a href="#conditional" class="ampersand-link">&darr;</a></summary>
               <menu>
-                <li><a href="#conditional-present">&empty; TRANS(Preesens, Презенс)</a></li>
+                <li><a href="#conditional-present">TRANS(Preesens, Презенс)</a></li>
                 <li><a href="#conditional-perfect">TRANS(Perfekti, Перфект)</a></li>
               </menu>
             </details></li>
@@ -188,9 +188,19 @@
         [*только в презенсе в 1. и 3-6. типах глаголов если последняя гласная короткая]
       )</p>
 
+      <details><summary>TRANS(Verbityypit, Типы глаголов)</summary>
+        <ol>
+          <li>ACCENT(-VA)</li>
+          <li>ACCENT(-dA)</li>
+          <li>ACCENT(-(ll/nn/rr/st)A)</li>
+          <li>ACCENT(-(A/O/U)tA)</li>
+          <li>ACCENT(-itA)</li>
+          <li>ACCENT(-etA)</li>
+        </ol>
+      </details>
+
       SELF_LINK(h1, finite-forms, TRANS(Tapaluokat (modukset), Наклонения))
       SELF_LINK(h2, indicative, TRANS(Indikatiivi, Индикатив (изъявительное наклонение)))
-
       <table>
         <caption>TRANS(Ei-verbin persoonamuodot, Спряжение отрицательной частицы ei)</caption>
         <thead><tr>
@@ -204,7 +214,7 @@
       </table>
 
       SELF_LINK(h3, present, TRANS(Indikatiivin preesens, Презенс индикатива))
-      SELF_LINK(h4, present-affirmative, TRANS(Myönteinen, Утвердительный))
+      SELF_LINK(h4, present-affirmative, TRANS(Myönteinen, Утверждение))
       SELF_LINK(h5, present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
       <ol>
         <li>-V<u>A</u> &rarr; -V-</li>
@@ -232,8 +242,8 @@
       )</p>
       SELF_LINK(h5, present-negative-passive, TRANS(Passiivi, Пассивный залог))
       <p>&rarr; TRANS(
-        [ei + myönteinen passiivi ilman viimeistä An:ää],
-        [ei + утвердительный пассив без конечного An]
+        [ei + myönteinen passiivi ilman viimeistä <u>An</u>:ää],
+        [ei + утвердительный пассив без конечного <u>An</u>]
       )</p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
@@ -259,7 +269,7 @@
       </details>
 
       SELF_LINK(h3, past, TRANS(Indikatiivin imperfekti, Имперфект индикатива))
-      SELF_LINK(h4, past-affirmative, TRANS(Myönteinen, Утвердительный))
+      SELF_LINK(h4, past-affirmative, TRANS(Myönteinen, Утверждение))
       SELF_LINK(h5, past-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
       <ol>
         <li>a&hellip;-<u>aa</u> (2 TRANS(tavua, слога)) &rarr; a&hellip;-<u>oi</u>-
@@ -369,7 +379,38 @@
 
       SELF_LINK(h2, conditional, TRANS(Konditionaali, Кондиционалис (сослагательное наклонение)))
       SELF_LINK(h3, conditional-present, TRANS(Konditionaalin preesens, Презенс кондиционалиса))
-      <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
+      SELF_LINK(h4, conditional-present-affirmative, TRANS(Myönteinen, Утверждение))
+      SELF_LINK(h5, conditional-present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+      <ol>
+        <li>-<u>eA</u> &rarr; -<u>isi</u>-
+        <br>-(A/i/O/U)<u>A</u> &rarr; -(A/i/O/U)<u>isi</u>-</li>
+        <li>-<u>idA</u> &rarr; -<u>isi</u>-
+        <br>-<u>V&#8321;V&#8322;dA</u> &rarr; -<u>V&#8322;isi</u>-</li>
+        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>isi</u>-</li>
+        <li>-A<u>tA</u> &rarr; -A<u>isi</u>-
+        <br>-(O/U)<u>tA</u> &rarr; -(O/U)<u>Aisi</u>-</li>
+        <li>-it<u>A</u> &rarr; -it<u>sisi</u>-</li>
+        <li>-e<u>tA</u> &rarr; -e<u>nisi</u>-</li>
+      </ol>
+
+      SELF_LINK(h5, conditional-present-affirmative-passive, TRANS(Passivi, Пассивный залог))
+      <p>TRANS([], [Из ])<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      <ul>
+        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>Aisiin</u></li>
+      </ul>
+
+      SELF_LINK(h4, conditional-present-negative, TRANS(Kielteinen, Отрицание))
+      SELF_LINK(h5, conditional-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
+      <p>&rarr; TRANS(
+        [ei-verbi + kieltomuoto (sama kuin vartalo)],
+        [частица ei + соотрицательная форма (такая же как и основа)]
+      )</p>
+
+      SELF_LINK(h5, conditional-present-negative-passive, TRANS(Passivi, Пассивный залог))
+      <p>&rarr; TRANS(
+        [ei + myönteinen passiivi ilman viimeistä <u>in</u>:ää],
+        [ei + утвердительный пассив без конечного <u>in</u>]
+      )</p>
 
       SELF_LINK(h3, conditional-perfect, TRANS(Konditionaalin perfekti, Перфект кондиционалиса))
       SELF_LINK(h4, conditional-perfect-active, TRANS(Aktiivimuodot, Активный залог))

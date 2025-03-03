@@ -7,7 +7,7 @@ Issues and pull-requests are welcome :3
 ## Checklist
 - [ ] Moods
   - [x] Indicative mood (present, past, perfect, pluperfect)
-  - [ ] Conditional mood (present, perfect ✓)
+  - [x] Conditional mood (present, perfect)
   - [ ] Imperative mood (present, perfect)
   - [ ] Potential mood (present, perfect ✓)
 - [x] Infinitives
