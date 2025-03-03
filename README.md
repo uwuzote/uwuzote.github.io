@@ -24,3 +24,7 @@ Issues and pull-requests are welcome :3
   - [x] Passive perfect tU-participle
   - [x] Agent mA-participle
   - [x] Negative agent mAtOn-participle
+
+## Building
+To build you will need [GNU M4](https://www.gnu.org/software/m4/m4.html).
+After that, just execute `./build.m4`.
