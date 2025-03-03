@@ -14,7 +14,7 @@
   <header>
     <hgroup>
       <h1>TRANS(Verbitaivutus suomen kielessä, Спряжение в финском языке)</h1>
-      <h2>TRANS(Versio, Версия) 2.12</h2>
+      <h2>TRANS(Versio, Версия) 2.13</h2>
       <h3>TRANS(<a href="/taivutus/index.ru.html">По-русски</a>, <a href="/taivutus/">Suomeksi</a>)</h3>
     </hgroup>
   </header>
@@ -53,9 +53,9 @@
               </menu>
             </details></li>
             <li><details>
-              <summary>&empty; TRANS(Potentiaali, Потенциалис) <a href="#potential" class="ampersand-link">&darr;</a></summary>
+              <summary>TRANS(Potentiaali, Потенциалис) <a href="#potential" class="ampersand-link">&darr;</a></summary>
               <menu>
-                <li><a href="#potential-present">&empty; TRANS(Preesens, Презенс)</a></li>
+                <li><a href="#potential-present">TRANS(Preesens, Презенс)</a></li>
                 <li><a href="#potential-perfect">TRANS(Perfekti, Перфект)</a></li>
               </menu>
             </details></li>
@@ -476,7 +476,69 @@
 
       SELF_LINK(h2, potential, TRANS(Potentiaali, Потенциалис (возможное наклонение)))
       SELF_LINK(h3, potential-present, TRANS(Potentiaalin preesens, Презенс потенциалиса))
-      <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
+      SELF_LINK(h4, potential-present-affirmative, TRANS(Myönteinen, Утверждение))
+      SELF_LINK(h5, potential-present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+      <p>TRANS(, [Из ])<a href="#p-active-perfect">ACCENT(nUt)-TRANS(partiipista, причастия)</a>:</p>
+      <ul>
+        <li>-<u>Ut</u> &rarr; -<u>e</u>-</li>
+      </ul>
+
+      SELF_LINK(h5, potential-present-affirmative-passive, TRANS(Passiivi, Пассив))
+      <p>TRANS([], [Из ])<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      <ul>
+        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>Aneen</u></li>
+      </ul>
+
+      SELF_LINK(h4, potential-present-negative, TRANS(Kielteinen, Отрицание))
+      SELF_LINK(h5, potential-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
+      <p>&rarr; TRANS(
+        [ei-verbi + kieltomuoto (sama kuin vartalo)],
+        [частица ei + соотрицательная форма (такая же как и основа)]
+      )</p>
+
+      SELF_LINK(h5, potential-present-negative-passive, TRANS(Passiivi, Пассив))
+      <p>&rarr; TRANS(
+        [ei + myönteinen passiivi ilman viimeistä <u>en</u>:ää],
+        [ei + утвердительный пассив без конечного <u>en</u>]
+      )</p>
+
+      <details><summary>TRANS(Esimerkit ja poikkeusverbi, Примеры и глагол-исключение) <i>olla</i></summary>
+        <table>
+          <thead><tr>
+            <th>TRANS(persoona, форма)</th><th>TRANS(myönteinen, утверждение)</th><th>TRANS(kielteinen, отрицание)</th>
+          </tr></thead>
+          <tr>
+            <th>minä</th><td>lienen</td><td>en liene</td>
+          </tr>
+          <tr>
+            <th>sinä</th><td>lienet</td><td>et liene</td>
+          </tr>
+          <tr>
+            <th>hän</th><td>lienee</td><td>ei liene</td>
+          </tr>
+          <tr>
+            <th>me</th><td>lienemme</td><td>emme liene</td>
+          </tr>
+          <tr>
+            <th>te</th><td>lienette</td><td>ette liene</td>
+          </tr>
+          <tr>
+            <th>he</th><td>lienevät</td><td>eivät liene</td>
+          </tr>
+          <tr>
+            <th><b>TRANS(passiivi, пассив)</b></th><td>oltaane</td><td>ei oltane</td>
+          </tr>
+        </table>
+
+        <ol>
+          <li>oppia &rarr; minä oppinen, opittaneen</li>
+          <li>voida &rarr; &hellip; voinen, voitaneen</li>
+          <li>ajatella &rarr; &hellip; ajatellen, ajateltaneen</li>
+          <li>kadota &rarr; &hellip; kadonnen, kadottaneen</li>
+          <li>valita &rarr; &hellip; valinnen, valittaneen</li>
+          <li>lämmetä &rarr; &hellip; lämmennen, lämmettäneen</li>
+        </ol>
+      </details>
 
       SELF_LINK(h3, potential-perfect, TRANS(Potentiaalin perfekti, Перфект потенциалиса))
       SELF_LINK(h4, potential-perfect-active, TRANS(Aktiivimuodot, Активный залог))

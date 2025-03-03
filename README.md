@@ -9,7 +9,7 @@ Issues and pull-requests are welcome :3
   - [x] Indicative mood (present, past, perfect, pluperfect)
   - [x] Conditional mood (present, perfect)
   - [ ] Imperative mood (present, perfect)
-  - [ ] Potential mood (present, perfect ✓)
+  - [x] Potential mood (present, perfect)
 - [x] Infinitives
   - [x] First A-infinitive
   - [x] Long first infinitive
