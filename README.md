@@ -5,10 +5,10 @@ Hosted with Github Pages at <https://uwuzote.github.io/taivutus/#>.
 Issues and pull-requests are welcome :3
 
 ## Checklist
-- [ ] Moods
+- [x] Moods
   - [x] Indicative mood (present, past, perfect, pluperfect)
   - [x] Conditional mood (present, perfect)
-  - [ ] Imperative mood (present, perfect)
+  - [x] Imperative mood (present, perfect)
   - [x] Potential mood (present, perfect)
 - [x] Infinitives
   - [x] First A-infinitive

@@ -46,10 +46,10 @@
               </menu>
             </details></li>
             <li><details>
-              <summary>&empty; TRANS(Imperatiivi, Императив) <a href="#imperative" class="ampersand-link">&darr;</a></summary>
+              <summary>TRANS(Imperatiivi, Императив) <a href="#imperative" class="ampersand-link">&darr;</a></summary>
               <menu>
-                <li><a href="#imperative-present">&empty; TRANS(Preesens, Прензенс)</a></li>
-                <li><a href="#imperative-perfect">&empty; TRANS(Perfekti, Перфект)</a></li>
+                <li><a href="#imperative-present">TRANS(Preesens, Прензенс)</a></li>
+                <li><a href="#imperative-perfect">TRANS(Perfekti, Перфект)</a></li>
               </menu>
             </details></li>
             <li><details>
@@ -469,10 +469,93 @@
 
       SELF_LINK(h2, imperative, TRANS(Imperatiivi, Императив (повелительное наклонение)))
       SELF_LINK(h3, imperative-present, TRANS(Imperatiivin preesens, Презенс императива))
-      <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
+      SELF_LINK(h4, imperative-present-2sg, TRANS(sinä-persoona, Форма sinä))
+      SELF_LINK(h5, imperative-present-2sg-affimative, TRANS(Myönteinen, Утверждение))
+      <p>&rarr; TRANS(minä-muoto indikatiivin preesensissä ilman viimeistä <u>n</u>:ää,
+        Форма minä индикатива презенса без последней <u>n</u>)</p>
+
+      SELF_LINK(h5, imperative-present-2sg-negative, TRANS(Kielteinen, Отрицание))
+      <p>&rarr; älä + TRANS(myönteinen muoto, утвердительная форма)</p>
+
+      SELF_LINK(h4, imperative-present-active, TRANS(Muut aktiivimuodot, Остальные формы активного залога))
+      <p>TRANS(Infinitiivivartalo (inf.var.) sanakirjamuodosta, Инфинитивная основа (инф.осн.) от словарной формы):</p>
+      <ol>
+        <li>-V<u>A</u> &rarr; -V-</li>
+        <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
+        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)-</li>
+        <li value=456 id="patch5"><span class="marker">4-6. TRANS(tyypit, типы): </span>-t<u>A</u> &rarr; -t-</li>
+      </ol>
+
+      <table>
+        <thead><tr>
+          <th>TRANS(persoona, лицо)</th>
+          <th>TRANS(myönteinen, утверждение)</th>
+          <th>TRANS(kielteinen, отрицание)</th>
+        </tr></thead>
+        <tr>
+          <th>minä</th>
+          <td colspan=2>&empty;</td>
+        </tr>
+        <tr>
+          <th>sinä</th>
+          <td colspan=2><a href="#imperative-present-2sg">TRANS(ylemmäs, выше)</td>
+        </tr>
+        <tr>
+          <th>hän</th>
+          <td>TRANS(inf.var., инф.осн.)+kOOn</td>
+          <td>älköön + TRANS(inf.var., инф.осн.)+kO</td>
+        </tr>
+        <tr>
+          <th>me</th>
+          <td>TRANS(inf.var., инф.осн.)+kAAmme</td>
+          <td>älkäämme + TRANS(inf.var., инф.осн.)+kO</td>
+        </tr>
+        <tr>
+          <th>te</th>
+          <td>TRANS(inf.var., инф.осн.)+kAA</td>
+          <td>älkää + TRANS(inf.var., инф.осн.)+kO</td>
+        </tr>
+        <tr>
+          <th>he</th>
+          <td>TRANS(inf.var., инф.осн.)+kOOt</td>
+          <td>älkööt + TRANS(inf.var., инф.осн.)+kO</td>
+        </tr>
+      </table>
+
+      SELF_LINK(h4, imperative-present-passive, TRANS(Passivi, Пассив))
+      SELF_LINK(h5, imperative-present-passive-affirmative, TRANS(Myönteinen, Утверждение))
+      <p>TRANS([], [Из ])<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      <ul>
+        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>AkOOn</u></li>
+      </ul>
+
+      SELF_LINK(h5, imperative-present-passive-negative, TRANS(Kielteinen, Отрицание))
+      <p>&rarr; älköön + TRANS(myönteinen passiivi ilman viimeistä <u>On</u>:ää, положительный пассив без последнего <u>On</u>)</p>
 
       SELF_LINK(h3, imperative-perfect, TRANS(Imperatiivin perfekti, Перфект императива))
-      <p><i>TRANS(Käynnissä, В прогрессе)...</i></p>
+      <p>TRANS(On vain 3. persoonan ja passivin muodot, Существуют только формы 3. лица и пассива)<p>
+      <table>
+        <thead><tr>
+          <th>TRANS(persoona, форма)</th>
+          <th>TRANS(myönteinen, утверждение)</th>
+          <th>TRANS(kielteinen, отрицание)</th>
+        </tr></thead>
+        <tr>
+          <th>hän</th>
+          <td>olkoon + <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a></td>
+          <td>älköön olko + <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a></td>
+        </tr>
+        <tr>
+          <th>he</th>
+          <td>olkoot + <a href="#p-active-perfect">ACCENT(neet)-TRANS(partisiippi, причастие)</a> (TRANS(monikko, мн.ч.))</td>
+          <td>älkööt olko + <a href="#p-active-perfect">ACCENT(neet)-TRANS(partisiippi, причастие)</a> (TRANS(monikko, мн.ч.))</td>
+        </tr>
+        <tr>
+          <th>TRANS(passivi, пассив)</th>
+          <td>olkoon + <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a></td>
+          <td>älköön olko + <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a></td>
+        </tr>
+      </table>
 
       SELF_LINK(h2, potential, TRANS(Potentiaali, Потенциалис (возможное наклонение)))
       SELF_LINK(h3, potential-present, TRANS(Potentiaalin preesens, Презенс потенциалиса))
