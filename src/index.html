@@ -179,23 +179,24 @@ dnl## TODO: add examples for the imperative, exception verbs
         </tbody>undefine([V], [H])
       </table>
 
-      <table>
-        <caption>TRANS(Persoonapäätteet, Личные окончания)</caption>
-        <thead><tr>
-          <th>TRANS(persoona, лицо)</th><th>TRANS(yksikkö, ед. ч.)</th><th>TRANS(monikko, мн. ч.)</th>
-        </tr></thead>
-        <tbody>
-          <tr><th>1.</th><td>-n</td><td>-mme</td></tr>
-          <tr><th>2.</th><td>-t</td><td>-tte</td></tr>
-          <tr><th>3.</th><td>-(V)*</td><td>-vAt</td></tr>
-        </tbody>
-      </table>
-      <p>TRANS(
-        [*vain preesensissä 1. tai 3-6. verbityypissä jos viimeinen vokaali on lyhyt],
-        [*только в презенсе в 1. и 3-6. типах глаголов если последняя гласная короткая]
-      )</p>
+      <details><summary>TRANS(Lisätiedot, Дополнительная информация)</summary>
+        <table>
+          <caption>TRANS(Persoonapäätteet, Личные окончания)</caption>
+          <thead><tr>
+            <th>TRANS(persoona, лицо)</th><th>TRANS(yksikkö, ед. ч.)</th><th>TRANS(monikko, мн. ч.)</th>
+          </tr></thead>
+          <tbody>
+            <tr><th>1.</th><td>-n</td><td>-mme</td></tr>
+            <tr><th>2.</th><td>-t</td><td>-tte</td></tr>
+            <tr><th>3.</th><td>-(V)*</td><td>-vAt</td></tr>
+          </tbody>
+        </table>
+        <p>TRANS(
+          [*vain preesensissä 1. tai 3-6. verbityypissä jos viimeinen vokaali on lyhyt],
+          [*только в презенсе в 1. и 3-6. типах глаголов если последняя гласная короткая]
+        )</p>
 
-      <details><summary>TRANS(Verbityypit, Типы глаголов)</summary>
+        <p>TRANS(Verbityypit, Типы глаголов):</p>
         <ol>
           <li>ACCENT(-VA)</li>
           <li>ACCENT(-dA)</li>
@@ -204,6 +205,30 @@ dnl## TODO: add examples for the imperative, exception verbs
           <li>ACCENT(-itA)</li>
           <li>ACCENT(-etA)</li>
         </ol>
+
+        <table>
+          <caption>TRANS(KPT-vaihtelutyypit, Типы KPT-чередований)</caption>
+          <thead><tr>
+            <th><a href="TRANS(https://fi.wikipedia.org/wiki/Kotimaisten_kielten_keskus, https://ru.wikipedia.org/wiki/Институт_исконных_языков_Финляндии)">KOTUS</a></th>
+            <th><b>TRANS(VAHVA, СИЛЬНАЯ)</b></th>
+            <th><i>TRANS(heikko, слабая)</i></th>
+          </tr></thead>
+          <tbody>
+            <tr><td>A</td><td>-kk-</td><td>-k-</td></tr>
+            <tr><td>B</td><td>-pp-</td><td>-p-</td></tr>
+            <tr><td>C</td><td>-tt-</td><td>-t-</td></tr>
+            <tr><td>D</td><td>-k-</td><td>-&empty;-</td></tr>
+            <tr><td>E</td><td>-p-</td><td>-v-</td></tr>
+            <tr><td>F</td><td>-t-</td><td>-d-</td></tr>
+            <tr><td>G</td><td>-nk-</td><td>-ng-</td></tr>
+            <tr><td>H</td><td>-mp-</td><td>-mm-</td></tr>
+            <tr><td>I</td><td>-lt-</td><td>-ll-</td></tr>
+            <tr><td>J</td><td>-nt-</td><td>-nn-</td></tr>
+            <tr><td>K</td><td>-rt-</td><td>-rr-</td></tr>
+            <tr><td>L</td><td>-k-</td><td>-j-</td></tr>
+            <tr><td>M</td><td>-k-</td><td>-v-</td></tr>
+          </tbody>
+        </table>
       </details>
 
       SELF_LINK(h1, finite-forms, TRANS(Tapaluokat (modukset), Наклонения))
