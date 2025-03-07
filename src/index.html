@@ -15,7 +15,7 @@ dnl## TODO: add examples for the imperative, exception verbs
   <header>
     <hgroup>
       <h1>TRANS(Verbitaivutus suomen kielessä, Спряжение в финском языке)</h1>
-      <h2>TRANS(Versio, Версия) 2.13</h2>
+      <h2>TRANS(Versio, Версия) 2.14</h2>
       <h3>TRANS(<a href="/taivutus/index.ru.html">По-русски</a>, <a href="/taivutus/">Suomeksi</a>)</h3>
     </hgroup>
   </header>
@@ -64,14 +64,14 @@ dnl## TODO: add examples for the imperative, exception verbs
         </details></li>
         <li><details>
           <summary>TRANS(Infiniitivit, Инфинитивы) <a href="#infinitives" class="ampersand-link">&darr;</a></summary>
-          <menu>define(OR, TRANS(eli, или))define(INF, TRANS(infinitiivi, инфинитив))
-            <li><a href="#inf-1">1. OR ACCENT(A)-INF</a></li>
+          <menu>define(INF, TRANS(infinitiivi, инфинитив))
+            <li><a href="#inf-1">1. ACCENT(A)-INF</a></li>
             <li><a href="#inf-1-long">TRANS(Pitkä, Длинный) 1. INF</a></li>
-            <li><a href="#inf-2">2. OR ACCENT(e)-INF</a></li>
-            <li><a href="#inf-3">3. OR ACCENT(mA)-INF</a></li>
-            <li><a href="#inf-4">4. OR ACCENT(minen)-INF</a></li>
-            <li><a href="#inf-5">5. OR ACCENT(mAinen)-INF</a></li>
-          </menu>undefine([OR], [INF])
+            <li><a href="#inf-2">2. ACCENT(e)-INF</a></li>
+            <li><a href="#inf-3">3. ACCENT(mA)-INF</a></li>
+            <li><a href="#inf-4">4. ACCENT(minen)-INF</a></li>
+            <li><a href="#inf-5">5. ACCENT(mAinen)-INF</a></li>
+          </menu>undefine([INF])
         </details></li>
         <li><details>
           <summary>TRANS(Partisiipit, Причастия) <a href="#participles" class="ampersand-link">&darr;</a></summary>
@@ -124,9 +124,12 @@ dnl## TODO: add examples for the imperative, exception verbs
         </thead>
         <tbody>define(V, <b>TRANS(VAHVA, СИЛЬНАЯ)</b>)define(H, <i>TRANS(heikko, слабая)</i>)
           <tr>
-            <th colspan=2>TRANS(sanakirjamuoto, начальная форма)</th>
-            <td rowspan=4>V</td>
-            <td rowspan=4>H</td>
+            <th colspan=2>TRANS(sanakirjamuoto = 1. infinitiivi, начальная форма = 1. инфинитив)</th>
+            <td rowspan=5>V</td>
+            <td rowspan=5>H</td>
+          </tr>
+          <tr>
+            <th colspan=2>2. ACCENT(<a href="#inf-2">e</a>)-TRANS(infinitiivi, инфинитив)</th>
           </tr>
           <tr>
             <th colspan=2>ACCENT(<a href="#p-active-perfect">nUt</a>)-TRANS(partisiippi, причастие)</th>
@@ -152,8 +155,8 @@ dnl## TODO: add examples for the imperative, exception verbs
           </tr>
           <tr>
             <th>TRANS(3. persoona, 3. лицо)</th>
-            <td rowspan=3>V</td>
-            <td rowspan=3>V</td>
+            <td rowspan=6>V</td>
+            <td rowspan=6>V</td>
           </tr>
           <tr>
             <th colspan=2>TRANS(konditionaali, кондиционалис)</th>
@@ -166,7 +169,16 @@ dnl## TODO: add examples for the imperative, exception verbs
             </th>
           </tr>
           <tr>
-            <th colspan=2>TRANS(kaikki passiivit, все пассивы)</th>
+            <th colspan=2>3. ACCENT(<a href="#inf-3">mA</a>)-TRANS(infinitiivi, инфинитив)</th>
+          </tr>
+          <tr>
+            <th colspan=2>4. ACCENT(<a href="#inf-4">minen</a>)-TRANS(infinitiivi, инфинитив)</th>
+          </tr>
+          <tr>
+            <th colspan=2>5. ACCENT(<a href="#inf-5">mAinen</a>)-TRANS(infinitiivi, инфинитив)</th>
+          </tr>
+          <tr>
+            <th colspan=2>TRANS(kaikki passiivit ja<br>muut passiiviset muodot, все пассивы и<br>другие пассивные формы)</th>
             <td rowspan=2>H</td>
             <td rowspan=2>H</td>
           </tr>
@@ -511,34 +523,36 @@ dnl## TODO: add examples for the imperative, exception verbs
           <th>TRANS(myönteinen, утверждение)</th>
           <th>TRANS(kielteinen, отрицание)</th>
         </tr></thead>
-        <tr>
-          <th>minä</th>
-          <td colspan=2>&empty;</td>
-        </tr>
-        <tr>
-          <th>sinä</th>
-          <td colspan=2><a href="#imperative-present-2sg">TRANS(ylemmäs, выше)</td>
-        </tr>
-        <tr>
-          <th>hän</th>
-          <td>TRANS(inf.var., инф.осн.)+kOOn</td>
-          <td>älköön + TRANS(inf.var., инф.осн.)+kO</td>
-        </tr>
-        <tr>
-          <th>me</th>
-          <td>TRANS(inf.var., инф.осн.)+kAAmme</td>
-          <td>älkäämme + TRANS(inf.var., инф.осн.)+kO</td>
-        </tr>
-        <tr>
-          <th>te</th>
-          <td>TRANS(inf.var., инф.осн.)+kAA</td>
-          <td>älkää + TRANS(inf.var., инф.осн.)+kO</td>
-        </tr>
-        <tr>
-          <th>he</th>
-          <td>TRANS(inf.var., инф.осн.)+kOOt</td>
-          <td>älkööt + TRANS(inf.var., инф.осн.)+kO</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>minä</th>
+            <td colspan=2>&empty;</td>
+          </tr>
+          <tr>
+            <th>sinä</th>
+            <td colspan=2><a href="#imperative-present-2sg">TRANS(ylemmäs, выше)</td>
+          </tr>
+          <tr>
+            <th>hän</th>
+            <td>TRANS(inf.var., инф.осн.)+kOOn</td>
+            <td>älköön + TRANS(inf.var., инф.осн.)+kO</td>
+          </tr>
+          <tr>
+            <th>me</th>
+            <td>TRANS(inf.var., инф.осн.)+kAAmme</td>
+            <td>älkäämme + TRANS(inf.var., инф.осн.)+kO</td>
+          </tr>
+          <tr>
+            <th>te</th>
+            <td>TRANS(inf.var., инф.осн.)+kAA</td>
+            <td>älkää + TRANS(inf.var., инф.осн.)+kO</td>
+          </tr>
+          <tr>
+            <th>he</th>
+            <td>TRANS(inf.var., инф.осн.)+kOOt</td>
+            <td>älkööt + TRANS(inf.var., инф.осн.)+kO</td>
+          </tr>
+        </tbody>
       </table>
 
       SELF_LINK(h4, imperative-present-passive, TRANS(Passiivi, Пассив))
