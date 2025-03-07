@@ -115,88 +115,68 @@ dnl## TODO: add examples for the imperative, exception verbs
       SELF_LINK(h1, general, TRANS(Yleiset tiedot, Общая информация))
 
       <table>
-        <caption>TRANS(KPT-vaihtelun verbeissä yhteenveto, Резюме KPT-чередования в глаголах)</caption>
+        <caption>
+          TRANS(KPT-vaihtelun verbeissä yhteenveto, Резюме KPT-чередования в глаголах)
+          <br>(TRANS(vaihtelua ei ole 2. ja 5. verbityypissä, чередования нет во 2. и 5. типах))
+        </caption>
         <thead>
-          <tr><th colspan=2>TRANS(verbityyppi, тип глагола)</th><th>1.</th><th>2., 5.</th><th>3., 4., 6.</th></tr>
+          <tr><th colspan=2>TRANS(verbityyppi, тип глагола)</th><th>1.</th><th>3., 4., 6.</th></tr>
         </thead>
-        <tbody>define(V, <b>TRANS(vahva, сильная)</b>)define(H, <i>TRANS(heikko, слабая)</i>)
+        <tbody>define(V, <b>TRANS(VAHVA, СИЛЬНАЯ)</b>)define(H, <i>TRANS(heikko, слабая)</i>)
           <tr>
-            <th colspan=2>
-              TRANS(sanakirjamuoto, начальная форма),
-              <br><a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
-            </th>
-            <td>V</td>
-            <td>&horbar;</td>
-            <td>H</td>
+            <th colspan=2>TRANS(sanakirjamuoto, начальная форма)</th>
+            <td rowspan=4>V</td>
+            <td rowspan=4>H</td>
           </tr>
           <tr>
-            <th colspan=2>TRANS(kaikki passiivit, все пассивы)</th>
-            <td>H</td>
-            <td>&horbar;</td>
-            <td>H</td>
+            <th colspan=2>ACCENT(<a href="#p-active-perfect">nUt</a>)-TRANS(partisiippi, причастие)</th>
           </tr>
-
+          <tr>
+            <th colspan=2>TRANS(potentiaali, потенциалис)</th>
+          </tr>
+          <tr>
+            <th rowspan=2>TRANS(imperatiivi, императив)</th>
+            <th>TRANS(muut muodot, остальные формы)</th>
+          </tr>
+          <tr>
+            <th>TRANS(sinä-muoto, форма sinä)</th>
+            <td rowspan=2>H</td>
+            <td rowspan=2>V</td>
+          </tr>
           <tr>
             <th rowspan=2>TRANS(indikatiivi, индикатив)</th>
             <th>
               TRANS(1. ja 2. persoona, 1. и 2. лицо),
               <br>TRANS(kieltomuoto, отрицание)
             </th>
-            <td>H</td>
-            <td>&horbar;</td>
-            <td>V</td>
           </tr>
           <tr>
             <th>TRANS(3. persoona, 3. лицо)</th>
-            <td>V</td>
-            <td>&horbar;</td>
-            <td>V</td>
+            <td rowspan=3>V</td>
+            <td rowspan=3>V</td>
           </tr>
           <tr>
             <th colspan=2>TRANS(konditionaali, кондиционалис)</th>
-            <td>V</td>
-            <td>&horbar;</td>
-            <td>V</td>
-          </tr>
-          <tr>
-            <th rowspan=2>TRANS(imperatiivi, императив)</th>
-            <th>TRANS(sinä-muoto, форма sinä)</th>
-            <td>H</td>
-            <td>&horbar;</td>
-            <td>V</td>
-          </tr>
-          <tr>
-            <th>TRANS(muut aktiivimuodot, активный залог)</th>
-            <td>V</td>
-            <td>&horbar;</td>
-            <td>H</td>
-          </tr>
-          <tr>
-            <th colspan=2>TRANS(potentiaali, потенциалис)</th>
-            <td>V</td>
-            <td>&horbar;</td>
-            <td>H</td>
           </tr>
           <tr>
             <th colspan=2>
-              <a href="#p-active-present">ACCENT(vA)-TRANS(partisiippi, причастие)</a>,
-              <br><a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a>,
-              <br><a href="#p-negative">ACCENT(mAtOn)-TRANS(partisiippi, причастие)</a>
+              ACCENT(<a href="#p-active-present">vA</a>),
+              ACCENT(<a href="#p-agent">mA</a>) TRANS(ja, и)
+              ACCENT(<a href="#p-negative">mAtOn</a>)-TRANS(partisiipit, причастия)
             </th>
-            <td>V</td>
-            <td>&horbar;</td>
-            <td>V</td>
+          </tr>
+          <tr>
+            <th colspan=2>TRANS(kaikki passiivit, все пассивы)</th>
+            <td rowspan=2>H</td>
+            <td rowspan=2>H</td>
           </tr>
           <tr>
             <th colspan=2>
-              <a href="#p-passive-present">ACCENT(tAvA)-TRANS(partisiippi, причастие)</a>,
-              <br><a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+              ACCENT(<a href="#p-passive-present">tAvA</a>),
+              ACCENT(<a href="#p-passive-perfect">tU</a>)-TRANS(partisiipit, причастия)
             </th>
-            <td>H</td>
-            <td>&horbar;</td>
-            <td>H</td>
           </tr>
-        </tbody>undefine([V])undefine([H])
+        </tbody>undefine([V], [H])
       </table>
 
       <table>
