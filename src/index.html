@@ -65,12 +65,12 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
         <li><details>
           <summary>TRANS(Infiniitivit, Инфинитивы) <a href="#infinitives" class="ampersand-link">&darr;</a></summary>
           <menu>define(eli, TRANS([[[eli]]], или))define(infinitiivi, TRANS([[[infinitiivi]]], инфинитив))
-            <li><a href="#infinitive-1">1. eli ACCENT(A)-infinitiivi</a></li>
-            <li><a href="#infinitive-1-long">TRANS(Pitkä, Длинный) 1. infinitiivi</a></li>
-            <li><a href="#infinitive-2">2. eli ACCENT(e)-infinitiivi</a></li>
-            <li><a href="#infinitive-3">3. eli ACCENT(mA)-infinitiivi</a></li>
-            <li><a href="#infinitive-4">4. eli ACCENT(minen)-infinitiivi</a></li>
-            <li><a href="#infinitive-5">5. eli ACCENT(mAinen)-infinitiivi</a></li>
+            <li><a href="#inf-1">1. eli ACCENT(A)-infinitiivi</a></li>
+            <li><a href="#inf-1-long">TRANS(Pitkä, Длинный) 1. infinitiivi</a></li>
+            <li><a href="#inf-2">2. eli ACCENT(e)-infinitiivi</a></li>
+            <li><a href="#inf-3">3. eli ACCENT(mA)-infinitiivi</a></li>
+            <li><a href="#inf-4">4. eli ACCENT(minen)-infinitiivi</a></li>
+            <li><a href="#inf-5">5. eli ACCENT(mAinen)-infinitiivi</a></li>
           </menu>undefine([eli], [infinitiivi])
         </details></li>
         <li><details>
@@ -642,13 +642,13 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
       </p>
 
       SELF_LINK(h1, infinitives, TRANS(Infinitiivit, Инфинитивы))
-      SELF_LINK(h2, infinitive-1, 1. ACCENT(A)-TRANS(infinitiivi, инфинитив))
+      SELF_LINK(h2, inf-1, 1. ACCENT(A)-TRANS(infinitiivi, инфинитив))
       <p>TRANS(
         [1. infiniitivi on sanakirjamuoto],
         [1. инфинитив это начальная (словарная) форма]
       )</p>
 
-      SELF_LINK(h2, infinitive-1-long, TRANS(Pitkä, Длинный) 1. TRANS(infinitiivi, инфинитив))
+      SELF_LINK(h2, inf-1-long, TRANS(Pitkä, Длинный) 1. TRANS(infinitiivi, инфинитив))
       <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
       <ul>
         <li>-A &rarr; -A<u>kse</u>- + TRANS(omistusliite, притяжательный суффикс)</li>
@@ -661,8 +661,8 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
           </ul>
       </details>
 
-      SELF_LINK(h2, infinitive-2, 2. ACCENT(e)-TRANS(infinitiivi, инфинитив))
-      SELF_LINK(h3, infinitive-2-active, TRANS(Aktiivimuodot, Активный залог))
+      SELF_LINK(h2, inf-2, 2. ACCENT(e)-TRANS(infinitiivi, инфинитив))
+      SELF_LINK(h3, inf-2-active, TRANS(Aktiivimuodot, Активный залог))
       <p>&rarr; TRANS(vartalo + sijapääte (inessiivi -<u>ssA</u> tai instruktiivi -<u>n</u>), основа + падежное окончание (инессива -<u>ssA</u> или инструктива -<u>n</u>))</p>
       <p>TRANS(Vartalo sanakirjamuodosta, Основа из словарной формы):</p>
       <ol>
@@ -670,29 +670,29 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
         <li value=16 id="patch4"><span class="marker">TRANS(Tyypit, Типы) 1-6.: </span>-<u>A</u> &rarr; -<u>e</u>-</li>
       </ol>
 
-      SELF_LINK(h3, infinitive-2-passive, TRANS(Passiivi, Пассив))
+      SELF_LINK(h3, inf-2-passive, TRANS(Passiivi, Пассив))
       <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
       <ul>
         <li>-<u>iin</u> &rarr; -<u>Ae-</u> + -ssA (TRANS(inessiivi, инэссив))</li>
       </ul>
 
-      SELF_LINK(h2, infinitive-3, 3. ACCENT(mA)-TRANS(infinitiivi, инфинитив))
-      SELF_LINK(h3, infinitive-3-active, TRANS(Aktiivimuodot, Активный залог))
+      SELF_LINK(h2, inf-3, 3. ACCENT(mA)-TRANS(infinitiivi, инфинитив))
+      SELF_LINK(h3, inf-3-active, TRANS(Aktiivimuodot, Активный залог))
       <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
 
-      SELF_LINK(h3, infinitive-3-passive, TRANS(Passiivi, Пассив))
+      SELF_LINK(h3, inf-3-passive, TRANS(Passiivi, Пассив))
       <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
       <ul>
         <li>-<u>iin</u> &rarr; -<u>AmA-</u> + -n (TRANS(instruktiivi))</li>
       </ul>
 
-      SELF_LINK(h2, infinitive-4, 4. ACCENT(minen)-TRANS(infinitiivi, инфинитив))
+      SELF_LINK(h2, inf-4, 4. ACCENT(minen)-TRANS(infinitiivi, инфинитив))
       <p>TRANS(, Из )<a href="#present">TRANS(He-muodosta, формы he)</a>:</p>
       <ol>
         <li>-<u>vAt</u> &rarr; -<u>minen</u></li>
       </ol>
 
-      SELF_LINK(h2, infinitive-5, 5. ACCENT(mAinen)-TRANS(infinitiivi, инфинитив))
+      SELF_LINK(h2, inf-5, 5. ACCENT(mAinen)-TRANS(infinitiivi, инфинитив))
       <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a> + -<u>isillA</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
 
       SELF_LINK(h1, participles, TRANS(Partisiipit, Причастия))
