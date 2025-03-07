@@ -1,4 +1,4 @@
-dnl## TODO: expand the KPT-table with the potential and the imperative, add examples for the imperative, exception verbs
+dnl## TODO: add examples for the imperative, exception verbs
 <!DOCTYPE html>
 <html lang="TRANS(fi, ru)">
 <head>
@@ -64,14 +64,14 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
         </details></li>
         <li><details>
           <summary>TRANS(Infiniitivit, Инфинитивы) <a href="#infinitives" class="ampersand-link">&darr;</a></summary>
-          <menu>define(eli, TRANS([[[eli]]], или))define(infinitiivi, TRANS([[[infinitiivi]]], инфинитив))
-            <li><a href="#inf-1">1. eli ACCENT(A)-infinitiivi</a></li>
-            <li><a href="#inf-1-long">TRANS(Pitkä, Длинный) 1. infinitiivi</a></li>
-            <li><a href="#inf-2">2. eli ACCENT(e)-infinitiivi</a></li>
-            <li><a href="#inf-3">3. eli ACCENT(mA)-infinitiivi</a></li>
-            <li><a href="#inf-4">4. eli ACCENT(minen)-infinitiivi</a></li>
-            <li><a href="#inf-5">5. eli ACCENT(mAinen)-infinitiivi</a></li>
-          </menu>undefine([eli], [infinitiivi])
+          <menu>define(OR, TRANS(eli, или))define(INF, TRANS(infinitiivi, инфинитив))
+            <li><a href="#inf-1">1. OR ACCENT(A)-INF</a></li>
+            <li><a href="#inf-1-long">TRANS(Pitkä, Длинный) 1. INF</a></li>
+            <li><a href="#inf-2">2. OR ACCENT(e)-INF</a></li>
+            <li><a href="#inf-3">3. OR ACCENT(mA)-INF</a></li>
+            <li><a href="#inf-4">4. OR ACCENT(minen)-INF</a></li>
+            <li><a href="#inf-5">5. OR ACCENT(mAinen)-INF</a></li>
+          </menu>undefine([OR], [INF])
         </details></li>
         <li><details>
           <summary>TRANS(Partisiipit, Причастия) <a href="#participles" class="ampersand-link">&darr;</a></summary>
@@ -164,6 +164,40 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
             <td>&horbar;</td>
             <td>H</td>
           </tr>
+          <tr>
+            <th rowspan=3>TRANS(imperatiivi, императив)</th>
+            <th>TRANS(sinä-muoto, форма sinä)</th>
+            <td>H</td>
+            <td>&horbar;</td>
+            <td>V</td>
+          </tr>
+          <tr>
+            <th>TRANS(muut aktiivimuodot, активный залог)</th>
+            <td>V</td>
+            <td>&horbar;</td>
+            <td>H</td>
+          </tr>
+          <tr>
+            <th>TRANS(passiivi, пассив)</th>
+            <td>H</td>
+            <td>&horbar;</td>
+            <td>H</td>
+          </tr>
+
+          <tr>
+            <th rowspan=2>TRANS(potentiaali, потенциалис)</th>
+            <th>TRANS(aktiivimuodot, активный залог)</th>
+            <td>V</td>
+            <td>&horbar;</td>
+            <td>H</td>
+          </tr>
+          <tr>
+            <th>TRANS(passiivi, пассив)</th>
+            <td>H</td>
+            <td>&horbar;</td>
+            <td>H</td>
+          </tr>
+
           <tr>
             <th colspan=2>
               <a href="#p-active-present">ACCENT(vA)-TRANS(partisiipissa, причастие)</a>,
@@ -292,7 +326,7 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
         <br>-(U/O)<u>A</u> &rarr; -(U/O)<u>i</u>-</li>
 
         <li>-i<u>dA</u> &rarr; -i-
-        <br>-<u>V&#8321;V&#8322;dA</u> &rarr; -<u>V&#8322;i</u>-</li>
+        <br>-<u>V<sub>1</sub>V<sub>2</sub>dA</u> &rarr; -<u>V<sub>2</sub>i</u>-</li>
 
         <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>i</u>-</li>
         <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>si</u>-</li>
@@ -399,7 +433,7 @@ dnl## TODO: expand the KPT-table with the potential and the imperative, add exam
         <li>-(<u>e</u>/<u>i</u>)<u>A</u> &rarr; -<u>isi</u>-
         <br>-(A/O/U)<u>A</u> &rarr; -(A/O/U)<u>isi</u>-</li>
         <li>-<u>idA</u> &rarr; -<u>isi</u>-
-        <br>-<u>V&#8321;V&#8322;dA</u> &rarr; -<u>V&#8322;isi</u>-</li>
+        <br>-<u>V<sub>1</sub>V<sub>2</sub>dA</u> &rarr; -<u>V<sub>2</sub>isi</u>-</li>
         <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>isi</u>-</li>
         <li>-A<u>tA</u> &rarr; -A<u>isi</u>-
         <br>-(O/U)<u>tA</u> &rarr; -(O/U)<u>Aisi</u>-</li>
