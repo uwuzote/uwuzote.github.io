@@ -1,3 +1,4 @@
+dnl## TODO: add strong, weak stems, move infinitive stem to the stems section
 <!DOCTYPE html>
 <html lang="TRANS(fi, ru)">
 <head>
@@ -26,6 +27,7 @@
         <li><a href="#foreword">TRANS(Esisana, Предысловие)</a></li>
         <li><a href="#abbrs">TRANS(Lyhennökset, Сокращения)</a></li>
         <li><a href="#general">TRANS(Yleiset tiedot, Общая информация)</a></li>
+        <li><a href="#stems">TRANS(Vartalot, Основы)</a></li>
         <li><details open>
           <summary>TRANS(Tapaluokat (modukset), Наклонения) <a href="#finite-forms" class="ampersand-link">&darr;</a></summary>
           <menu>
@@ -177,7 +179,7 @@
             <th colspan=2>5. ACCENT(<a href="#inf-5">mAinen</a>)-TRANS(infinitiivi, инфинитив)</th>
           </tr>
           <tr>
-            <th colspan=2>TRANS(kaikki passiivit ja<br>muut passiiviset muodot, все пассивы и<br>другие пассивные формы)</th>
+            <th colspan=2>TRANS(kaikki passiivit[,]<br>muut passiiviset muodot<br>ja <a href="#stem-passive">passiivivartalo</a>, все пассивы[,]<br>другие пассивные формы<br>и <a href="#stem-passive">пассивная основа</a>)</th>
             <td rowspan=2>H</td>
             <td rowspan=2>H</td>
           </tr>
@@ -249,6 +251,20 @@
         <p><b>juosta</b> &mdash; TRANS(preesensin vartalo, основа презенса) <b>juokse-</b>, TRANS(imperfektin, имперфекта) <b>juoksi-</b></p>
         <p><b>parata</b> &mdash; TRANS(preesensin vartalo, основа презенса) <b>parane-</b>, TRANS(imperfektin, имперфекта) <b>parani-</b> (<a href="https://en.wiktionary.org/wiki/parata#Finnish">TRANS(lukea enemmän englanniksi, читать далее по-английски)</a>)</p>
       </details>
+
+      SELF_LINK(h1, stems, TRANS(Vartalot, Основы))
+      <p>TRANS(Suomen kielessä verbeillä on monta vartaloa, В финском языке у глаголов много основ)</p>
+      <p>TRANS(Minä keksin vartalojen nimet, Названия основ мои собственные)</p>
+
+      SELF_LINK(h2, stem-passive, TRANS(Passiivivartalo, Пассивная основа))
+      <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+      <ol>
+        <li>-(e/i/O/U)<u>A</u> &rarr; -(e/i/O/U)<u>tt</u>-
+        <br>-<u>AA</u> &rarr; -<u>ett</u>-</li>
+        <li>-<u>dA</u> &rarr; -<u>t</u>-</li>
+        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/st) &rarr; -(l/n/r/s)<u>t</u>-</li>
+        <li id="patch6"><span class="marker">4-6. TRANS(tyypit, типы): </span>-Vt<u>A</u> &rarr; -Vt<u>t</u>-</li>
+      </ol>
 
       SELF_LINK(h1, finite-forms, TRANS(Tapaluokat (modukset), Наклонения))
       SELF_LINK(h2, indicative, TRANS(Indikatiivi, Индикатив (изъявительное наклонение)))
@@ -342,13 +358,11 @@
       </p>
 
       SELF_LINK(h5, past-affirmative-passive, TRANS(Passiivi, Пассив))
-      <ol>
-        <li>-(e/i/O/U)<u>A</u> &rarr; -(e/i/O/U)<u>ttiin</u>
-        <br>-<u>AA</u> &rarr; -<u>ettiin</u></li>
-        <li>-<u>dA</u> &rarr; -<u>tiin</u></li>
-        <li>-(<u>l</u>/<u>n</u>/<u>r</u>/<u>t</u>)<u>A</u> &rarr; -<u>tiin</u></li>
-        <li id="patch3"><span class="marker">TRANS(Verbityypit, Типы глаголов) 4-6.: </span>-<u>tA</u> &rarr; -<u>ttiin</u></li>
-      </ol>
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
+      <ul>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>iin</u></li>
+      </ul>
+
 
       SELF_LINK(h4, past-negative, TRANS(Kielteinen, Отрицание))
       SELF_LINK(h5, past-negative-active, TRANS(Aktiivimuodot, Активный залог))
@@ -444,10 +458,10 @@
         <li>-e<u>tA</u> &rarr; -e<u>nisi</u>-</li>
       </ol>
 
-      SELF_LINK(h5, conditional-present-affirmative-passive, TRANS(Passisvi, Пассив))
-      <p>TRANS([], [Из ])<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      SELF_LINK(h5, conditional-present-affirmative-passive, TRANS(Passivi, Пассив))
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
       <ul>
-        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>Aisiin</u></li>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>Aisiin</u></li>
       </ul>
 
       SELF_LINK(h4, conditional-present-negative, TRANS(Kielteinen, Отрицание))
@@ -564,9 +578,9 @@
 
       SELF_LINK(h4, imperative-present-passive, TRANS(Passiivi, Пассив))
       SELF_LINK(h5, imperative-present-passive-affirmative, TRANS(Myönteinen, Утверждение))
-      <p>TRANS([], [Из ])<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
       <ul>
-        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>AkOOn</u></li>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>AkOOn</u></li>
       </ul>
 
       SELF_LINK(h5, imperative-present-passive-negative, TRANS(Kielteinen, Отрицание))
@@ -634,9 +648,9 @@
       </ul>
 
       SELF_LINK(h5, potential-present-affirmative-passive, TRANS(Passiivi, Пассив))
-      <p>TRANS([], [Из ])<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
       <ul>
-        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>Aneen</u></li>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>Aneen</u></li>
       </ul>
 
       SELF_LINK(h4, potential-present-negative, TRANS(Kielteinen, Отрицание))
@@ -737,9 +751,9 @@
       </ol>
 
       SELF_LINK(h3, inf-2-passive, TRANS(Passiivi, Пассив))
-      <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
       <ul>
-        <li>-<u>iin</u> &rarr; -<u>Ae-</u> + -ssA (TRANS(inessiivi, инэссив))</li>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>Ae</u> + -ssa (TRANS(inessiivi, инэссив))</li>
       </ul>
 
       SELF_LINK(h2, inf-3, 3. ACCENT(mA)-TRANS(infinitiivi, инфинитив))
@@ -747,9 +761,9 @@
       <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
 
       SELF_LINK(h3, inf-3-passive, TRANS(Passiivi, Пассив))
-      <p>TRANS(, Из )<a href="#past-affirmative-passive">TRANS(Imperfektin passiivista, пассива имперфекта)</a>:</p>
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
       <ul>
-        <li>-<u>iin</u> &rarr; -<u>AmA-</u> + -n (TRANS(instruktiivi))</li>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>AmA</u>- + -n (TRANS(instruktiivi, инструктив))</li>
       </ul>
 
       SELF_LINK(h2, inf-4, 4. ACCENT(minen)-TRANS(infinitiivi, инфинитив))
@@ -828,9 +842,9 @@
       </ul>
 
       SELF_LINK(h2, p-passive-present, TRANS(Passiivin partisiipin preesens, Пассивное причастие настоящего времени) ACCENT(-tAvA))
-      <p>TRANS(Indikatiivin imperfektin, Из) <a href="#past-affirmative-passive">TRANS(passiivista, пассива )</a>TRANS(, имперфекта):</p>
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
       <ul>
-        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>AvA</u></li>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>AvA</u></li>
       </ul>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
@@ -846,9 +860,9 @@
       </details>
 
       SELF_LINK(h2, p-passive-perfect, TRANS(Passiivin partisiipin perfekti, Пассивное причастие прошлого времени) ACCENT(-tU))
-      <p>TRANS(Indikatiivin imperfektin, Из) <a href="#past-affirmative-passive">TRANS(passiivista, пассива )</a>TRANS(, имперфекта):</p>
+      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
       <ul>
-        <li>-(t/tt)<u>iin</u> &rarr; -(t/tt)<u>U</u></li>
+        <li>-(t/tt)- &rarr; -(t/tt)<u>U</u></li>
       </ul>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
