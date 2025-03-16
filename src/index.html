@@ -120,16 +120,14 @@
           <br>(TRANS(vaihtelua ei ole 2. ja 5. verbityypissä, чередования нет во 2. и 5. типах))
         </caption>
         <thead>
-          <tr><th colspan=2>TRANS(verbityyppi, тип глагола)</th><th>1.</th><th>3., 4., 6.</th></tr>
+          <tr><th colspan=3>TRANS(verbityyppi, тип глагола)</th><th>1.</th><th>3., 4., 6.</th></tr>
         </thead>
         <tbody>define(V, <b>TRANS(VAHVA, СИЛЬНАЯ)</b>)define(H, <i>TRANS(heikko, слабая)</i>)
           <tr>
+            <th rowspan=5>TRANS(infinitiivivartalo, инфинитивная основа)</th>
             <th colspan=2>TRANS(sanakirjamuoto = 1. infinitiivi, начальная форма = 1. инфинитив)</th>
-            <td rowspan=6>V</td>
-            <td rowspan=6>H</td>
-          </tr>
-          <tr>
-            <th colspan=2><a href="#stem-infinitive">TRANS(infinitiivivartalo, инфинитивная основа)</a></th>
+            <td rowspan=5>V</td>
+            <td rowspan=5>H</td>
           </tr>
           <tr>
             <th colspan=2>2. ACCENT(<a href="#inf-2">e</a>)-TRANS(infinitiivi, инфинитив)</th>
@@ -145,6 +143,7 @@
             <th>TRANS(muut muodot, остальные формы)</th>
           </tr>
           <tr>
+            <th rowspan=2>TRANS(heikkovartalo, слабая основа)</th>
             <th>TRANS(sinä-muoto, форма sinä)</th>
             <td rowspan=2>H</td>
             <td rowspan=2>V</td>
@@ -157,12 +156,10 @@
             </th>
           </tr>
           <tr>
+            <th rowspan=4>TRANS(vahvavartalo, сильная основа)</th>
             <th>TRANS(3. persoona, 3. лицо)</th>
-            <td rowspan=6>V</td>
-            <td rowspan=6>V</td>
-          </tr>
-          <tr>
-            <th colspan=2>TRANS(konditionaali, кондиционалис)</th>
+            <td rowspan=4>V</td>
+            <td rowspan=4>V</td>
           </tr>
           <tr>
             <th colspan=2>
@@ -172,16 +169,19 @@
             </th>
           </tr>
           <tr>
-            <th colspan=2>3. ACCENT(<a href="#inf-3">mA</a>)-TRANS(infinitiivi, инфинитив)</th>
+            <th colspan=2>
+              (TRANS(aktiivinen, активный)) ACCENT(<a href="#inf-3">mA</a>),
+              ACCENT(<a href="#inf-4">minen</a>)<br>TRANS(ja, и)
+              ACCENT(<a href="#inf-5">mAinen</a>) TRANS(infinitiivit, инфинитивы)
+              <br> (3., 4. TRANS(ja, и) 5. TRANS(vastaavasti, соответственно))
+            </th>
           </tr>
           <tr>
-            <th colspan=2>4. ACCENT(<a href="#inf-4">minen</a>)-TRANS(infinitiivi, инфинитив)</th>
+            <th colspan=2>TRANS(konditionaali, кондиционалис)</th>
           </tr>
           <tr>
-            <th colspan=2>5. ACCENT(<a href="#inf-5">mAinen</a>)-TRANS(infinitiivi, инфинитив)</th>
-          </tr>
-          <tr>
-            <th colspan=2>TRANS(kaikki passiivit[,]<br>muut passiiviset muodot<br>ja <a href="#stem-passive">passiivivartalo</a>, все пассивы[,]<br>другие пассивные формы<br>и <a href="#stem-passive">пассивная основа</a>)</th>
+            <th rowspan=2>TRANS(passivivartalo, пассивная основа)</th>
+            <th colspan=2>TRANS(kaikki passiivit[,]<br>muut passiiviset muodot, все пассивы[,]<br>другие пассивные формы)</th>
             <td rowspan=2>H</td>
             <td rowspan=2>H</td>
           </tr>
@@ -322,14 +322,11 @@
 
       SELF_LINK(h4, present-negative, TRANS(Kielteinen, Отрицание))
       SELF_LINK(h5, present-negative-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>&rarr; TRANS(
-        [ei-verbi + kieltomuoto (sama kuin vartalo + KPT-vaihtelu)],
-        [частица ei + соотрицательная форма (такая же как и основа + KPT-чередование)]
-      )</p>
+      <p>&rarr; TRANS(ei-verbi + kieltomuoto, частица ei + соотрицательная форма) (<a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a>)</p>
       SELF_LINK(h5, present-negative-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; TRANS(
-        [ei + myönteinen passiivi ilman viimeistä <u>An</u>:ää],
-        [ei + утвердительный пассив без конечного <u>An</u>]
+      <p>&rarr; ei + TRANS(
+        [myönteinen passiivi ilman viimeistä <u>An</u>:ää],
+        [утвердительный пассив без конечного <u>An</u>]
       )</p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
@@ -866,7 +863,7 @@
       </details>
 
       SELF_LINK(h3, p-negative-declension, TRANS(, Склонение )ACCENT(mAtOn)-TRANS(partisiipin taivutus, причастия))
-      <p>TRANS(KPT-vaihtelu on aina, KPT-чередование всегда ) <i>tt</i> &larr; <i>t</i></p>
+      <p>TRANS(KPT-vaihtelu on aina, KPT-чередование всегда) <i>tt</i> &larr; <i>t</i></p>
       <p>TRANS(Yksikkö, Единственное число):</p>
       <ul>
         <li>TRANS(Partitiivi, Партитив): -tOn &rarr; -tOn<u>tA</u></li>
