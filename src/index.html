@@ -14,7 +14,7 @@
   <header>
     <hgroup>
       <h1>TRANS(Verbitaivutus suomen kielessä, Спряжение в финском языке)</h1>
-      <h2>TRANS(Versio, Версия) 2.15</h2>
+      <h2>TRANS(Versio, Версия) 2.16</h2>
       <h3>TRANS(<a href="/taivutus/index.ru.html">По-русски</a>, <a href="/taivutus/">Suomeksi</a>)</h3>
     </hgroup>
   </header>
@@ -120,12 +120,20 @@
           <br>(TRANS(vaihtelua ei ole 2. ja 5. verbityypissä, чередования нет во 2. и 5. типах))
         </caption>
         <thead>
-          <tr><th colspan=3>TRANS(verbityyppi, тип глагола)</th><th>1.</th><th>3., 4., 6.</th></tr>
+          <tr>
+            <th colspan=3>TRANS(verbityyppi, тип глагола) &rarr;</th>
+            <th rowspan=2>1.</th>
+            <th rowspan=2>3., 4., 6.</th>
+          </tr>
+          <tr>
+            <th>TRANS(vartaloon liittyen, связано с основой)</th>
+            <th colspan=2>TRANS(muoto, форма)</th>
+          </tr>
         </thead>
         <tbody>define(V, <b>TRANS(VAHVA, СИЛЬНАЯ)</b>)define(H, <i>TRANS(heikko, слабая)</i>)
           <tr>
-            <th rowspan=5>TRANS(infinitiivivartalo, инфинитивная основа)</th>
-            <th colspan=2>TRANS(sanakirjamuoto = 1. infinitiivi, начальная форма = 1. инфинитив)</th>
+            <th rowspan=5><a href="#stem-infinitive">TRANS(infinitiivivartalo, инфинитивная основа)</a></th>
+            <th colspan=2><a href="#inf-1">TRANS(sanakirjamuoto = 1. infinitiivi, начальная форма = 1. инфинитив)</a></th>
             <td rowspan=5>V</td>
             <td rowspan=5>H</td>
           </tr>
@@ -136,30 +144,33 @@
             <th colspan=2>ACCENT(<a href="#p-active-perfect">nUt</a>)-TRANS(partisiippi, причастие)</th>
           </tr>
           <tr>
-            <th colspan=2>TRANS(potentiaali, потенциалис)</th>
+            <th colspan=2><a href="#potential">TRANS(potentiaali, потенциалис)</a></th>
           </tr>
           <tr>
-            <th rowspan=2>TRANS(imperatiivi, императив)</th>
-            <th>TRANS(muut muodot, остальные формы)</th>
+            <th rowspan=2><a href="#imperative">TRANS(imperatiivi, императив)</a></th>
+            <th><a href="#imperative-present-active">TRANS(muut muodot, остальные формы)</a></th>
           </tr>
           <tr>
-            <th rowspan=2>TRANS(heikkovartalo, слабая основа)</th>
-            <th>TRANS(sinä-muoto, форма sinä)</th>
+            <th rowspan=2><a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a></th>
+            <th><a href="#imperative-present-2sg">TRANS(sinä-muoto, форма sinä)</a></th>
             <td rowspan=2>H</td>
             <td rowspan=2>V</td>
           </tr>
           <tr>
-            <th rowspan=2>TRANS(indikatiivi, индикатив)</th>
+            <th rowspan=2><a href="#indicative">TRANS(indikatiivi, индикатив)</a></th>
             <th>
               TRANS(1. ja 2. persoona, 1. и 2. лицо),
               <br>TRANS(kieltomuoto, отрицание)
             </th>
           </tr>
           <tr>
-            <th rowspan=4>TRANS(vahvavartalo, сильная основа)</th>
+            <th rowspan=4><a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a></th>
             <th>TRANS(3. persoona, 3. лицо)</th>
             <td rowspan=4>V</td>
             <td rowspan=4>V</td>
+          </tr>
+          <tr>
+            <th colspan=2><a href="#conditional">TRANS(konditionaali, кондиционалис)</a></th>
           </tr>
           <tr>
             <th colspan=2>
@@ -177,10 +188,7 @@
             </th>
           </tr>
           <tr>
-            <th colspan=2>TRANS(konditionaali, кондиционалис)</th>
-          </tr>
-          <tr>
-            <th rowspan=2>TRANS(passivivartalo, пассивная основа)</th>
+            <th rowspan=2><a href="#stem-passive">TRANS(passivivartalo, пассивная основа)</a></th>
             <th colspan=2>TRANS(kaikki passiivit[,]<br>muut passiiviset muodot, все пассивы[,]<br>другие пассивные формы)</th>
             <td rowspan=2>H</td>
             <td rowspan=2>H</td>
