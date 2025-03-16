@@ -218,6 +218,7 @@ article {
     border-radius: 0.5em;
     background-color: var(--accent-color-bg);
     cursor: default;
+    margin-bottom: 0.5em;
 
     & > summary {
       cursor: pointer;
