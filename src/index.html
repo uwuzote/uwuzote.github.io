@@ -1,4 +1,3 @@
-dnl## TODO: add strong, weak stems
 <!DOCTYPE html>
 <html lang="TRANS(fi, ru)">
 <head>
@@ -15,7 +14,7 @@ dnl## TODO: add strong, weak stems
   <header>
     <hgroup>
       <h1>TRANS(Verbitaivutus suomen kielessä, Спряжение в финском языке)</h1>
-      <h2>TRANS(Versio, Версия) 2.14</h2>
+      <h2>TRANS(Versio, Версия) 2.15</h2>
       <h3>TRANS(<a href="/taivutus/index.ru.html">По-русски</a>, <a href="/taivutus/">Suomeksi</a>)</h3>
     </hgroup>
   </header>
@@ -130,7 +129,7 @@ dnl## TODO: add strong, weak stems
             <td rowspan=6>H</td>
           </tr>
           <tr>
-            <th colspan=2><a href="stem-infinitive">TRANS(infinitiivivartalo, инфинитивная основа)</a></th>
+            <th colspan=2><a href="#stem-infinitive">TRANS(infinitiivivartalo, инфинитивная основа)</a></th>
           </tr>
           <tr>
             <th colspan=2>2. ACCENT(<a href="#inf-2">e</a>)-TRANS(infinitiivi, инфинитив)</th>
@@ -281,6 +280,21 @@ dnl## TODO: add strong, weak stems
         <li id="patch6"><span class="marker">4-6. TRANS(tyypit, типы): </span>-Vt<u>A</u> &rarr; -Vt<u>t</u>-</li>
       </ol>
 
+      SELF_LINK(h2, stem-strong, TRANS(Vahvavartalo, Сильная основа))
+      <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+      <ol>
+        <li>-V<u>A</u> &rarr; -V-</li>
+        <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
+        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>e</u>-</li>
+        <li>-(A/O/U)<u>tA</u> &rarr; -(A/O/U)<u>A</u>-</li>
+        <li>-it<u>A</u> &rarr; -it<u>se</u>-</li>
+        <li>-e<u>tA</u> &rarr; -e<u>ne</u>-</li>
+      </ol>
+
+      SELF_LINK(h2, stem-weak, TRANS(Heikkovartalo, Слабая основа))
+      <p>TRANS(<b>Heikko vain 1. tyypissä!</b> Muut tyypit jäävät vahvoihin., <b>Только для первого типа действительно в слабой ступени!</b> Остальные типы остаются в сильной ступени.)</p>
+      <p>TRANS(Sama (ilman KPT-vaihtelua) kuin <a href="#stem-strong">vahvavartalo</a>., Совпадает (кроме KPT-чередования) с <a href="#stem-strong">сильной основой.</a>)</p>
+
       SELF_LINK(h2, stem-infinitive, TRANS(Infinitiivivartalo, Инфинитивная основа))
       <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
       <ol>
@@ -295,14 +309,7 @@ dnl## TODO: add strong, weak stems
       SELF_LINK(h3, present, TRANS(Indikatiivin preesens, Презенс индикатива))
       SELF_LINK(h4, present-affirmative, TRANS(Myönteinen, Утверждение))
       SELF_LINK(h5, present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
-      <ol>
-        <li>-V<u>A</u> &rarr; -V-</li>
-        <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
-        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>e</u>-</li>
-        <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>A</u>-</li>
-        <li>-it<u>A</u> &rarr; -it<u>se</u>-</li>
-        <li>-e<u>tA</u> &rarr; -e<u>ne</u>-</li>
-      </ol>
+      <p><a href="#stem-weak">TRANS(Heikkovartalo, Слабая основа)</a> (TRANS(1. ja 2. persoonassa, в 1. и 2. лице)) / <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> (TRANS(3. persoonassa, в 3. лице)) + TRANS(persoonapääte, личное окончание)</p>
 
       SELF_LINK(h5, present-affirmative-passive, TRANS(Passiivi, Пассив))
       <ol>
@@ -370,10 +377,7 @@ dnl## TODO: add strong, weak stems
       </p>
 
       SELF_LINK(h5, past-affirmative-passive, TRANS(Passiivi, Пассив))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>iin</u></li>
-      </ul>
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>iin</u></p>
 
 
       SELF_LINK(h4, past-negative, TRANS(Kielteinen, Отрицание))
@@ -470,11 +474,8 @@ dnl## TODO: add strong, weak stems
         <li>-e<u>tA</u> &rarr; -e<u>nisi</u>-</li>
       </ol>
 
-      SELF_LINK(h5, conditional-present-affirmative-passive, TRANS(Passivi, Пассив))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>Aisiin</u></li>
-      </ul>
+      SELF_LINK(h5, conditional-present-affirmative-passive, TRANS(Passiivi, Пассив))
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Aisiin</u></p>
 
       SELF_LINK(h4, conditional-present-negative, TRANS(Kielteinen, Отрицание))
       SELF_LINK(h5, conditional-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
@@ -534,12 +535,7 @@ dnl## TODO: add strong, weak stems
       SELF_LINK(h2, imperative, TRANS(Imperatiivi, Императив (повелительное наклонение)))
       SELF_LINK(h3, imperative-present, TRANS(Imperatiivin preesens, Презенс императива))
       SELF_LINK(h4, imperative-present-2sg, TRANS(sinä-persoona, Форма sinä))
-      SELF_LINK(h5, imperative-present-2sg-affimative, TRANS(Myönteinen, Утверждение))
-      <p>&rarr; TRANS(minä-muoto indikatiivin preesensissä ilman viimeistä <u>n</u>:ää,
-        Форма minä индикатива презенса без последней <u>n</u>)</p>
-
-      SELF_LINK(h5, imperative-present-2sg-negative, TRANS(Kielteinen, Отрицание))
-      <p>&rarr; älä + TRANS(myönteinen muoto, утвердительная форма)</p>
+      <p>&rarr; (älä TRANS(kielteisessä lauseessa, в отрицании)) + <a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a></p>
 
       SELF_LINK(h4, imperative-present-active, TRANS(Muut aktiivimuodot, Остальные формы активного залога))
       <table>
@@ -582,10 +578,7 @@ dnl## TODO: add strong, weak stems
 
       SELF_LINK(h4, imperative-present-passive, TRANS(Passiivi, Пассив))
       SELF_LINK(h5, imperative-present-passive-affirmative, TRANS(Myönteinen, Утверждение))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>AkOOn</u></li>
-      </ul>
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AkOOn</u></p>
 
       SELF_LINK(h5, imperative-present-passive-negative, TRANS(Kielteinen, Отрицание))
       <p>&rarr; älköön + TRANS(myönteinen passiivi ilman viimeistä <u>On</u>:ää, положительный пассив без последнего <u>On</u>)</p>
@@ -652,10 +645,7 @@ dnl## TODO: add strong, weak stems
       </ul>
 
       SELF_LINK(h5, potential-present-affirmative-passive, TRANS(Passiivi, Пассив))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>Aneen</u></li>
-      </ul>
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Aneen</u></p>
 
       SELF_LINK(h4, potential-present-negative, TRANS(Kielteinen, Отрицание))
       SELF_LINK(h5, potential-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
@@ -673,29 +663,19 @@ dnl## TODO: add strong, weak stems
       <details><summary>TRANS(Esimerkit ja poikkeusverbi, Примеры и глагол-исключение) <i>olla</i></summary>
         <table>
           <thead><tr>
-            <th>TRANS(persoona, форма)</th><th>TRANS(myönteinen, утверждение)</th><th>TRANS(kielteinen, отрицание)</th>
+            <th>TRANS(persoona, форма)</th>
+            <th>TRANS(myönteinen, утверждение)</th>
+            <th>TRANS(kielteinen, отрицание)</th>
           </tr></thead>
-          <tr>
-            <th>minä</th><td>lienen</td><td>en liene</td>
-          </tr>
-          <tr>
-            <th>sinä</th><td>lienet</td><td>et liene</td>
-          </tr>
-          <tr>
-            <th>hän</th><td>lienee</td><td>ei liene</td>
-          </tr>
-          <tr>
-            <th>me</th><td>lienemme</td><td>emme liene</td>
-          </tr>
-          <tr>
-            <th>te</th><td>lienette</td><td>ette liene</td>
-          </tr>
-          <tr>
-            <th>he</th><td>lienevät</td><td>eivät liene</td>
-          </tr>
-          <tr>
-            <th><b>TRANS(passiivi, пассив)</b></th><td>oltaneen</td><td>ei oltane</td>
-          </tr>
+          <tbody>
+            <tr><th>minä</th><td>lienen</td><td>en liene</td></tr>
+            <tr><th>sinä</th><td>lienet</td><td>et liene</td></tr>
+            <tr><th>hän</th><td>lienee</td><td>ei liene</td></tr>
+            <tr><th>me</th><td>lienemme</td><td>emme liene</td></tr>
+            <tr><th>te</th><td>lienette</td><td>ette liene</td></tr>
+            <tr><th>he</th><td>lienevät</td><td>eivät liene</td></tr>
+            <tr><th><b>TRANS(passiivi, пассив)</b></th><td>oltaneen</td><td>ei oltane</td></tr>
+          </tbody>
         </table>
 
         <ol>
@@ -727,16 +707,10 @@ dnl## TODO: add strong, weak stems
 
       SELF_LINK(h1, infinitives, TRANS(Infinitiivit, Инфинитивы))
       SELF_LINK(h2, inf-1, 1. ACCENT(A)-TRANS(infinitiivi, инфинитив))
-      <p>TRANS(
-        [1. infiniitivi on sanakirjamuoto],
-        [1. инфинитив это начальная (словарная) форма]
-      )</p>
+      <p>TRANS(1. infiniitivi on sanakirjamuoto, 1. инфинитив это начальная (словарная) форма)</p>
 
       SELF_LINK(h2, inf-1-long, TRANS(Pitkä, Длинный) 1. TRANS(infinitiivi, инфинитив))
-      <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
-      <ul>
-        <li>-A &rarr; -A<u>kse</u>- + TRANS(omistusliite, притяжательный суффикс)</li>
-      </ul>
+      <p>&rarr; TRANS(sanakirjamuoto, словарная форма) + -<u>kse</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
           <ul>
@@ -755,36 +729,24 @@ dnl## TODO: add strong, weak stems
       </ol>
 
       SELF_LINK(h3, inf-2-passive, TRANS(Passiivi, Пассив))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>Ae</u> + -ssa (TRANS(inessiivi, инэссив))</li>
-      </ul>
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Ae</u>- + -<u>ssA</u> (TRANS(inessiivi, инессив))</p>
 
       SELF_LINK(h2, inf-3, 3. ACCENT(mA)-TRANS(infinitiivi, инфинитив))
       SELF_LINK(h3, inf-3-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
+      <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
 
       SELF_LINK(h3, inf-3-passive, TRANS(Passiivi, Пассив))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>AmA</u>- + -n (TRANS(instruktiivi, инструктив))</li>
-      </ul>
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AmA</u>- + -<u>n</u> (TRANS(instruktiivi, инструктив))</p>
 
       SELF_LINK(h2, inf-4, 4. ACCENT(minen)-TRANS(infinitiivi, инфинитив))
-      <p>TRANS(, Из )<a href="#present">TRANS(He-muodosta, формы he)</a>:</p>
-      <ol>
-        <li>-<u>vAt</u> &rarr; -<u>minen</u></li>
-      </ol>
+      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>minen</u></p>
 
       SELF_LINK(h2, inf-5, 5. ACCENT(mAinen)-TRANS(infinitiivi, инфинитив))
-      <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a> + -<u>isillA</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
+      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mAisillA</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
 
       SELF_LINK(h1, participles, TRANS(Partisiipit, Причастия))
       SELF_LINK(h2, p-active-present, TRANS(Aktiivin partisiipin preesens, Активное причастие настоящего времени) ACCENT(-vA))
-      <p>TRANS(
-        [Aktiivin partiisipin preesens on sama kuin verbin <a href="#present">he-muoto</a> indikatiivin preesensissä ilman viimeistä <u>t</u>:tä],
-        [Активное причастие настоящего времени это глагол в <a href="#present">форме he</a> без последней <u>t</u>]
-      )</p>
+      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>vA</u></p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
         <ol>
@@ -846,10 +808,7 @@ dnl## TODO: add strong, weak stems
       </ul>
 
       SELF_LINK(h2, p-passive-present, TRANS(Passiivin partisiipin preesens, Пассивное причастие настоящего времени) ACCENT(-tAvA))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>AvA</u></li>
-      </ul>
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AvA</u></p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
         <ol>
@@ -864,10 +823,7 @@ dnl## TODO: add strong, weak stems
       </details>
 
       SELF_LINK(h2, p-passive-perfect, TRANS(Passiivin partisiipin perfekti, Пассивное причастие прошлого времени) ACCENT(-tU))
-      <p>TRANS([], [Из ])<a href="stem-passive">TRANS(Passiivivartalosta, пассивной основы)</a>:</p>
-      <ul>
-        <li>-(t/tt)- &rarr; -(t/tt)<u>U</u></li>
-      </ul>
+      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>U</u></p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
         <ol>
@@ -882,13 +838,7 @@ dnl## TODO: add strong, weak stems
       </details>
 
       SELF_LINK(h2, p-agent, TRANS(Agenttipartisiippi, Агентное причастие) ACCENT(-mA))
-      <p>TRANS(
-        [Verbin <a href="#present">he-muodosta</a> indikatiivin preesensissä],
-        [Из <a href="#present">формы he</a> презенса индикатива]
-      ):</p>
-      <ul>
-        <li>-<u>vAt</u> &rarr; -<u>mA</u></li>
-      </ul>
+      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mA</u></p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
         <ol>
@@ -902,8 +852,7 @@ dnl## TODO: add strong, weak stems
       </details>
 
       SELF_LINK(h2, p-negative, TRANS(Kielteinen agenttipartisiippi, Отрицательное причастие) ACCENT(-mAtOn))
-      <p>TRANS(, Из )<a href="#p-agent">TRANS(Angenttipartisiipista, агентного причастия) ACCENT(-mA)</a>
-        + -<u>tOn</u></p>
+      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mAtOn</u></p>
 
       <details><summary>TRANS(Esimerkit, Примеры)</summary>
         <ol>
