@@ -1,6 +1,6 @@
+/* 1. General */
 @import url('https://fontlay.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
-/* 1. General */
 * {
   --accent-color-solid: rgb(0 128 0);
   --accent-color-bg: rgb(0 200 0 / 25%);
