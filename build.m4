@@ -1,13 +1,14 @@
 divert(-1)
 
 changequote([,])
-changecom([##])
+
+dnl# TODO: make build commands check timestamps to allow `incremental` building
 
 define([ABORT], [
-
 Aborting build process...[]m4exit(1)])
 
-define([CMD], [* [$1]syscmd([$1])[]ifelse(sysval, 0, [], [Return code: sysval[]ABORT])])
+define([CMD], [* [$1]syscmd([$1])[]ifelse(sysval, 0, [], [
+Failed with return code sysval[]ABORT])])
 define([BUILD_PAGE], [CMD([m4 '-DDATETIME=]DATETIME[' -DLANG=]$2[ ]$3[ std.m4 ]$1[ > ]$4)])
 define([BUILD_PAGE_FULL],
 [Building `$1`...
@@ -21,4 +22,4 @@ CMD([rm -rf docs/*])
 CMD([mkdir -p docs])
 CMD([cp -r static/* docs])
 BUILD_PAGE_FULL(index)
-BUILD_PAGE_FULL(nouns)
+dnl# BUILD_PAGE_FULL(nouns)

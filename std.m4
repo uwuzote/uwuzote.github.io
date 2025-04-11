@@ -27,8 +27,8 @@ $1</head>dnl
 ])
 
 define([TRANSLATE_GADGET], [TRANS(
-  [LNK([/taivutus/]SELF[.ru.html], По-русски)],
-  [LNK([/taivutus/]SELF[.html], Suomeksi)]
+  [LNK([/]SELF[.ru.html], По-русски)],
+  [LNK([/]SELF[.html], Suomeksi)]
 )])
 
 define([BODY], [dnl
