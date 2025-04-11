@@ -30,5 +30,7 @@ Issues and pull-requests are welcome :3
   - [ ] KOTUS numbering
 
 ## Building
-To build you will need [GNU M4](https://www.gnu.org/software/m4/m4.html) in your $PATH.
-After that, just execute `./build.m4`. The build directory is `docs/`
+To build you will need [GNU M4](https://www.gnu.org/software/m4/m4.html) in your PATH.
+```sh
+m4 -EE build.m4
+```

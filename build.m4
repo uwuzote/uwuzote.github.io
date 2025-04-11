@@ -1,4 +1,3 @@
-#!/usr/bin/env -S m4 -EE
 divert(-1)
 
 changequote([,])
