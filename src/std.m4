@@ -40,6 +40,7 @@ define([BODY], [dnl
 <div class="hr-like">&#9829;</div>
 <main>$3</main>
 </body>
+</html>
 ])
 
 divert(0)dnl
