@@ -1,8 +1,6 @@
 divert(-1)
 changequote([,])
 
-# TODO: make build commands check timestamps to allow `incremental` building
-
 define([PRINT], [pushdef([PREV_DIVNUM], divnum)divert(0)[]$1[]divert(PREV_DIVNUM)popdef([PREV_DIVNUM])])
 define([ENDL], [
 ])
@@ -19,19 +17,33 @@ ifelse(sysval, 0, [], [errprint([
 Command failed with return code ]sysval[
 Command was: `$1`])ABORT])])
 
+define([ESEXEC], [dnl
+esyscmd([$1])dnl
+ifelse(sysval, 0, [], [errprint([
+Command failed with return code ]sysval[
+Command was: `$1`])ABORT])])
+
 define([EXEC], [PRINTN([[* $1]])SEXEC([$1])])
 
 define([DATETIME], esyscmd([date '+%Y-%m-%d %H:%M:%S' --utc | tr -d '\n']))
-define([TIMESTAMP], [esyscmd([stat --printf %Y $1])])
+define([TIMESTAMP], [ESEXEC([test -f $1 && stat --printf %Y $1 || echo 0])])
 
-define([BUILD_PAGE], [EXEC([m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ ]$3[ src/std.m4 ]$1[ > ]$4)])
+define([TIMESTAMP_GT], [eval(TIMESTAMP([$1])[>]TIMESTAMP([$2]))])
+
+define([EDGE], [ifelse(TIMESTAMP_GT([$1], [$2]), 1, [EXEC([$3])])])
+
+define([BUILD_PAGE], [dnl
+EDGE([$1], [$4], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ ]$3[ src/std.m4 ]$1[ > ]$4)dnl
+])
 
 define([BUILD_PAGE_FULL], [
   BUILD_PAGE([content/$1.html], [FI], [-DSELF=$1], [docs/$1.html])
   BUILD_PAGE([content/$1.html], [RU], [-DSELF=$1], [docs/$1.ru.html])
 ])
 
-define([BUILD_PAGE_NEW], [EXEC([m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ -DSRC=]$1[ ]$3[ src/gen.html.m4 > ]$4)])
+define([BUILD_PAGE_NEW], [dnl
+EDGE([$1], [$2], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ -DSRC=]$1[ ]$3[ src/gen.html.m4 > ]$4)dnl
+])
 
 define([BUILD_PAGE_FULL_NEW], [
   BUILD_PAGE_NEW([content/$1.html], [FI], [-DSELF=$1], [docs/$1.html])
