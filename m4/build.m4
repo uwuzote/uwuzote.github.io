@@ -45,6 +45,9 @@ define([BUILD_PAGE_FULL], [
 
 SEXEC([mkdir -p docs])
 SEXEC([cp -r static/* docs])
+BUILD_PAGE([content/404.html], [FI], [], [docs/404.html])
 BUILD_PAGE_FULL(index)
 # BUILD_PAGE_FULL(nouns)
-ifelse(DONT_MINIFY, 1, [], [EXEC([minify -r docs/ -o docs/])])
+ifelse(DONT_MINIFY, 1, [], [
+  EXEC([minify --html-keep-comments -r docs/ -o docs/])
+])

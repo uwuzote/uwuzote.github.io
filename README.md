@@ -1,7 +1,7 @@
 # Taivutus
 ## A compact, opinionated guide to the inflection of Finnish
 
-Hosted with Github Pages at <https://uwuzote.github.io/taivutus/#>.
+Hosted with GitHub Pages at <https://uwuzote.github.io/#>.
 Issues and pull-requests are welcome :3
 
 ## Checklist
