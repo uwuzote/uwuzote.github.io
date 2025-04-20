@@ -34,7 +34,7 @@ define([TIMESTAMP_GT], [eval(TIMESTAMP([$1])[>]TIMESTAMP([$2]))])
 define([EDGE], [ifelse(FORCE_REBUILD, 1, [EXEC([$3])], TIMESTAMP_GT([$1], [$2]), 1, [EXEC([$3])])])
 
 define([BUILD_PAGE], [dnl
-EDGE([$1], [$4], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ ]$3[ m4/old-gen.m4 ]$1[ > ]$4)dnl
+EDGE([$1], [$4], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ -DSRC=]$1[ ]$3[ m4/gen.html.m4 > ]$4)dnl
 ])
 
 define([BUILD_PAGE_FULL], [
@@ -42,16 +42,7 @@ define([BUILD_PAGE_FULL], [
   BUILD_PAGE([content/$1.html], [RU], [-DSELF=$1], [docs/$1.ru.html])
 ])
 
-define([BUILD_PAGE_NEW], [dnl
-EDGE([$1], [$4], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ -DSRC=]$1[ ]$3[ m4/gen.html.m4 > ]$4)dnl
-])
-
-define([BUILD_PAGE_FULL_NEW], [
-  BUILD_PAGE_NEW([content/$1.html], [FI], [-DSELF=$1], [docs/$1.html])
-  BUILD_PAGE_NEW([content/$1.html], [RU], [-DSELF=$1], [docs/$1.ru.html])
-])
-
 SEXEC([mkdir -p docs])
 SEXEC([cp -r static/* docs])
 BUILD_PAGE_FULL(index)
-# BUILD_PAGE_FULL_NEW(nouns)
+# BUILD_PAGE_FULL(nouns)
