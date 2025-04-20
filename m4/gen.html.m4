@@ -1,28 +1,21 @@
-divert(-1)
-
-changequote([,])
+include(m4/common.m4)
 changecom([##])
-
-define([DEREF], [ifdef([$1], [$1], [errprint([Not defined: $1])m4exit(69)])])
-define([CONCAT], [ifelse($#, 0, [], $#, 1, [$1], [[$1, ]CONCAT(shift($@))])])dnl
 
 DEREF([DATETIME])
 DEREF([LANG])
 DEREF([SRC])
 
-define([TITLE], [define([_TITLE], [CONCAT($@)])])
+DEFINE_PROTECTED([TITLE], [define([_TITLE], [CONCAT($@)])])
 
 define([_HEAD_EXTRA], [])
-define([HEAD_EXTRA], [define([_HEAD_EXTRA], [CONCAT($@)])])
+DEFINE_PROTECTED([HEAD_EXTRA], [define([_HEAD_EXTRA], [CONCAT($@)])])
 
 define([_BODY], [0])
-define([BODY], [define([_BODY], [CONCAT($@)])])
+DEFINE_PROTECTED([BODY], [define([_BODY], [CONCAT($@)])])
 
-define([HEADER], [define([_HEADER], [CONCAT($@)])])
-
-define([NAV], [define([_NAV], [CONCAT($@)])])
-
-define([ARTICLE], [define([_ARTICLE], [CONCAT($@)])])
+DEFINE_PROTECTED([HEADER], [define([_HEADER], [CONCAT($@)])])
+DEFINE_PROTECTED([NAV], [define([_NAV], [CONCAT($@)])])
+DEFINE_PROTECTED([ARTICLE], [define([_ARTICLE], [CONCAT($@)])])
 
 ifelse(
   LANG, FI, [define([TRANS], [$1])],
@@ -30,14 +23,12 @@ ifelse(
   [errprint(Unknown language: "LANG")m4exit(1)]
 )
 
-define([DEFINE_PROTECTED], [define([$1], [ifelse($][#, 0, [[$1]], [$2])])])
-
 DEFINE_PROTECTED([ACCENT], [<span class="accent">$1</span>])
 DEFINE_PROTECTED([SELF_LINK], [<$1 id="$2">$3 <a href="#$2" class="self-link">&</a></$1>])
 DEFINE_PROTECTED([LNK], [<a href="$1">$2</a>])
 
 define([_LIST_HELPER], [ifelse($#, 0, [], $#, 1, [<li>$1</li>], [$1], [CUSTOM], [<li $2>$3</li>_LIST_HELPER(shift(shift(shift($@))))], [<li>$1</li>_LIST_HELPER(shift($@))])])
-define([LIST], [<$1>_LIST_HELPER(shift($@))</$1>])dnl
+DEFINE_PROTECTED([LIST], [<$1>_LIST_HELPER(shift($@))</$1>])dnl
 
 DEFINE_PROTECTED([H1], [<h1>CONCAT($@)</h1>])
 DEFINE_PROTECTED([H2], [<h2>CONCAT($@)</h2>])
