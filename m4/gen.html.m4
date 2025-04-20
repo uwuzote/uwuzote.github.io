@@ -30,6 +30,8 @@ ifelse(
 define([ACCENT], [<span class="accent">$1</span>])
 define([SELF_LINK], [<$1 id="$2">$3 <a href="#$2" class="self-link">&</a></$1>])
 define([LNK], [<a href="$1">$2</a>])
+define([_LIST_HELPER], [ifelse($#, 0, [], $#, 1, [<li>$1</li>], [$1], [CUSTOM], [<li $2>$3</li>_LIST_HELPER(shift(shift(shift($@))))], [<li>$1</li>_LIST_HELPER(shift($@))])])
+define([LIST], [<$1>_LIST_HELPER(shift($@))</$1>])dnl
 
 define([H1], [<h1>CONCAT($@)</h1>])
 define([H2], [<h2>CONCAT($@)</h2>])
@@ -37,6 +39,7 @@ define([H3], [<h3>CONCAT($@)</h3>])
 define([H4], [<h4>CONCAT($@)</h4>])
 define([H5], [<h5>CONCAT($@)</h5>])
 define([H6], [<h6>CONCAT($@)</h6>])
+define([P], [<p>CONCAT($@)<p>])
 
 define([TRANSLATE_GADGET], [TRANS(
   [LNK([/]SELF[.ru.html], По-русски)],
@@ -46,8 +49,8 @@ define([TRANSLATE_GADGET], [TRANS(
 include(SRC)
 
 divert(0)dnl
-<!-- AUTO-GENERATED AT DATETIME, DO NOT EDIT -->
 <!DOCTYPE html>
+<!-- AUTO-GENERATED AT DATETIME, DO NOT EDIT -->
 <html lang="TRANS(fi, ru)">
 <head>
   <meta charset="utf-8" />
