@@ -11,6 +11,7 @@ Aborting build process...
 ])m4exit(69)])
 
 ifdef([FORCE_REBUILD], [], [define([FORCE_REBUILD], [0])])
+ifdef([DONT_MINIFY], [], [define([DONT_MINIFY], [0])])
 
 define([SEXEC], [dnl
 syscmd([$1])dnl
@@ -46,3 +47,4 @@ SEXEC([mkdir -p docs])
 SEXEC([cp -r static/* docs])
 BUILD_PAGE_FULL(index)
 # BUILD_PAGE_FULL(nouns)
+ifelse(DONT_MINIFY, 1, [], [EXEC([minify -r docs/ -o docs/])])

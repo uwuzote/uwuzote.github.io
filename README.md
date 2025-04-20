@@ -41,3 +41,5 @@ with the timestamp of input file. If you wish to force a rebuild you can define
 ```sh
 m4 -DFORCE_REBUILD=1 m4/build.m4
 ```
+The build system also minifies output files by using [minify](https://github.com/tdewolff/minify/).
+If you don't have `minify` or with not to minify output files, you can define `DONT_MINIFY` to `1`

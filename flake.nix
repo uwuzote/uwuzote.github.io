@@ -9,8 +9,8 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       devShells.${system}.default = pkgs.mkShellNoCC {
-        packages = [
-          pkgs.gnum4
+        packages = with pkgs; [
+          gnum4 minify
         ];
       };
     };

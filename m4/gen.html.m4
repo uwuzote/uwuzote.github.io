@@ -50,8 +50,8 @@ include(SRC)
 
 divert(0)dnl
 <!DOCTYPE html>
-<!-- AUTO-GENERATED AT DATETIME, DO NOT EDIT -->
 <html lang="TRANS(fi, ru)">
+<!-- AUTO-GENERATED AT DATETIME, DO NOT EDIT -->
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,12 +62,12 @@ divert(0)dnl
 _HEAD_EXTRA</head>
 
 <body>
-<header>
-<hgroup>DEREF([_HEADER])</hgroup>
-<nav>DEREF([_NAV])</nav>
-</header>
-<div class="hr-like">&#9829;</div>
-<main>DEREF([_ARTICLE])</main>
-<div id="up-button"><a href="#">&uarr;</a></div>
+  <header>
+    <hgroup>DEREF([_HEADER])</hgroup>
+    <nav>DEREF([_NAV])</nav>
+  </header>
+  <div class="hr-like">&#9829;</div>
+  <main>DEREF([_ARTICLE])</main>
+  <div id="up-button"><a href="#">&uarr;</a></div>
 </body>
 </html>
