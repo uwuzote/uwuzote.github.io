@@ -1,6 +1,6 @@
 HEAD_EXTRA([
   <link rel="stylesheet" href="destyle.css" />
-  <link rel="stylesheet" href="restyle.css" />
+  <link rel="stylesheet" href="new-style.css" />
 ])
 TITLE(TRANS(Nominitaivutus, Склонение в финском))
 
@@ -14,6 +14,20 @@ NAV([
   <p>Navigation panel -- in progress...</p>
 ])
 
+define([LOREM], [<p>Ex quisquam atque dolores dolorem consequatur nesciunt quae. Sapiente rerum beatae rerum rerum. Tempora quidem tenetur ACCENT(nesciunt) maxime eos vel neque.</p><p>In fuga ut quia distinctio et eaque beatae. Voluptate impedit vitae fuga dolorum non pariatur adipisci. Et sint voluptatem ex animi consequatur eos est. Ipsam ex enim ACCENT(cupiditate) cumque illo eum.</p>])
+
 ARTICLE([
-  SELF_LINK(h1, first, First header)
+  H1(Ensimmäinen ACCENT(1:nen)) LOREM
+  H2(Toinen ACCENT(2:nen)) LOREM
+  H3(Kolmas ACCENT(3:s)) LOREM
+  H4(Neljäs ACCENT(4:s)) LOREM
+  H5(Viides ACCENT(5:s)) LOREM
+  H6(Kuudes ACCENT(6:s)) LOREM
+
+  H1(Ensimmäinen ACCENT(1:nen))
+  H2(Toinen ACCENT(2:nen))
+  H3(Kolmas ACCENT(3:s))
+  H4(Neljäs ACCENT(4:s))
+  H5(Viides ACCENT(5:s))
+  H6(Kuudes ACCENT(6:s))
 ])

@@ -1,5 +1,8 @@
 divert(-1)
 
+define(LBRACKET, [)
+define(RBRACKET, ])
+
 changequote([,])
 changecom([##])
 

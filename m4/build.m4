@@ -10,6 +10,7 @@ define([ABORT], [errprint([
 Aborting build process...
 ])m4exit(69)])
 
+ifdef([FORCE_REBUILD], [], [define([FORCE_REBUILD], [0])])
 
 define([SEXEC], [dnl
 syscmd([$1])dnl
@@ -30,10 +31,10 @@ define([TIMESTAMP], [ESEXEC([test -f $1 && stat --printf %Y $1 || echo 0])])
 
 define([TIMESTAMP_GT], [eval(TIMESTAMP([$1])[>]TIMESTAMP([$2]))])
 
-define([EDGE], [ifelse(TIMESTAMP_GT([$1], [$2]), 1, [EXEC([$3])])])
+define([EDGE], [ifelse(FORCE_REBUILD, 1, [EXEC([$3])], TIMESTAMP_GT([$1], [$2]), 1, [EXEC([$3])])])
 
 define([BUILD_PAGE], [dnl
-EDGE([$1], [$4], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ ]$3[ src/std.m4 ]$1[ > ]$4)dnl
+EDGE([$1], [$4], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ ]$3[ m4/old-gen.m4 ]$1[ > ]$4)dnl
 ])
 
 define([BUILD_PAGE_FULL], [
@@ -42,7 +43,7 @@ define([BUILD_PAGE_FULL], [
 ])
 
 define([BUILD_PAGE_NEW], [dnl
-EDGE([$1], [$2], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ -DSRC=]$1[ ]$3[ src/gen.html.m4 > ]$4)dnl
+EDGE([$1], [$4], [m4 -EE '-DDATETIME=]DATETIME[' -DLANG=]$2[ -DSRC=]$1[ ]$3[ m4/gen.html.m4 > ]$4)dnl
 ])
 
 define([BUILD_PAGE_FULL_NEW], [

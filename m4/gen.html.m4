@@ -30,12 +30,12 @@ define([ACCENT], [<span class="accent">$1</span>])
 define([SELF_LINK], [<$1 id="$2">$3 <a href="#$2" class="self-link">&</a></$1>])
 define([LNK], [<a href="$1">$2</a>])
 
-define([H1], [<h1>$1<h1>])
-define([H2], [<h2>$1<h2>])
-define([H3], [<h3>$1<h3>])
-define([H4], [<h4>$1<h4>])
-define([H5], [<h5>$1<h5>])
-define([H6], [<h6>$1<h6>])
+define([H1], [<h1>$1</h1>])
+define([H2], [<h2>$1</h2>])
+define([H3], [<h3>$1</h3>])
+define([H4], [<h4>$1</h4>])
+define([H5], [<h5>$1</h5>])
+define([H6], [<h6>$1</h6>])
 
 define([TRANSLATE_GADGET], [TRANS(
   [LNK([/]SELF[.ru.html], По-русски)],

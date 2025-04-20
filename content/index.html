@@ -1,6 +1,6 @@
 HEAD([
-  <link rel="stylesheet" href="init.css" />
-  <link rel="stylesheet" href="style-verbs.css" />
+  <link rel="stylesheet" href="destyle.css" />
+  <link rel="stylesheet" href="new-style.css" />
   <title>TRANS(Verbitaivutus, Спряжение в финском)</title>
 ])
 <body>
@@ -10,8 +10,6 @@ HEAD([
       <h2>TRANS(Versio, Версия) 2.16</h2>
       <h3>TRANSLATE_GADGET</h3>
     </hgroup>
-  </header>
-  <main>
     <nav>
       <h1 id="contents">TRANS(Sisältö, Содержание)</h1>
       <p>TRANS(Voidaan avata osat nuolten kanssa, Можно раскрывать пункты со стрелочками)<p>
@@ -79,843 +77,831 @@ HEAD([
         </details></li>
       </menu>
     </nav>
-    <div class="hr-like">&#9829;</div>
-    <article>
-      SELF_LINK(h1, foreword, TRANS(Esisana, Предысловие))
+  </header>
+  <div class="hr-like">&#9829;</div>
+  <main>
+    SELF_LINK(h1, foreword, TRANS(Esisana, Предысловие))
+    <p>TRANS(
+        [Tässä sivustossa voi olla virheet. Jos näet yhden, kirjoita
+        <a href="https://github.com/uwuzote/taivutus">GitHub</a>:iini, kiitos!],
+        [На этой странице могут быть ошибки. Можете сообщить о них на мой
+        <a href="https://github.com/uwuzote/taivutus">GitHub</a>, спасибо!]
+    )</p>
+    <p>TRANS(
+      [Käytin <a href="https://uusikielemme.fi">uusikielemme.fi</a>,
+      <a href="https://fi.wiktionary.org">wikisanakirjan</a>
+      (<a href="https://en.wiktionary.org">englanniksi</a>) ja <i>Suomen Mestari</i>-oppikirjat.],
+      [Использованные ресурсы: <a href="https://uusikielemme.fi">uusikielemme.fi</a>,
+      <a href="https://ru.wiktionary.org">викисловарь</a>
+      (<a href="https://en.wiktionary.org">англ.</a>) и учебники <i>Suomen Mestari</i>.]
+    )</p>
+
+    SELF_LINK(h1, abbrs, TRANS(Lyhennökset, Сокращения))
+    <ul>
+      <li>V TRANS(on (viimeinen) vokaali, &mdash; (последняя) гласная)</li>
+      <li>A TRANS(on, &mdash;) a TRANS(tai, или) ä</li>
+      <li>O TRANS(on, &mdash;) o TRANS(tai, или) ö</li>
+      <li>U TRANS(on, &mdash;) u TRANS(tai, или) y</li>
+    </ul>
+
+    SELF_LINK(h1, general, TRANS(Yleiset tiedot, Общая информация))
+
+    <table>
+      <caption>
+        TRANS(KPT-vaihtelun verbeissä yhteenveto, Резюме KPT-чередования в глаголах)
+        <br>(TRANS(vaihtelua ei ole 2. ja 5. verbityypissä, чередования нет во 2. и 5. типах))
+      </caption>
+      <thead>
+        <tr>
+          <th colspan=3>TRANS(verbityyppi, тип глагола) &rarr;</th>
+          <th rowspan=2>1.</th>
+          <th rowspan=2>3., 4., 6.</th>
+        </tr>
+        <tr>
+          <th>TRANS(vartaloon liittyen, связано с основой)</th>
+          <th colspan=2>TRANS(muoto, форма)</th>
+        </tr>
+      </thead>
+      <tbody>define(V, <b>TRANS(VAHVA, СИЛЬНАЯ)</b>)define(H, <i>TRANS(heikko, слабая)</i>)
+        <tr>
+          <th rowspan=5><a href="#stem-infinitive">TRANS(infinitiivivartalo, инфинитивная основа)</a></th>
+          <th colspan=2><a href="#inf-1">TRANS(sanakirjamuoto = 1. infinitiivi, начальная форма = 1. инфинитив)</a></th>
+          <td rowspan=5>V</td>
+          <td rowspan=5>H</td>
+        </tr>
+        <tr>
+          <th colspan=2>2. ACCENT(<a href="#inf-2">e</a>)-TRANS(infinitiivi, инфинитив)</th>
+        </tr>
+        <tr>
+          <th colspan=2>ACCENT(<a href="#p-active-perfect">nUt</a>)-TRANS(partisiippi, причастие)</th>
+        </tr>
+        <tr>
+          <th colspan=2><a href="#potential">TRANS(potentiaali, потенциалис)</a></th>
+        </tr>
+        <tr>
+          <th rowspan=2><a href="#imperative">TRANS(imperatiivi, императив)</a></th>
+          <th><a href="#imperative-present-active">TRANS(muut muodot, остальные формы)</a></th>
+        </tr>
+        <tr>
+          <th rowspan=2><a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a></th>
+          <th><a href="#imperative-present-2sg">TRANS(sinä-muoto, форма sinä)</a></th>
+          <td rowspan=2>H</td>
+          <td rowspan=2>V</td>
+        </tr>
+        <tr>
+          <th rowspan=2><a href="#indicative">TRANS(indikatiivi, индикатив)</a></th>
+          <th>
+            TRANS(1. ja 2. persoona, 1. и 2. лицо),
+            <br>TRANS(kieltomuoto, отрицание)
+          </th>
+        </tr>
+        <tr>
+          <th rowspan=4><a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a></th>
+          <th>TRANS(3. persoona, 3. лицо)</th>
+          <td rowspan=4>V</td>
+          <td rowspan=4>V</td>
+        </tr>
+        <tr>
+          <th colspan=2><a href="#conditional">TRANS(konditionaali, кондиционалис)</a></th>
+        </tr>
+        <tr>
+          <th colspan=2>
+            ACCENT(<a href="#p-active-present">vA</a>),
+            ACCENT(<a href="#p-agent">mA</a>) TRANS(ja, и)
+            ACCENT(<a href="#p-negative">mAtOn</a>)-TRANS(partisiipit, причастия)
+          </th>
+        </tr>
+        <tr>
+          <th colspan=2>
+            (TRANS(aktiivinen, активный)) ACCENT(<a href="#inf-3">mA</a>),
+            ACCENT(<a href="#inf-4">minen</a>)<br>TRANS(ja, и)
+            ACCENT(<a href="#inf-5">mAinen</a>) TRANS(infinitiivit, инфинитивы)
+            <br> (3., 4. TRANS(ja, и) 5. TRANS(vastaavasti, соответственно))
+          </th>
+        </tr>
+        <tr>
+          <th rowspan=2><a href="#stem-passive">TRANS(passivivartalo, пассивная основа)</a></th>
+          <th colspan=2>TRANS(kaikki passiivit[,]<br>muut passiiviset muodot, все пассивы[,]<br>другие пассивные формы)</th>
+          <td rowspan=2>H</td>
+          <td rowspan=2>H</td>
+        </tr>
+        <tr>
+          <th colspan=2>
+            ACCENT(<a href="#p-passive-present">tAvA</a>),
+            ACCENT(<a href="#p-passive-perfect">tU</a>)-TRANS(partisiipit, причастия)
+          </th>
+        </tr>
+      </tbody>undefine([V], [H])
+    </table>
+
+    <details><summary>TRANS(Lisätiedot, Дополнительная информация)</summary>
+      <table>
+        <caption>TRANS(Persoonapäätteet, Личные окончания)</caption>
+        <thead><tr>
+          <th>TRANS(persoona, лицо)</th><th>TRANS(yksikkö, ед. ч.)</th><th>TRANS(monikko, мн. ч.)</th>
+        </tr></thead>
+        <tbody>
+          <tr><th>1.</th><td>-n</td><td>-mme</td></tr>
+          <tr><th>2.</th><td>-t</td><td>-tte</td></tr>
+          <tr><th>3.</th><td>-(V)*</td><td>-vAt</td></tr>
+        </tbody>
+      </table>
       <p>TRANS(
-          [Tässä sivustossa voi olla virheet. Jos näet yhden, kirjoita
-          <a href="https://github.com/uwuzote/taivutus">GitHub</a>:iini, kiitos!],
-          [На этой странице могут быть ошибки. Можете сообщить о них на мой
-          <a href="https://github.com/uwuzote/taivutus">GitHub</a>, спасибо!]
-      )</p>
-      <p>TRANS(
-        [Käytin <a href="https://uusikielemme.fi">uusikielemme.fi</a>,
-        <a href="https://fi.wiktionary.org">wikisanakirjan</a>
-        (<a href="https://en.wiktionary.org">englanniksi</a>) ja <i>Suomen Mestari</i>-oppikirjat.],
-        [Использованные ресурсы: <a href="https://uusikielemme.fi">uusikielemme.fi</a>,
-        <a href="https://ru.wiktionary.org">викисловарь</a>
-        (<a href="https://en.wiktionary.org">англ.</a>) и учебники <i>Suomen Mestari</i>.]
+        [*vain preesensissä 1. tai 3-6. verbityypissä jos viimeinen vokaali on lyhyt],
+        [*только в презенсе в 1. и 3-6. типах глаголов если последняя гласная короткая]
       )</p>
 
-      SELF_LINK(h1, abbrs, TRANS(Lyhennökset, Сокращения))
+      <p>TRANS(Verbityypit, Типы глаголов):</p>
+      <ol>
+        <li>-<u>VA</u></li>
+        <li>-<u>dA</u></li>
+        <li>-<u>(ll/nn/rr/st)A</u></li>
+        <li>-<u>(A/O/U)tA</u></li>
+        <li>-<u>itA</u></li>
+        <li>-<u>etA</u></li>
+      </ol>
+
+      <table>
+        <caption>TRANS(KPT-vaihtelutyypit, Типы KPT-чередований)</caption>
+        <thead><tr>
+          <th><a href="TRANS(https://fi.wikipedia.org/wiki/Kotimaisten_kielten_keskus, https://ru.wikipedia.org/wiki/Институт_исконных_языков_Финляндии)">KOTUS</a></th>
+          <th><b>TRANS(VAHVA, СИЛЬНАЯ)</b></th>
+          <th><i>TRANS(heikko, слабая)</i></th>
+        </tr></thead>
+        <tbody>
+          <tr><td>A</td><td>-kk-</td><td>-k-</td></tr>
+          <tr><td>B</td><td>-pp-</td><td>-p-</td></tr>
+          <tr><td>C</td><td>-tt-</td><td>-t-</td></tr>
+          <tr><td>D</td><td>-k-</td><td>-&empty;-</td></tr>
+          <tr><td>E</td><td>-p-</td><td>-v-</td></tr>
+          <tr><td>F</td><td>-t-</td><td>-d-</td></tr>
+          <tr><td>G</td><td>-nk-</td><td>-ng-</td></tr>
+          <tr><td>H</td><td>-mp-</td><td>-mm-</td></tr>
+          <tr><td>I</td><td>-lt-</td><td>-ll-</td></tr>
+          <tr><td>J</td><td>-nt-</td><td>-nn-</td></tr>
+          <tr><td>K</td><td>-rt-</td><td>-rr-</td></tr>
+          <tr><td>L</td><td>-k-</td><td>-j-</td></tr>
+          <tr><td>M</td><td>-k-</td><td>-v-</td></tr>
+        </tbody>
+      </table>
+
+      <table>
+        <caption>TRANS(Ei-verbin persoonamuodot, Спряжение отрицательной частицы ei)</caption>
+        <thead><tr>
+          <th>TRANS(persoona, лицо)</th><th>TRANS(yksikkö, ед. ч.)</th><th>TRANS(monikko, мн. ч.)</th>
+        </tr></thead>
+        <tbody>
+          <tr><th>1.</th><td>en</td><td>emme</td></tr>
+          <tr><th>2.</th><td>et</td><td>ette</td></tr>
+          <tr><th>3.</th><td>ei</td><td>eivät</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <details><summary>TRANS(Yleiset poikkeusverbit, Частые глаголы-исключения)</summary>
       <ul>
-        <li>V TRANS(on (viimeinen) vokaali, &mdash; (последняя) гласная)</li>
-        <li>A TRANS(on, &mdash;) a TRANS(tai, или) ä</li>
-        <li>O TRANS(on, &mdash;) o TRANS(tai, или) ö</li>
-        <li>U TRANS(on, &mdash;) u TRANS(tai, или) y</li>
+        <li><b>olla</b> &mdash; TRANS(preesesensin 3. persoona yks., презенс 3. лицо ед.ч.) <b>on</b>, TRANS(mon., мн.ч.) <b>ovat</b>, TRANS(konditionalin, кондиционалиса) <b>liene</b>-</li>
+        <li><b>tehdä</b>, <b>nähdä</b> &mdash; TRANS(preesensin vartalot, основы презенса) <b>teke-</b>, <b>näke-</b>, TRANS(imperfektin, имперфекта) <b>teki-</b>, <b>näki-</b></li>
+        <li><b>käydä</b> &mdash; TRANS(imperfektin vartalo, основа имперфекта) <b>kävi-</b></li>
+        <li><b>juosta</b> &mdash; TRANS(preesensin vartalo, основа презенса) <b>juokse-</b>, TRANS(imperfektin, имперфекта) <b>juoksi-</b></li>
+        <li><b>parata</b> &mdash; TRANS(preesensin vartalo, основа презенса) <b>parane-</b>, TRANS(imperfektin, имперфекта) <b>parani-</b> (<a href="https://en.wiktionary.org/wiki/parata#Finnish">TRANS(lukea enemmän englanniksi, читать далее по-английски)</a>)</li>
+        <li><b>tietää</b> &mdash; TRANS(toinen ACCENT(nUt)-partisiipin, альтернативная форма ACCENT(nUt)-причастия) <b>tiennyt</b></li>
       </ul>
+    </details>
 
-      SELF_LINK(h1, general, TRANS(Yleiset tiedot, Общая информация))
+    SELF_LINK(h1, stems, TRANS(Vartalot, Основы))
+    <p>TRANS(Suomen kielessä verbeillä on monta vartaloa, В финском языке у глаголов много основ)</p>
+    <p>TRANS(Minä keksin vartalojen nimet, Названия основ мои собственные)</p>
 
-      <table>
-        <caption>
-          TRANS(KPT-vaihtelun verbeissä yhteenveto, Резюме KPT-чередования в глаголах)
-          <br>(TRANS(vaihtelua ei ole 2. ja 5. verbityypissä, чередования нет во 2. и 5. типах))
-        </caption>
-        <thead>
-          <tr>
-            <th colspan=3>TRANS(verbityyppi, тип глагола) &rarr;</th>
-            <th rowspan=2>1.</th>
-            <th rowspan=2>3., 4., 6.</th>
-          </tr>
-          <tr>
-            <th>TRANS(vartaloon liittyen, связано с основой)</th>
-            <th colspan=2>TRANS(muoto, форма)</th>
-          </tr>
-        </thead>
-        <tbody>define(V, <b>TRANS(VAHVA, СИЛЬНАЯ)</b>)define(H, <i>TRANS(heikko, слабая)</i>)
-          <tr>
-            <th rowspan=5><a href="#stem-infinitive">TRANS(infinitiivivartalo, инфинитивная основа)</a></th>
-            <th colspan=2><a href="#inf-1">TRANS(sanakirjamuoto = 1. infinitiivi, начальная форма = 1. инфинитив)</a></th>
-            <td rowspan=5>V</td>
-            <td rowspan=5>H</td>
-          </tr>
-          <tr>
-            <th colspan=2>2. ACCENT(<a href="#inf-2">e</a>)-TRANS(infinitiivi, инфинитив)</th>
-          </tr>
-          <tr>
-            <th colspan=2>ACCENT(<a href="#p-active-perfect">nUt</a>)-TRANS(partisiippi, причастие)</th>
-          </tr>
-          <tr>
-            <th colspan=2><a href="#potential">TRANS(potentiaali, потенциалис)</a></th>
-          </tr>
-          <tr>
-            <th rowspan=2><a href="#imperative">TRANS(imperatiivi, императив)</a></th>
-            <th><a href="#imperative-present-active">TRANS(muut muodot, остальные формы)</a></th>
-          </tr>
-          <tr>
-            <th rowspan=2><a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a></th>
-            <th><a href="#imperative-present-2sg">TRANS(sinä-muoto, форма sinä)</a></th>
-            <td rowspan=2>H</td>
-            <td rowspan=2>V</td>
-          </tr>
-          <tr>
-            <th rowspan=2><a href="#indicative">TRANS(indikatiivi, индикатив)</a></th>
-            <th>
-              TRANS(1. ja 2. persoona, 1. и 2. лицо),
-              <br>TRANS(kieltomuoto, отрицание)
-            </th>
-          </tr>
-          <tr>
-            <th rowspan=4><a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a></th>
-            <th>TRANS(3. persoona, 3. лицо)</th>
-            <td rowspan=4>V</td>
-            <td rowspan=4>V</td>
-          </tr>
-          <tr>
-            <th colspan=2><a href="#conditional">TRANS(konditionaali, кондиционалис)</a></th>
-          </tr>
-          <tr>
-            <th colspan=2>
-              ACCENT(<a href="#p-active-present">vA</a>),
-              ACCENT(<a href="#p-agent">mA</a>) TRANS(ja, и)
-              ACCENT(<a href="#p-negative">mAtOn</a>)-TRANS(partisiipit, причастия)
-            </th>
-          </tr>
-          <tr>
-            <th colspan=2>
-              (TRANS(aktiivinen, активный)) ACCENT(<a href="#inf-3">mA</a>),
-              ACCENT(<a href="#inf-4">minen</a>)<br>TRANS(ja, и)
-              ACCENT(<a href="#inf-5">mAinen</a>) TRANS(infinitiivit, инфинитивы)
-              <br> (3., 4. TRANS(ja, и) 5. TRANS(vastaavasti, соответственно))
-            </th>
-          </tr>
-          <tr>
-            <th rowspan=2><a href="#stem-passive">TRANS(passivivartalo, пассивная основа)</a></th>
-            <th colspan=2>TRANS(kaikki passiivit[,]<br>muut passiiviset muodot, все пассивы[,]<br>другие пассивные формы)</th>
-            <td rowspan=2>H</td>
-            <td rowspan=2>H</td>
-          </tr>
-          <tr>
-            <th colspan=2>
-              ACCENT(<a href="#p-passive-present">tAvA</a>),
-              ACCENT(<a href="#p-passive-perfect">tU</a>)-TRANS(partisiipit, причастия)
-            </th>
-          </tr>
-        </tbody>undefine([V], [H])
-      </table>
+    SELF_LINK(h2, stem-passive, TRANS(Passiivivartalo, Пассивная основа))
+    <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+    <ol>
+      <li>-(e/i/O/U)<u>A</u> &rarr; -(e/i/O/U)<u>tt</u>-
+      <br>-<u>AA</u> &rarr; -<u>ett</u>-</li>
+      <li>-<u>dA</u> &rarr; -<u>t</u>-</li>
+      <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/st) &rarr; -(l/n/r/s)<u>t</u>-</li>
+      <li class="patch-set-marker-4-6"><span class="patch-hint-marker">4-6. TRANS(tyypit, типы): </span>-Vt<u>A</u> &rarr; -Vt<u>t</u>-</li>
+    </ol>
 
-      <details><summary>TRANS(Lisätiedot, Дополнительная информация)</summary>
-        <table>
-          <caption>TRANS(Persoonapäätteet, Личные окончания)</caption>
-          <thead><tr>
-            <th>TRANS(persoona, лицо)</th><th>TRANS(yksikkö, ед. ч.)</th><th>TRANS(monikko, мн. ч.)</th>
-          </tr></thead>
-          <tbody>
-            <tr><th>1.</th><td>-n</td><td>-mme</td></tr>
-            <tr><th>2.</th><td>-t</td><td>-tte</td></tr>
-            <tr><th>3.</th><td>-(V)*</td><td>-vAt</td></tr>
-          </tbody>
-        </table>
-        <p>TRANS(
-          [*vain preesensissä 1. tai 3-6. verbityypissä jos viimeinen vokaali on lyhyt],
-          [*только в презенсе в 1. и 3-6. типах глаголов если последняя гласная короткая]
-        )</p>
+    SELF_LINK(h2, stem-strong, TRANS(Vahvavartalo, Сильная основа))
+    <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+    <ol>
+      <li>-V<u>A</u> &rarr; -V-</li>
+      <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
+      <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>e</u>-</li>
+      <li>-(A/O/U)<u>tA</u> &rarr; -(A/O/U)<u>A</u>-</li>
+      <li>-it<u>A</u> &rarr; -it<u>se</u>-</li>
+      <li>-e<u>tA</u> &rarr; -e<u>ne</u>-</li>
+    </ol>
 
-        <p>TRANS(Verbityypit, Типы глаголов):</p>
-        <ol>
-          <li>ACCENT(-VA)</li>
-          <li>ACCENT(-dA)</li>
-          <li>ACCENT(-(ll/nn/rr/st)A)</li>
-          <li>ACCENT(-(A/O/U)tA)</li>
-          <li>ACCENT(-itA)</li>
-          <li>ACCENT(-etA)</li>
-        </ol>
+    SELF_LINK(h2, stem-weak, TRANS(Heikkovartalo, Слабая основа))
+    <p>TRANS(<b>Heikko vain 1. tyypissä!</b> Muut tyypit jäävät vahvoihin., <b>Только для первого типа действительно в слабой ступени!</b> Остальные типы остаются в сильной ступени.)</p>
+    <p>TRANS(Sama (paitsi KPT-vaihtelua) kuin <a href="#stem-strong">vahvavartalo</a>., Совпадает (кроме KPT-чередования) с <a href="#stem-strong">сильной основой.</a>)</p>
 
-        <table>
-          <caption>TRANS(KPT-vaihtelutyypit, Типы KPT-чередований)</caption>
-          <thead><tr>
-            <th><a href="TRANS(https://fi.wikipedia.org/wiki/Kotimaisten_kielten_keskus, https://ru.wikipedia.org/wiki/Институт_исконных_языков_Финляндии)">KOTUS</a></th>
-            <th><b>TRANS(VAHVA, СИЛЬНАЯ)</b></th>
-            <th><i>TRANS(heikko, слабая)</i></th>
-          </tr></thead>
-          <tbody>
-            <tr><td>A</td><td>-kk-</td><td>-k-</td></tr>
-            <tr><td>B</td><td>-pp-</td><td>-p-</td></tr>
-            <tr><td>C</td><td>-tt-</td><td>-t-</td></tr>
-            <tr><td>D</td><td>-k-</td><td>-&empty;-</td></tr>
-            <tr><td>E</td><td>-p-</td><td>-v-</td></tr>
-            <tr><td>F</td><td>-t-</td><td>-d-</td></tr>
-            <tr><td>G</td><td>-nk-</td><td>-ng-</td></tr>
-            <tr><td>H</td><td>-mp-</td><td>-mm-</td></tr>
-            <tr><td>I</td><td>-lt-</td><td>-ll-</td></tr>
-            <tr><td>J</td><td>-nt-</td><td>-nn-</td></tr>
-            <tr><td>K</td><td>-rt-</td><td>-rr-</td></tr>
-            <tr><td>L</td><td>-k-</td><td>-j-</td></tr>
-            <tr><td>M</td><td>-k-</td><td>-v-</td></tr>
-          </tbody>
-        </table>
+    SELF_LINK(h2, stem-infinitive, TRANS(Infinitiivivartalo, Инфинитивная основа))
+    <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+    <ol>
+      <li>-V<u>A</u> &rarr; -V-</li>
+      <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
+      <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)-</li>
+      <li value=456 class="patch-set-marker-4-6"><span class="patch-hint-marker">4-6. TRANS(tyypit, типы): </span>-t<u>A</u> &rarr; -t-</li>
+    </ol>
 
-        <table>
-          <caption>TRANS(Ei-verbin persoonamuodot, Спряжение отрицательной частицы ei)</caption>
-          <thead><tr>
-            <th>TRANS(persoona, лицо)</th><th>TRANS(yksikkö, ед. ч.)</th><th>TRANS(monikko, мн. ч.)</th>
-          </tr></thead>
-          <tbody>
-            <tr><th>1.</th><td>en</td><td>emme</td></tr>
-            <tr><th>2.</th><td>et</td><td>ette</td></tr>
-            <tr><th>3.</th><td>ei</td><td>eivät</td></tr>
-          </tbody>
-        </table>
-      </details>
+    SELF_LINK(h1, finite-forms, TRANS(Tapaluokat (modukset), Наклонения))
+    SELF_LINK(h2, indicative, TRANS(Indikatiivi, Индикатив (изъявительное наклонение)))
+    SELF_LINK(h3, present, TRANS(Indikatiivin preesens, Презенс индикатива))
+    SELF_LINK(h4, present-affirmative, TRANS(Myönteinen, Утверждение))
+    SELF_LINK(h5, present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+    <p><a href="#stem-weak">TRANS(Heikkovartalo, Слабая основа)</a> (TRANS(1. ja 2. persoonassa, в 1. и 2. лице)) / <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> (TRANS(3. persoonassa, в 3. лице)) + TRANS(persoonapääte, личное окончание)</p>
 
-      <details><summary>TRANS(Yleiset poikkeusverbit, Частые глаголы-исключения)</summary>
-        <p><b>olla</b> &mdash; TRANS(preesesensin 3. persoona yks., презенс 3. лицо ед.ч.) <b>on</b>, TRANS(mon., мн.ч.) <b>ovat</b></p>
-        <p><b>tehdä</b>, <b>nähdä</b> &mdash; TRANS(preesensin vartalot, основы презенса) <b>teke-</b>, <b>näke-</b>, TRANS(imperfektin, имперфекта) <b>teki-</b>, <b>näki-</b></p>
-        <p><b>käydä</b> &mdash; TRANS(imperfektin vartalo, основа имперфекта) <b>kävi-</b><p>
-        <p><b>juosta</b> &mdash; TRANS(preesensin vartalo, основа презенса) <b>juokse-</b>, TRANS(imperfektin, имперфекта) <b>juoksi-</b></p>
-        <p><b>parata</b> &mdash; TRANS(preesensin vartalo, основа презенса) <b>parane-</b>, TRANS(imperfektin, имперфекта) <b>parani-</b> (<a href="https://en.wiktionary.org/wiki/parata#Finnish">TRANS(lukea enemmän englanniksi, читать далее по-английски)</a>)</p>
-        <p><b>tietää</b> &mdash; TRANS(toinen ACCENT(nUt)-partisiipin, альтернативная форма ACCENT(nUt)-причастия) <b>tiennyt</b></p>
-      </details>
+    SELF_LINK(h5, present-affirmative-passive, TRANS(Passiivi, Пассив))
+    <ol>
+      <li>-(e/i/O/U)<u>A</u>
+        &rarr; -(e/i/O/U)<u>tAAn</u>
+        <br>-<u>AA</u> &rarr; -<u>etAAn</u>
+      </li>
+      <li class="patch-set-marker-2-6" value=26><span class="patch-hint-marker">2-6. TRANS(tyypit, типы): </span>-A &rarr; -A<u>An</u>
+    </ol>
 
-      SELF_LINK(h1, stems, TRANS(Vartalot, Основы))
-      <p>TRANS(Suomen kielessä verbeillä on monta vartaloa, В финском языке у глаголов много основ)</p>
-      <p>TRANS(Minä keksin vartalojen nimet, Названия основ мои собственные)</p>
+    SELF_LINK(h4, present-negative, TRANS(Kielteinen, Отрицание))
+    SELF_LINK(h5, present-negative-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>&rarr; TRANS(ei-verbi + kieltomuoto, частица ei + соотрицательная форма) (<a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a>)</p>
+    SELF_LINK(h5, present-negative-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; ei + TRANS(
+      [myönteinen passiivi ilman viimeistä <u>An</u>:ää],
+      [утвердительный пассив без конечного <u>An</u>]
+    )</p>
 
-      SELF_LINK(h2, stem-passive, TRANS(Passiivivartalo, Пассивная основа))
-      <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <p>TRANS(Aktiivimuodot, Активный залог):</p>
       <ol>
-        <li>-(e/i/O/U)<u>A</u> &rarr; -(e/i/O/U)<u>tt</u>-
-        <br>-<u>AA</u> &rarr; -<u>ett</u>-</li>
-        <li>-<u>dA</u> &rarr; -<u>t</u>-</li>
-        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/st) &rarr; -(l/n/r/s)<u>t</u>-</li>
-        <li id="patch6"><span class="marker">4-6. TRANS(tyypit, типы): </span>-Vt<u>A</u> &rarr; -Vt<u>t</u>-</li>
+        <li>oppia &rarr; minä opin, hän oppii, hän ei opi</li>
+        <li>voida &rarr; &hellip; voin, &hellip; voi, &hellip; voi</li>
+        <li>jutella &rarr; &hellip; juttelen, &hellip; juttelee, &hellip; juttele</li>
+        <li>pelätä &rarr; &hellip; pelkään, &hellip; pelkää, &hellip; pelkää</li>
+        <li>tarvita &rarr; &hellip; tarvitsen, &hellip; tarvitsee, &hellip; tarvitse</li>
+        <li>pidetä &rarr; &hellip; pitenen, &hellip; pitenee, &hellip; pitene</li>
       </ol>
-
-      SELF_LINK(h2, stem-strong, TRANS(Vahvavartalo, Сильная основа))
-      <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+      <p>TRANS(Passiivit, Пассивы):</p>
       <ol>
-        <li>-V<u>A</u> &rarr; -V-</li>
-        <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
-        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>e</u>-</li>
-        <li>-(A/O/U)<u>tA</u> &rarr; -(A/O/U)<u>A</u>-</li>
-        <li>-it<u>A</u> &rarr; -it<u>se</u>-</li>
-        <li>-e<u>tA</u> &rarr; -e<u>ne</u>-</li>
+        <li>oppia &rarr; opitaan, ei opita
+        <br>alkaa &rarr; aletaan, ei aleta</li>
+        <li>voida &rarr; voidaan, ei voida</li>
+        <li>jutella &rarr; jutellaan, ei jutella</li>
+        <li>pelätä &rarr; pelätään, ei pelätä</li>
+        <li>tarvita &rarr; tarvitaan, ei tarvita</li>
+        <li>pidetä &rarr; pidetään, ei pidetä</li>
       </ol>
+    </details>
 
-      SELF_LINK(h2, stem-weak, TRANS(Heikkovartalo, Слабая основа))
-      <p>TRANS(<b>Heikko vain 1. tyypissä!</b> Muut tyypit jäävät vahvoihin., <b>Только для первого типа действительно в слабой ступени!</b> Остальные типы остаются в сильной ступени.)</p>
-      <p>TRANS(Sama (ilman KPT-vaihtelua) kuin <a href="#stem-strong">vahvavartalo</a>., Совпадает (кроме KPT-чередования) с <a href="#stem-strong">сильной основой.</a>)</p>
+    SELF_LINK(h3, past, TRANS(Indikatiivin imperfekti, Имперфект индикатива))
+    SELF_LINK(h4, past-affirmative, TRANS(Myönteinen, Утверждение))
+    SELF_LINK(h5, past-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+    <ol>
+      <li>a&hellip;-<u>aa</u> (2 TRANS(tavua, слога)) &rarr; a&hellip;-<u>oi</u>-
+      <br>-(l/n/r)<u>tAA</u>* &rarr; -(l/n/r)<u>si-</u>
+      <br>-<u>(A/e/i)A</u> &rarr; -<u>i</u>-
+      <br>-(U/O)<u>A</u> &rarr; -(U/O)<u>i</u>-</li>
 
-      SELF_LINK(h2, stem-infinitive, TRANS(Infinitiivivartalo, Инфинитивная основа))
-      <p>TRANS(Sanakirjamuodosta, Из словарной формы):</p>
+      <li>-i<u>dA</u> &rarr; -i-
+      <br>-<u>V<sub>1</sub>V<sub>2</sub>dA</u> &rarr; -<u>V<sub>2</sub>i</u>-</li>
+
+      <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>i</u>-</li>
+      <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>si</u>-</li>
+      <li>-it<u>A</u> &rarr; -it<u>si</u>-</li>
+      <li>-e<u>tA</u> &rarr; -e<u>ni</u>-</li>
+    </ol>
+    <p>
+      *TRANS(ja verbit, и глаголы) <strong>huutaa</strong>, <strong>löytää</strong>, <strong>pyytää</strong>,
+      <strong>tietää</strong>, <strong>tuntea</strong>, <strong>taitaa</strong>
+    </p>
+
+    SELF_LINK(h5, past-affirmative-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>iin</u></p>
+
+
+    SELF_LINK(h4, past-negative, TRANS(Kielteinen, Отрицание))
+    SELF_LINK(h5, past-negative-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>
+      &rarr; TRANS(ei-verbi, частица ei) +
+      <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
+      TRANS(
+        [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
+        [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
+      )
+    </p>
+
+    SELF_LINK(h5, past-negative-passive, TRANS(Passiivi, Пассив))
+    <p>
+      &rarr; ei +
+      <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+    </p>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <p>TRANS(Aktiivimuodot, Активный залог):</p>
       <ol>
-        <li>-V<u>A</u> &rarr; -V-</li>
-        <li>-<u>dA</u> &rarr; -<u>&empty;</u>-</li>
-        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)-</li>
-        <li value=456 id="patch5"><span class="marker">4-6. TRANS(tyypit, типы): </span>-t<u>A</u> &rarr; -t-</li>
+        <li>alkaa &rarr; minä aloin, hän alkoi
+        <br>lentää &rarr; &hellip; lensin, &hellip; lensi
+        <br>tuntea &rarr; &hellip; tunsin, &hellip; tunsi
+        <br>käyttää &rarr; &hellip; käytin, &hellip; käytti
+        <br>uskoa &rarr; &hellip; uskoin, &hellip; uskoi</li>
+        <li>voida &rarr; &hellip; voin, &hellip; voi
+        <br>juoda &rarr; &hellip; join, &hellip; joi</li>
+        <li>jutella &rarr; &hellip; juttelin, &hellip; jutteli</li>
+        <li>pelätä &rarr; &hellip; pelkäsin, &hellip; pelkäsi</li>
+        <li>tarvita &rarr; &hellip; tarvitsin, &hellip; tarvitsi</li>
+        <li>pidetä &rarr; &hellip; pitenin, &hellip; piteni</li>
       </ol>
-
-      SELF_LINK(h1, finite-forms, TRANS(Tapaluokat (modukset), Наклонения))
-      SELF_LINK(h2, indicative, TRANS(Indikatiivi, Индикатив (изъявительное наклонение)))
-      SELF_LINK(h3, present, TRANS(Indikatiivin preesens, Презенс индикатива))
-      SELF_LINK(h4, present-affirmative, TRANS(Myönteinen, Утверждение))
-      SELF_LINK(h5, present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
-      <p><a href="#stem-weak">TRANS(Heikkovartalo, Слабая основа)</a> (TRANS(1. ja 2. persoonassa, в 1. и 2. лице)) / <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> (TRANS(3. persoonassa, в 3. лице)) + TRANS(persoonapääte, личное окончание)</p>
-
-      SELF_LINK(h5, present-affirmative-passive, TRANS(Passiivi, Пассив))
+      <p>TRANS(Passiivit, Пассивы):<p>
       <ol>
-        <li><span class="marker">1. TRANS(tyyppi, тип): </span>-(e/i/O/U)<u>A</u>
-          &rarr; -(e/i/O/U)<u>tAAn</u>
-          <br>-<u>AA</u> &rarr; -<u>etAAn</u>
-        </li>
-        <li id="patch1" value=26><span class="marker">2-6. TRANS(tyypit, типы): </span>-A &rarr; -A<u>An</u>
+        <li>oppia &rarr; opittiin
+        <br>alkaa &rarr; alettiin</li>
+        <li>voida &rarr; voitiin</li>
+        <li>jutella &rarr; juteltiin</li>
+        <li>pelätä &rarr; pelättiin</li>
+        <li>tarvita &rarr; tarvittiin</li>
+        <li>pidetä &rarr; pidettiin</li>
       </ol>
+    </details>
 
-      SELF_LINK(h4, present-negative, TRANS(Kielteinen, Отрицание))
-      SELF_LINK(h5, present-negative-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>&rarr; TRANS(ei-verbi + kieltomuoto, частица ei + соотрицательная форма) (<a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a>)</p>
-      SELF_LINK(h5, present-negative-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; ei + TRANS(
-        [myönteinen passiivi ilman viimeistä <u>An</u>:ää],
-        [утвердительный пассив без конечного <u>An</u>]
-      )</p>
+    SELF_LINK(h3, perfect, TRANS(Indikatiivin perfekti, Перфект индикатива))
+    SELF_LINK(h4, perfect-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>
+      &rarr; TRANS(olla-verbi, глагол olla) +
+      <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
+      TRANS(
+        [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
+        [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
+      )
+    </p>
 
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <p>TRANS(Aktiivimuodot, Активный залог):</p>
-        <ol>
-          <li>oppia &rarr; minä opin, hän oppii, hän ei opi</li>
-          <li>voida &rarr; &hellip; voin, &hellip; voi, &hellip; voi</li>
-          <li>jutella &rarr; &hellip; juttelen, &hellip; juttelee, &hellip; juttele</li>
-          <li>pelätä &rarr; &hellip; pelkään, &hellip; pelkää, &hellip; pelkää</li>
-          <li>tarvita &rarr; &hellip; tarvitsen, &hellip; tarvitsee, &hellip; tarvitse</li>
-          <li>pidetä &rarr; &hellip; pitenen, &hellip; pitenee, &hellip; pitene</li>
-        </ol>
-        <p>TRANS(Passiivit, Пассивы):</p>
-        <ol>
-          <li>oppia &rarr; opitaan, ei opita
-          <br>alkaa &rarr; aletaan, ei aleta</li>
-          <li>voida &rarr; voidaan, ei voida</li>
-          <li>jutella &rarr; jutellaan, ei jutella</li>
-          <li>pelätä &rarr; pelätään, ei pelätä</li>
-          <li>tarvita &rarr; tarvitaan, ei tarvita</li>
-          <li>pidetä &rarr; pidetään, ei pidetä</li>
-        </ol>
-      </details>
+    SELF_LINK(h4, perfect-passive, TRANS(Passiivi, Пассив))
+    <p>
+      &rarr; on / ei ole +
+      <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+    </p>
 
-      SELF_LINK(h3, past, TRANS(Indikatiivin imperfekti, Имперфект индикатива))
-      SELF_LINK(h4, past-affirmative, TRANS(Myönteinen, Утверждение))
-      SELF_LINK(h5, past-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+    SELF_LINK(h3, pluperfect, TRANS(Indikatiivin pluskvamperfekti, Плюсквамперфект индикатива))
+    SELF_LINK(h4, pluperfect-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>
+      &rarr; TRANS(olla-verbi imperfektimuodossa, глагол olla в имперфекте) +
+      <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
+      TRANS(
+        [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
+        [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
+      )
+    </p>
+
+    SELF_LINK(h4, pluperfect-passive, TRANS(Passiivi, Пассив))
+    <p>
+      &rarr; oli / ei ollut +
+      <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+    </p>
+
+    SELF_LINK(h2, conditional, TRANS(Konditionaali, Кондиционалис (сослагательное наклонение)))
+    SELF_LINK(h3, conditional-present, TRANS(Konditionaalin preesens, Презенс кондиционалиса))
+    SELF_LINK(h4, conditional-present-affirmative, TRANS(Myönteinen, Утверждение))
+    SELF_LINK(h5, conditional-present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+    <ol>
+      <li>-(<u>e</u>/<u>i</u>)<u>A</u> &rarr; -<u>isi</u>-
+      <br>-(A/O/U)<u>A</u> &rarr; -(A/O/U)<u>isi</u>-</li>
+      <li>-<u>idA</u> &rarr; -<u>isi</u>-
+      <br>-<u>V<sub>1</sub>V<sub>2</sub>dA</u> &rarr; -<u>V<sub>2</sub>isi</u>-</li>
+      <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>isi</u>-</li>
+      <li>-A<u>tA</u> &rarr; -A<u>isi</u>-
+      <br>-(O/U)<u>tA</u> &rarr; -(O/U)<u>Aisi</u>-</li>
+      <li>-it<u>A</u> &rarr; -it<u>sisi</u>-</li>
+      <li>-e<u>tA</u> &rarr; -e<u>nisi</u>-</li>
+    </ol>
+
+    SELF_LINK(h5, conditional-present-affirmative-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Aisiin</u></p>
+
+    SELF_LINK(h4, conditional-present-negative, TRANS(Kielteinen, Отрицание))
+    SELF_LINK(h5, conditional-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>&rarr; TRANS(
+      [ei-verbi + kieltomuoto (sama kuin vartalo)],
+      [частица ei + соотрицательная форма (такая же как и основа)]
+    )</p>
+
+    SELF_LINK(h5, conditional-present-negative-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; TRANS(
+      [ei + myönteinen passiivi ilman viimeistä <u>in</u>:ää],
+      [ei + утвердительный пассив без конечного <u>in</u>]
+    )</p>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <p>TRANS(Aktiivimuodot, Активный залог):</p>
       <ol>
-        <li>a&hellip;-<u>aa</u> (2 TRANS(tavua, слога)) &rarr; a&hellip;-<u>oi</u>-
-        <br>-(l/n/r)<u>tAA</u>* &rarr; -(l/n/r)<u>si-</u>
-        <br>-<u>(A/e/i)A</u> &rarr; -<u>i</u>-
-        <br>-(U/O)<u>A</u> &rarr; -(U/O)<u>i</u>-</li>
-
-        <li>-i<u>dA</u> &rarr; -i-
-        <br>-<u>V<sub>1</sub>V<sub>2</sub>dA</u> &rarr; -<u>V<sub>2</sub>i</u>-</li>
-
-        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>i</u>-</li>
-        <li>-(A/O/U)<u>ta</u> &rarr; -(A/O/U)<u>si</u>-</li>
-        <li>-it<u>A</u> &rarr; -it<u>si</u>-</li>
-        <li>-e<u>tA</u> &rarr; -e<u>ni</u>-</li>
+        <li>lukea &rarr; minä lukisin
+        <br>sanoa &rarr; &hellip; sanoisin</li>
+        <li>imuroida &rarr; &hellip; imuroisin
+        <br>juoda &rarr; &hellip; joisin</li>
+        <li>jutella &rarr; &hellip; juttelisin</li>
+        <li>tavata &rarr; &hellip; tapaisin
+        <br>kadota &rarr; &hellip; katoaisin</li>
+        <li>tarvita &rarr; &hellip; tarvitsisin</li>
+        <li>supeta &rarr; &hellip; suppenisin</li>
       </ol>
-      <p>
-        *TRANS(ja verbit, и глаголы) <strong>huutaa</strong>, <strong>löytää</strong>, <strong>pyytää</strong>,
-        <strong>tietää</strong>, <strong>tuntea</strong>, <strong>taitaa</strong>
-      </p>
-
-      SELF_LINK(h5, past-affirmative-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>iin</u></p>
-
-
-      SELF_LINK(h4, past-negative, TRANS(Kielteinen, Отрицание))
-      SELF_LINK(h5, past-negative-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>
-        &rarr; TRANS(ei-verbi, частица ei) +
-        <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
-        TRANS(
-          [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
-          [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
-        )
-      </p>
-
-      SELF_LINK(h5, past-negative-passive, TRANS(Passiivi, Пассив))
-      <p>
-        &rarr; ei +
-        <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
-      </p>
-
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <p>TRANS(Aktiivimuodot, Активный залог):</p>
-        <ol>
-          <li>alkaa &rarr; minä aloin, hän alkoi
-          <br>lentää &rarr; &hellip; lensin, &hellip; lensi
-          <br>tuntea &rarr; &hellip; tunsin, &hellip; tunsi
-          <br>käyttää &rarr; &hellip; käytin, &hellip; käytti
-          <br>uskoa &rarr; &hellip; uskoin, &hellip; uskoi</li>
-          <li>voida &rarr; &hellip; voin, &hellip; voi
-          <br>juoda &rarr; &hellip; join, &hellip; joi</li>
-          <li>jutella &rarr; &hellip; juttelin, &hellip; jutteli</li>
-          <li>pelätä &rarr; &hellip; pelkäsin, &hellip; pelkäsi</li>
-          <li>tarvita &rarr; &hellip; tarvitsin, &hellip; tarvitsi</li>
-          <li>pidetä &rarr; &hellip; pitenin, &hellip; piteni</li>
-        </ol>
-        <p>TRANS(Passiivit, Пассивы):<p>
-        <ol>
-          <li>oppia &rarr; opittiin
-          <br>alkaa &rarr; alettiin</li>
-          <li>voida &rarr; voitiin</li>
-          <li>jutella &rarr; juteltiin</li>
-          <li>pelätä &rarr; pelättiin</li>
-          <li>tarvita &rarr; tarvittiin</li>
-          <li>pidetä &rarr; pidettiin</li>
-        </ol>
-      </details>
-
-      SELF_LINK(h3, perfect, TRANS(Indikatiivin perfekti, Перфект индикатива))
-      SELF_LINK(h4, perfect-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>
-        &rarr; TRANS(olla-verbi, глагол olla) +
-        <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
-        TRANS(
-          [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
-          [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
-        )
-      </p>
-
-      SELF_LINK(h4, perfect-passive, TRANS(Passiivi, Пассив))
-      <p>
-        &rarr; on / ei ole +
-        <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
-      </p>
-
-      SELF_LINK(h3, pluperfect, TRANS(Indikatiivin pluskvamperfekti, Плюсквамперфект индикатива))
-      SELF_LINK(h4, pluperfect-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>
-        &rarr; TRANS(olla-verbi imperfektimuodossa, глагол olla в имперфекте) +
-        <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
-        TRANS(
-          [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
-          [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
-        )
-      </p>
-
-      SELF_LINK(h4, pluperfect-passive, TRANS(Passiivi, Пассив))
-      <p>
-        &rarr; oli / ei ollut +
-        <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
-      </p>
-
-      SELF_LINK(h2, conditional, TRANS(Konditionaali, Кондиционалис (сослагательное наклонение)))
-      SELF_LINK(h3, conditional-present, TRANS(Konditionaalin preesens, Презенс кондиционалиса))
-      SELF_LINK(h4, conditional-present-affirmative, TRANS(Myönteinen, Утверждение))
-      SELF_LINK(h5, conditional-present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+      <p>TRANS(Passiivi, Пассив):</p>
       <ol>
-        <li>-(<u>e</u>/<u>i</u>)<u>A</u> &rarr; -<u>isi</u>-
-        <br>-(A/O/U)<u>A</u> &rarr; -(A/O/U)<u>isi</u>-</li>
-        <li>-<u>idA</u> &rarr; -<u>isi</u>-
-        <br>-<u>V<sub>1</sub>V<sub>2</sub>dA</u> &rarr; -<u>V<sub>2</sub>isi</u>-</li>
-        <li>-(l<u>l</u>/n<u>n</u>/r<u>r</u>/s<u>t</u>)<u>A</u> &rarr; -(l/n/r/s)<u>isi</u>-</li>
-        <li>-A<u>tA</u> &rarr; -A<u>isi</u>-
-        <br>-(O/U)<u>tA</u> &rarr; -(O/U)<u>Aisi</u>-</li>
-        <li>-it<u>A</u> &rarr; -it<u>sisi</u>-</li>
-        <li>-e<u>tA</u> &rarr; -e<u>nisi</u>-</li>
-      </ol>
+        <li>oppia &rarr; opittaisiin
+        <br>alkaa &rarr; alettaisiin</li>
+        <li>voida &rarr; voitaisiin</li>
+        <li>jutella &rarr; juteltaisiin</li>
+        <li>pelätä &rarr; pelättäisiin</li>
+        <li>tarvita &rarr; tarvittaisiin</li>
+        <li>pidetä &rarr; pidettäisiin</li>
+      <ol>
+    </details>
 
-      SELF_LINK(h5, conditional-present-affirmative-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Aisiin</u></p>
+    SELF_LINK(h3, conditional-perfect, TRANS(Konditionaalin perfekti, Перфект кондиционалиса))
+    SELF_LINK(h4, conditional-perfect-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>
+      &rarr; TRANS(olla-verbi konditionaalin preesensissä, глагол olla в презенсе кондиционалиса) +
+      <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
+      TRANS(
+        [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
+        [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
+      )
+    </p>
 
-      SELF_LINK(h4, conditional-present-negative, TRANS(Kielteinen, Отрицание))
-      SELF_LINK(h5, conditional-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>&rarr; TRANS(
-        [ei-verbi + kieltomuoto (sama kuin vartalo)],
-        [частица ei + соотрицательная форма (такая же как и основа)]
-      )</p>
+    SELF_LINK(h4, conditional-perfect-passive, TRANS(Passiivi, Пассив))
+    <p>
+      &rarr; olisi / ei olisi +
+      <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+    </p>
 
-      SELF_LINK(h5, conditional-present-negative-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; TRANS(
-        [ei + myönteinen passiivi ilman viimeistä <u>in</u>:ää],
-        [ei + утвердительный пассив без конечного <u>in</u>]
-      )</p>
+    SELF_LINK(h2, imperative, TRANS(Imperatiivi, Императив (повелительное наклонение)))
+    SELF_LINK(h3, imperative-present, TRANS(Imperatiivin preesens, Презенс императива))
+    SELF_LINK(h4, imperative-present-2sg, TRANS(sinä-persoona, Форма sinä))
+    <p>&rarr; (<i>älä</i> TRANS(kielteisessä lauseessa, в отрицании)) + <a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a></p>
 
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <p>TRANS(Aktiivimuodot, Активный залог):</p>
-        <ol>
-          <li>lukea &rarr; minä lukisin
-          <br>sanoa &rarr; &hellip; sanoisin</li>
-          <li>imuroida &rarr; &hellip; imuroisin
-          <br>juoda &rarr; &hellip; joisin</li>
-          <li>jutella &rarr; &hellip; juttelisin</li>
-          <li>tavata &rarr; &hellip; tapaisin
-          <br>kadota &rarr; &hellip; katoaisin</li>
-          <li>tarvita &rarr; &hellip; tarvitsisin</li>
-          <li>supeta &rarr; &hellip; suppenisin</li>
-        </ol>
-        <p>TRANS(Passiivi, Пассив):</p>
-        <ol>
-          <li>oppia &rarr; opittaisiin
-          <br>alkaa &rarr; alettaisiin</li>
-          <li>voida &rarr; voitaisiin</li>
-          <li>jutella &rarr; juteltaisiin</li>
-          <li>pelätä &rarr; pelättäisiin</li>
-          <li>tarvita &rarr; tarvittaisiin</li>
-          <li>pidetä &rarr; pidettäisiin</li>
-        <ol>
-      </details>
-
-      SELF_LINK(h3, conditional-perfect, TRANS(Konditionaalin perfekti, Перфект кондиционалиса))
-      SELF_LINK(h4, conditional-perfect-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>
-        &rarr; TRANS(olla-verbi konditionaalin preesensissä, глагол olla в презенсе кондиционалиса) +
-        <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
-        TRANS(
-          [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
-          [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
-        )
-      </p>
-
-      SELF_LINK(h4, conditional-perfect-passive, TRANS(Passiivi, Пассив))
-      <p>
-        &rarr; olisi / ei olisi +
-        <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
-      </p>
-
-      SELF_LINK(h2, imperative, TRANS(Imperatiivi, Императив (повелительное наклонение)))
-      SELF_LINK(h3, imperative-present, TRANS(Imperatiivin preesens, Презенс императива))
-      SELF_LINK(h4, imperative-present-2sg, TRANS(sinä-persoona, Форма sinä))
-      <p>&rarr; (älä TRANS(kielteisessä lauseessa, в отрицании)) + <a href="#stem-weak">TRANS(heikkovartalo, слабая основа)</a></p>
-
-      SELF_LINK(h4, imperative-present-active, TRANS(Muut aktiivimuodot, Остальные формы активного залога))
-      <table>
-        <thead><tr>
-          <th>TRANS(persoona, лицо)</th>
-          <th>TRANS(myönteinen, утверждение)</th>
-          <th>TRANS(kielteinen, отрицание)</th>
-        </tr></thead>
-        <tbody>define([INFSTEM], <a href="#stem-infinitive">TRANS(inf.var., инф.осн.)</a>)
-          <tr>
-            <th>minä</th>
-            <td colspan=2>&empty;</td>
-          </tr>
-          <tr>
-            <th>sinä</th>
-            <td colspan=2><a href="#imperative-present-2sg">TRANS(ylemmäs, выше)</td>
-          </tr>
-          <tr>
-            <th>hän</th>
-            <td>INFSTEM+kOOn</td>
-            <td>älköön + INFSTEM+kO</td>
-          </tr>
-          <tr>
-            <th>me</th>
-            <td>INFSTEM+kAAmme</td>
-            <td>älkäämme + INFSTEM+kO</td>
-          </tr>
-          <tr>
-            <th>te</th>
-            <td>INFSTEM+kAA</td>
-            <td>älkää + INFSTEM+kO</td>
-          </tr>
-          <tr>
-            <th>he</th>
-            <td>INFSTEM+kOOt</td>
-            <td>älkööt + INFSTEM+kO</td>
-          </tr>
-        </tbody>undefine([INFSTEM])
-      </table>
-
-      SELF_LINK(h4, imperative-present-passive, TRANS(Passiivi, Пассив))
-      SELF_LINK(h5, imperative-present-passive-affirmative, TRANS(Myönteinen, Утверждение))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AkOOn</u></p>
-
-      SELF_LINK(h5, imperative-present-passive-negative, TRANS(Kielteinen, Отрицание))
-      <p>&rarr; älköön + TRANS(myönteinen passiivi ilman viimeistä <u>On</u>:ää, положительный пассив без последнего <u>On</u>)</p>
-
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <table>
-          <thead><tr>
-            <th>TRANS(verbi, глагол)</th>
-            <th>TRANS(tyyppi, тип)</th>
-            <th>sinä</th>
-            <th>te</th>
-            <th>hän</th>
-            <th>TRANS(passiivi, пассив)</th>
-          </tr></thead>
-          <tbody>define([ROW], [<tr><td>$1</td><td>$2</td><td>$3</td><td>$4</td><td>$5</td><td>$6</td></tr>])
-            ROW(oppia, 1, opi, oppikaa, oppikoon, opittakoon)
-            ROW(alkaa, 1, ala, alkakaa, alkakoon, alettakoon)
-            ROW(juoda, 2, juo, juokaa, juokoon, juotakoon)
-            ROW(tehdä, 2, tee, tehkää, tehköön, tehtäköön)
-            ROW(jutella, 3, juttele, jutelkaa, jutelkoon, juteltakoon)
-            ROW(mennä, 3, mene, menkää, menköön, mentäköön)
-            ROW(pakata, 4, pakkaa, pakatkaa, pakatkoon, pakattakoon)
-            ROW(levätä, 4, lepää, pevätkää, levätköön, levättäköön)
-            ROW(tarvita, 5, tarvitse, tarvitkaa, tarvitkoon, tarvittakoon)
-            ROW(merkitä, 5, merkitse, merkitkää, merkitköön, merkittäköön)
-            ROW(vanheta, 6, vanhene, vanhetkaa, vanhetkoon, vanhettakoon)
-            ROW(edetä, 6, etene, edetkää, edetköön, edettäköön)
-          </tbody>undefine([ROW])
-        </table>
-      </details>
-
-      SELF_LINK(h3, imperative-perfect, TRANS(Imperatiivin perfekti, Перфект императива))
-      <p>TRANS(On vain 3. persoonan ja passiivin muodot, Существуют только формы 3. лица и пассива)<p>
-      <table>
-        <thead><tr>
-          <th>TRANS(persoona, форма)</th>
-          <th>TRANS(myönteinen, утверждение)</th>
-          <th>TRANS(kielteinen, отрицание)</th>
-        </tr></thead>
+    SELF_LINK(h4, imperative-present-active, TRANS(Muut aktiivimuodot, Остальные формы активного залога))
+    <table>
+      <thead><tr>
+        <th>TRANS(persoona, лицо)</th>
+        <th>TRANS(myönteinen, утверждение)</th>
+        <th>TRANS(kielteinen, отрицание)</th>
+      </tr></thead>
+      <tbody>define([INFSTEM], <a href="#stem-infinitive">TRANS(inf.var., инф.осн.)</a>)
+        <tr>
+          <th>minä</th>
+          <td colspan=2>&empty;</td>
+        </tr>
+        <tr>
+          <th>sinä</th>
+          <td colspan=2><a href="#imperative-present-2sg">TRANS(ylemmäs, выше)</td>
+        </tr>
         <tr>
           <th>hän</th>
-          <td>olkoon + <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a></td>
-          <td>älköön olko + <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a></td>
+          <td>INFSTEM+kOOn</td>
+          <td>älköön + INFSTEM+kO</td>
+        </tr>
+        <tr>
+          <th>me</th>
+          <td>INFSTEM+kAAmme</td>
+          <td>älkäämme + INFSTEM+kO</td>
+        </tr>
+        <tr>
+          <th>te</th>
+          <td>INFSTEM+kAA</td>
+          <td>älkää + INFSTEM+kO</td>
         </tr>
         <tr>
           <th>he</th>
-          <td>olkoot + <a href="#p-active-perfect">ACCENT(neet)-TRANS(partisiippi, причастие)</a> (TRANS(monikko, мн.ч.))</td>
-          <td>älkööt olko + <a href="#p-active-perfect">ACCENT(neet)-TRANS(partisiippi, причастие)</a> (TRANS(monikko, мн.ч.))</td>
+          <td>INFSTEM+kOOt</td>
+          <td>älkööt + INFSTEM+kO</td>
         </tr>
-        <tr>
+      </tbody>undefine([INFSTEM])
+    </table>
+
+    SELF_LINK(h4, imperative-present-passive, TRANS(Passiivi, Пассив))
+    SELF_LINK(h5, imperative-present-passive-affirmative, TRANS(Myönteinen, Утверждение))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AkOOn</u></p>
+
+    SELF_LINK(h5, imperative-present-passive-negative, TRANS(Kielteinen, Отрицание))
+    <p>&rarr; älköön + TRANS(myönteinen passiivi ilman viimeistä <u>On</u>:ää, положительный пассив без последнего <u>On</u>)</p>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <table>
+        <thead><tr>
+          <th>TRANS(verbi, глагол)</th>
+          <th>TRANS(tyyppi, тип)</th>
+          <th>sinä</th>
+          <th>te</th>
+          <th>hän</th>
           <th>TRANS(passiivi, пассив)</th>
-          <td>olkoon + <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a></td>
-          <td>älköön olko + <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a></td>
-        </tr>
+        </tr></thead>
+        <tbody>define([ROW], [<tr><td>$1</td><td>$2</td><td>$3</td><td>$4</td><td>$5</td><td>$6</td></tr>])
+          ROW(oppia, 1, opi, oppikaa, oppikoon, opittakoon)
+          ROW(alkaa, 1, ala, alkakaa, alkakoon, alettakoon)
+          ROW(juoda, 2, juo, juokaa, juokoon, juotakoon)
+          ROW(tehdä, 2, tee, tehkää, tehköön, tehtäköön)
+          ROW(jutella, 3, juttele, jutelkaa, jutelkoon, juteltakoon)
+          ROW(mennä, 3, mene, menkää, menköön, mentäköön)
+          ROW(pakata, 4, pakkaa, pakatkaa, pakatkoon, pakattakoon)
+          ROW(levätä, 4, lepää, pevätkää, levätköön, levättäköön)
+          ROW(tarvita, 5, tarvitse, tarvitkaa, tarvitkoon, tarvittakoon)
+          ROW(merkitä, 5, merkitse, merkitkää, merkitköön, merkittäköön)
+          ROW(vanheta, 6, vanhene, vanhetkaa, vanhetkoon, vanhettakoon)
+          ROW(edetä, 6, etene, edetkää, edetköön, edettäköön)
+        </tbody>undefine([ROW])
       </table>
+    </details>
 
-      SELF_LINK(h2, potential, TRANS(Potentiaali, Потенциалис (возможное наклонение)))
-      SELF_LINK(h3, potential-present, TRANS(Potentiaalin preesens, Презенс потенциалиса))
-      SELF_LINK(h4, potential-present-affirmative, TRANS(Myönteinen, Утверждение))
-      SELF_LINK(h5, potential-present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>TRANS(, [Из ])<a href="#p-active-perfect">ACCENT(nUt)-TRANS(partiipista, причастия)</a>:</p>
-      <ul>
-        <li>-<u>Ut</u> &rarr; -<u>e</u>-</li>
-      </ul>
+    SELF_LINK(h3, imperative-perfect, TRANS(Imperatiivin perfekti, Перфект императива))
+    <p>TRANS(On vain 3. persoonan ja passiivin muodot, Существуют только формы 3. лица и пассива)<p>
+    <table>
+      <thead><tr>
+        <th>TRANS(persoona, форма)</th>
+        <th>TRANS(myönteinen, утверждение)</th>
+        <th>TRANS(kielteinen, отрицание)</th>
+      </tr></thead>
+      <tr>
+        <th>hän</th>
+        <td>olkoon + <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a></td>
+        <td>älköön olko + <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a></td>
+      </tr>
+      <tr>
+        <th>he</th>
+        <td>olkoot + <a href="#p-active-perfect">ACCENT(neet)-TRANS(partisiippi, причастие)</a> (TRANS(monikko, мн.ч.))</td>
+        <td>älkööt olko + <a href="#p-active-perfect">ACCENT(neet)-TRANS(partisiippi, причастие)</a> (TRANS(monikko, мн.ч.))</td>
+      </tr>
+      <tr>
+        <th>TRANS(passiivi, пассив)</th>
+        <td>olkoon + <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a></td>
+        <td>älköön olko + <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a></td>
+      </tr>
+    </table>
 
-      SELF_LINK(h5, potential-present-affirmative-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Aneen</u></p>
+    SELF_LINK(h2, potential, TRANS(Potentiaali, Потенциалис (возможное наклонение)))
+    SELF_LINK(h3, potential-present, TRANS(Potentiaalin preesens, Презенс потенциалиса))
+    SELF_LINK(h4, potential-present-affirmative, TRANS(Myönteinen, Утверждение))
+    SELF_LINK(h5, potential-present-affirmative-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>TRANS(, [Из ])<a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiipista, причастия)</a>:</p>
+    <ul>
+      <li>-<u>Ut</u> &rarr; -<u>e</u>-</li>
+    </ul>
 
-      SELF_LINK(h4, potential-present-negative, TRANS(Kielteinen, Отрицание))
-      SELF_LINK(h5, potential-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>&rarr; TRANS(
-        [ei-verbi + kieltomuoto (sama kuin vartalo)],
-        [частица ei + соотрицательная форма (такая же как и основа)]
-      )</p>
+    SELF_LINK(h5, potential-present-affirmative-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Aneen</u></p>
 
-      SELF_LINK(h5, potential-present-negative-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; TRANS(
-        [ei + myönteinen passiivi ilman viimeistä <u>en</u>:ää],
-        [ei + утвердительный пассив без конечного <u>en</u>]
-      )</p>
+    SELF_LINK(h4, potential-present-negative, TRANS(Kielteinen, Отрицание))
+    SELF_LINK(h5, potential-present-negative-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>&rarr; TRANS(
+      [ei-verbi + kieltomuoto (sama kuin vartalo)],
+      [частица ei + соотрицательная форма (такая же как и основа)]
+    )</p>
 
-      <details><summary>TRANS(Esimerkit ja poikkeusverbi, Примеры и глагол-исключение) <i>olla</i></summary>
-        <table>
-          <thead><tr>
-            <th>TRANS(persoona, форма)</th>
-            <th>TRANS(myönteinen, утверждение)</th>
-            <th>TRANS(kielteinen, отрицание)</th>
-          </tr></thead>
-          <tbody>
-            <tr><th>minä</th><td>lienen</td><td>en liene</td></tr>
-            <tr><th>sinä</th><td>lienet</td><td>et liene</td></tr>
-            <tr><th>hän</th><td>lienee</td><td>ei liene</td></tr>
-            <tr><th>me</th><td>lienemme</td><td>emme liene</td></tr>
-            <tr><th>te</th><td>lienette</td><td>ette liene</td></tr>
-            <tr><th>he</th><td>lienevät</td><td>eivät liene</td></tr>
-            <tr><th><b>TRANS(passiivi, пассив)</b></th><td>oltaneen</td><td>ei oltane</td></tr>
-          </tbody>
-        </table>
+    SELF_LINK(h5, potential-present-negative-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; TRANS(
+      [ei + myönteinen passiivi ilman viimeistä <u>en</u>:ää],
+      [ei + утвердительный пассив без конечного <u>en</u>]
+    )</p>
 
-        <ol>
-          <li>oppia &rarr; minä oppinen, opittaneen</li>
-          <li>voida &rarr; &hellip; voinen, voitaneen</li>
-          <li>ajatella &rarr; &hellip; ajatellen, ajateltaneen</li>
-          <li>kadota &rarr; &hellip; kadonnen, kadottaneen</li>
-          <li>valita &rarr; &hellip; valinnen, valittaneen</li>
-          <li>lämmetä &rarr; &hellip; lämmennen, lämmettäneen</li>
-        </ol>
-      </details>
-
-      SELF_LINK(h3, potential-perfect, TRANS(Potentiaalin perfekti, Перфект потенциалиса))
-      SELF_LINK(h4, potential-perfect-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>
-        &rarr; TRANS(olla-verbi potentiaalin preesensissä, глагол olla в презенсе потенциалиса) +
-        <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
-        TRANS(
-          [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
-          [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
-        )
-      </p>
-
-      SELF_LINK(h4, potential-perfect-passive, TRANS(Passiivi, Пассив))
-      <p>
-        &rarr; lienee / ei liene +
-        <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
-      </p>
-
-      SELF_LINK(h1, infinitives, TRANS(Infinitiivit, Инфинитивы))
-      SELF_LINK(h2, inf-1, 1. ACCENT(A)-TRANS(infinitiivi, инфинитив))
-      <p>TRANS(1. infiniitivi on sanakirjamuoto, 1. инфинитив это начальная (словарная) форма)</p>
-
-      SELF_LINK(h2, inf-1-long, TRANS(Pitkä, Длинный) 1. TRANS(infinitiivi, инфинитив))
-      <p>&rarr; TRANS(sanakirjamuoto, словарная форма) + -<u>kse</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
-
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-          <ul>
-            <li>muistaa &rarr; muistaakseni</li>
-            <li>tietää &rarr; tietääkseen</li>
-          </ul>
-      </details>
-
-      SELF_LINK(h2, inf-2, 2. ACCENT(e)-TRANS(infinitiivi, инфинитив))
-      SELF_LINK(h3, inf-2-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>&rarr; TRANS(vartalo + sijapääte (inessiivi -<u>ssA</u> tai instruktiivi -<u>n</u>), основа + падежное окончание (инессива -<u>ssA</u> или инструктива -<u>n</u>))</p>
-      <p>TRANS(Vartalo sanakirjamuodosta, Основа из словарной формы):</p>
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
       <ol>
-        <li>-<u>eA</u> &rarr; -<u>ie</u>-</li>
-        <li value=16 id="patch4"><span class="marker">TRANS(Tyypit, Типы) 1-6.: </span>-<u>A</u> &rarr; -<u>e</u>-</li>
+        <li>oppia &rarr; minä oppinen, opittaneen</li>
+        <li>voida &rarr; &hellip; voinen, voitaneen</li>
+        <li>ajatella &rarr; &hellip; ajatellen, ajateltaneen</li>
+        <li>kadota &rarr; &hellip; kadonnen, kadottaneen</li>
+        <li>valita &rarr; &hellip; valinnen, valittaneen</li>
+        <li>lämmetä &rarr; &hellip; lämmennen, lämmettäneen</li>
       </ol>
+    </details>
 
-      SELF_LINK(h3, inf-2-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Ae</u>- + -<u>ssA</u> (TRANS(inessiivi, инессив))</p>
+    SELF_LINK(h3, potential-perfect, TRANS(Potentiaalin perfekti, Перфект потенциалиса))
+    SELF_LINK(h4, potential-perfect-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>
+      &rarr; TRANS(olla-verbi potentiaalin preesensissä, глагол olla в презенсе потенциалиса) +
+      <a href="#p-active-perfect">ACCENT(nUt)-TRANS(partisiippi, причастие)</a>
+      TRANS(
+        [(yksikkö ja kohtelias Te <u>-nUt</u> tai T-monikko <u>-neet</u>)],
+        [(единственное число и уважительное Te: <u>-nUt</u>; множественное <u>-neet</u>)]
+      )
+    </p>
 
-      SELF_LINK(h2, inf-3, 3. ACCENT(mA)-TRANS(infinitiivi, инфинитив))
-      SELF_LINK(h3, inf-3-active, TRANS(Aktiivimuodot, Активный залог))
-      <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
+    SELF_LINK(h4, potential-perfect-passive, TRANS(Passiivi, Пассив))
+    <p>
+      &rarr; lienee / ei liene +
+      <a href="#p-passive-perfect">ACCENT(tU)-TRANS(partisiippi, причастие)</a>
+    </p>
 
-      SELF_LINK(h3, inf-3-passive, TRANS(Passiivi, Пассив))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AmA</u>- + -<u>n</u> (TRANS(instruktiivi, инструктив))</p>
+    SELF_LINK(h1, infinitives, TRANS(Infinitiivit, Инфинитивы))
+    SELF_LINK(h2, inf-1, 1. ACCENT(A)-TRANS(infinitiivi, инфинитив))
+    <p>TRANS(1. infiniitivi on sanakirjamuoto, 1. инфинитив это начальная (словарная) форма)</p>
 
-      SELF_LINK(h2, inf-4, 4. ACCENT(minen)-TRANS(infinitiivi, инфинитив))
-      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>minen</u></p>
+    SELF_LINK(h2, inf-1-long, TRANS(Pitkä, Длинный) 1. TRANS(infinitiivi, инфинитив))
+    <p>&rarr; TRANS(sanakirjamuoto, словарная форма) + -<u>kse</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
 
-      SELF_LINK(h2, inf-5, 5. ACCENT(mAinen)-TRANS(infinitiivi, инфинитив))
-      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mAisillA</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
-
-      SELF_LINK(h1, participles, TRANS(Partisiipit, Причастия))
-      SELF_LINK(h2, p-active-present, TRANS(Aktiivin partisiipin preesens, Активное причастие настоящего времени) ACCENT(-vA))
-      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>vA</u></p>
-
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <ol>
-          <li>oppia &rarr; oppiva</li>
-          <li>juoda &rarr; juova</li>
-          <li>purra &rarr; pureva</li>
-          <li>kadota &rarr; katoava</li>
-          <li>tarvita &rarr; tarvitseva</li>
-          <li>vanheta &rarr; vanheneva</li>
-        </ol>
-      </details>
-
-      <details><summary>TRANS(ACCENT(vA)-partisiipin käytön esimerkit, Примеры использования ACCENT(vA)-причастия)</summary>
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
         <ul>
-          <li>itkevä lapsi[]TRANS(, [ (плачущий ребёнок)]) = lapsi, joka itkee[]TRANS(, [ (ребёнок, который плачет)])</li>
-          <li>laulava mies[]TRANS(, [ (поющий мужчина)]) = mies, joka laulaa[]TRANS(, [ (мужчина, который поёт)])</li>
+          <li>muistaa &rarr; muistaakseni</li>
+          <li>tietää &rarr; tietääkseen</li>
         </ul>
-      </details>
+    </details>
 
-      SELF_LINK(h2, p-active-perfect, TRANS(Aktiivin partisiipin perfekti, Активное причастие прошлого времени) ACCENT(-nUt))
+    SELF_LINK(h2, inf-2, 2. ACCENT(e)-TRANS(infinitiivi, инфинитив))
+    SELF_LINK(h3, inf-2-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>&rarr; TRANS(vartalo + sijapääte (inessiivi -<u>ssA</u> tai instruktiivi -<u>n</u>), основа + падежное окончание (инессива -<u>ssA</u> или инструктива -<u>n</u>))</p>
+    <p>TRANS(Vartalo sanakirjamuodosta, Основа из словарной формы):</p>
+    <ol>
+      <li>-<u>eA</u> &rarr; -<u>ie</u>-</li>
+      <li value=16 class="patch-set-marker-1-6"><span class="patch-hint-marker">TRANS(Tyypit, Типы) 1-6.: </span>-<u>A</u> &rarr; -<u>e</u>-</li>
+    </ol>
+
+    SELF_LINK(h3, inf-2-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>Ae</u>- + -<u>ssA</u> (TRANS(inessiivi, инессив))</p>
+
+    SELF_LINK(h2, inf-3, 3. ACCENT(mA)-TRANS(infinitiivi, инфинитив))
+    SELF_LINK(h3, inf-3-active, TRANS(Aktiivimuodot, Активный залог))
+    <p>&rarr; <a href="#p-agent">ACCENT(mA)-TRANS(partisiippi, причастие)</a> + TRANS([sijapääte (inessiivi -<u>ssA</u>, elatiivi -<u>stA</u>, illatiivi -<u>An</u>, adessiivi -<u>llA</u>, abessiivi -<u>ttA</u> tai instruktiivi -<u>n</u>)], [падежное окончание (инессив -<u>ssA</u>, элатив -<u>stA</u>, иллатив -<u>An</u>, адессив -<u>llA</u>, абессив -<u>ttA</u> или инструктив -<u>n</u>)])</p>
+
+    SELF_LINK(h3, inf-3-passive, TRANS(Passiivi, Пассив))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AmA</u>- + -<u>n</u> (TRANS(instruktiivi, инструктив))</p>
+
+    SELF_LINK(h2, inf-4, 4. ACCENT(minen)-TRANS(infinitiivi, инфинитив))
+    <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>minen</u></p>
+
+    SELF_LINK(h2, inf-5, 5. ACCENT(mAinen)-TRANS(infinitiivi, инфинитив))
+    <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mAisillA</u>- + TRANS(omistusliite, притяжательный суффикс)</p>
+
+    SELF_LINK(h1, participles, TRANS(Partisiipit, Причастия))
+    SELF_LINK(h2, p-active-present, TRANS(Aktiivin partisiipin preesens, Активное причастие настоящего времени) ACCENT(-vA))
+    <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>vA</u></p>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
       <ol>
-        <li>-<u>A</u> &rarr; -<u>nUt</u></li>
-        <li>-<u>dA</u> &rarr; -<u>nUt</u></li>
-        <li>-(ll/nn/rr/s<u>t</u>)<u>A</u> &rarr; -(ll/nn/rr/s<u>s</u>)Ut</li>
-        <li id="patch2"><span class="marker">4-6. TRANS(tyypit, типы): </span>-<u>tA</u> &rarr; -<u>nnUt</u></li>
+        <li>oppia &rarr; oppiva</li>
+        <li>juoda &rarr; juova</li>
+        <li>purra &rarr; pureva</li>
+        <li>kadota &rarr; katoava</li>
+        <li>tarvita &rarr; tarvitseva</li>
+        <li>vanheta &rarr; vanheneva</li>
       </ol>
+    </details>
 
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <ol>
-          <li>oppia &rarr; oppinut</li>
-          <li>juoda &rarr; juonut</li>
-          <li>purra &rarr; purrut</li>
-          <li>kadota &rarr; kadonnut</li>
-          <li>tarvita &rarr; tarvinnut</li>
-          <li>vanheta &rarr; vanhennut</li>
-        </ol>
-      </details>
-
-      <details><summary>TRANS(ACCENT(nUt)-partisiipin käytön esimerkit, Примеры использования ACCENT(nUt)-причастия)</summary>
-        <ul>
-          <li>koomassa ollut potilas[]TRANS(, [ (находившийся в коме пациент)]) = potilas, joka oli koomassa[]TRANS(, [ (пациент, который был в коме)])</li>
-          <li>piirtänyt lapsi[]TRANS(, [ (рисовавший ребёнок)]) = lapsi, joka piirsi[]TRANS(, [ (ребёнок, который рисовал)])</li>
-        </ul>
-      </details>
-
-      SELF_LINK(h3, p-active-perfect-declension, TRANS(,Склонение )ACCENT(nUt)-TRANS(partisiipin taivutus, причастия))
-      <p>TRANS(Ei ole KPT-vaihtelua, Нет KPT-чередования)</p>
-      <p>TRANS(Yksikkö, Единственное число):</p>
+    <details><summary>TRANS(ACCENT(vA)-partisiipin käytön esimerkit, Примеры использования ACCENT(vA)-причастия)</summary>
       <ul>
-        <li>TRANS(Partitiivi, Партитив): -Ut &rarr; -Ut<u>tA</u></li>
-        <li>TRANS(Illatiivi, Иллатив): -<u>Ut</u> &rarr; -<u>eeseen</u></li>
-        <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>Ut</u> &rarr; -<u>ee</u>- + TRANS(sijapääte, окончание)</li>
+        <li>itkevä lapsi[]TRANS(, [ (плачущий ребёнок)]) = lapsi, joka itkee[]TRANS(, [ (ребёнок, который плачет)])</li>
+        <li>laulava mies[]TRANS(, [ (поющий мужчина)]) = mies, joka laulaa[]TRANS(, [ (мужчина, который поёт)])</li>
       </ul>
-      <p>TRANS(Monikko, Множественное число):</p>
+    </details>
+
+    SELF_LINK(h2, p-active-perfect, TRANS(Aktiivin partisiipin perfekti, Активное причастие прошлого времени) ACCENT(-nUt))
+    <ol>
+      <li>-<u>A</u> &rarr; -<u>nUt</u></li>
+      <li>-<u>dA</u> &rarr; -<u>nUt</u></li>
+      <li>-(ll/nn/rr/s<u>t</u>)<u>A</u> &rarr; -(ll/nn/rr/s<u>s</u>)Ut</li>
+      <li class="patch-set-marker-4-6"><span class="patch-hint-marker">4-6. TRANS(tyypit, типы): </span>-<u>tA</u> &rarr; -<u>nnUt</u></li>
+    </ol>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <ol>
+        <li>oppia &rarr; oppinut</li>
+        <li>juoda &rarr; juonut</li>
+        <li>purra &rarr; purrut</li>
+        <li>kadota &rarr; kadonnut</li>
+        <li>tarvita &rarr; tarvinnut</li>
+        <li>vanheta &rarr; vanhennut</li>
+      </ol>
+    </details>
+
+    <details><summary>TRANS(ACCENT(nUt)-partisiipin käytön esimerkit, Примеры использования ACCENT(nUt)-причастия)</summary>
       <ul>
-        <li>TRANS(Partitiivi, Партитив): -<u>Ut</u> &rarr; -<u>eitA</u></li>
-        <li>TRANS(Genetiivi, Генетив): -<u>Ut</u> &rarr; -<u>ei(d/tt)en</u></li>
-        <li>TRANS(Illatiivi, Иллатив): -<u>Ut</u> &rarr; -<u>ei(siin/hin)</u></li>
-        <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>Ut</u> &rarr; -<u>ei</u>- + TRANS(sijapääte, окончание)</li>
+        <li>koomassa ollut potilas[]TRANS(, [ (находившийся в коме пациент)]) = potilas, joka oli koomassa[]TRANS(, [ (пациент, который был в коме)])</li>
+        <li>piirtänyt lapsi[]TRANS(, [ (рисовавший ребёнок)]) = lapsi, joka piirsi[]TRANS(, [ (ребёнок, который рисовал)])</li>
       </ul>
+    </details>
 
-      SELF_LINK(h2, p-passive-present, TRANS(Passiivin partisiipin preesens, Пассивное причастие настоящего времени) ACCENT(-tAvA))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AvA</u></p>
+    SELF_LINK(h3, p-active-perfect-declension, TRANS(,Склонение )ACCENT(nUt)-TRANS(partisiipin taivutus, причастия))
+    <p>TRANS(Ei ole KPT-vaihtelua, Нет KPT-чередования)</p>
+    <p>TRANS(Yksikkö, Единственное число):</p>
+    <ul>
+      <li>TRANS(Partitiivi, Партитив): -Ut &rarr; -Ut<u>tA</u></li>
+      <li>TRANS(Illatiivi, Иллатив): -<u>Ut</u> &rarr; -<u>eeseen</u></li>
+      <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>Ut</u> &rarr; -<u>ee</u>- + TRANS(sijapääte, окончание)</li>
+    </ul>
+    <p>TRANS(Monikko, Множественное число):</p>
+    <ul>
+      <li>TRANS(Partitiivi, Партитив): -<u>Ut</u> &rarr; -<u>eitA</u></li>
+      <li>TRANS(Genetiivi, Генетив): -<u>Ut</u> &rarr; -<u>ei(d/tt)en</u></li>
+      <li>TRANS(Illatiivi, Иллатив): -<u>Ut</u> &rarr; -<u>ei(siin/hin)</u></li>
+      <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>Ut</u> &rarr; -<u>ei</u>- + TRANS(sijapääte, окончание)</li>
+    </ul>
 
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
+    SELF_LINK(h2, p-passive-present, TRANS(Passiivin partisiipin preesens, Пассивное причастие настоящего времени) ACCENT(-tAvA))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>AvA</u></p>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <ol>
+        <li>oppia &rarr; opittava
+        <br>alkaa &rarr; alettava</li>
+        <li>voida &rarr; voitava</li>
+        <li>jutella &rarr; juteltava</li>
+        <li>pelätä &rarr; pelättävä</li>
+        <li>tarvita &rarr; tarvittava</li>
+        <li>pidetä &rarr; pidettävä</li>
+      </ol>
+    </details>
+
+    TRANS([<p>ACCENT(nUt)-partisiipin käytön esimerkit vain venäjän kielellä</p>],
+      [<details><summary>Примеры использования ACCENT(tAvA)-причастия</summary>
+        <p>Все примеры переведены с <a href="https://uusikielemme.fi/finnish-grammar/verbs/participles/the-passive-present-participle-tehtava-luettava-sanottava">uusikielemme.fi</a></p>
         <ol>
-          <li>oppia &rarr; opittava
-          <br>alkaa &rarr; alettava</li>
-          <li>voida &rarr; voitava</li>
-          <li>jutella &rarr; juteltava</li>
-          <li>pelätä &rarr; pelättävä</li>
-          <li>tarvita &rarr; tarvittava</li>
-          <li>pidetä &rarr; pidettävä</li>
+          <li>Что-то происходит с предметом:
+          <br>[[Käännettävä kirja]] on pitkä. = [[Книга, которую переводят,]] длинная.
+          <br>[[Koulussa käytettävä kirja]] on vanha. = [[Используемая в школе книга]] старая.
+          <br>Olen asunut [[remontoitavassa talossa]] vuoden. = Я прожил(а) год в реновируемом доме.</li>
+          <li>Что-то можно сделать с преметом:
+          <br>[[Kannettava tietokone]] on painava. = [[Переносной компьютер]] (=ноутбук) тяжёлый.
+          <br>Se on [[ymmärrettävä selitys]]. = Это [[понятное обьяснение]].
+          <br>Se ei ole [[uskottava valhe]]. = Это не [[правдоподобная ложь]].
+          <br>Osaatko tunnistaa [[syötävät sienet]]? = Ты умеешь распозновать [[съедобные грибы]]?</li>
+          <li>Что-то нужно сделать с преметом:
+          <br>Tämä on [[aamulla otettava lääke]]. = Это [[лекарство, которое нужно принять с утра]].
+          <br>[[Arkistoitavat dokumentit]] ovat pinossa. = [[Документы, которые нужно поместить в архив,]] лежат в куче.
+          <br>Muista [[nämä lukittavat ovet]]! = Не забудь про [[эти запираемые двери]]! = Не забудь запереть эти двери!</li>
         </ol>
-      </details>
+      </details>])
 
-      TRANS([<p>ACCENT(nUt)-partisiipin käytön esimerkit vain venäjän kielellä</p>],
-        [<details><summary>Примеры использования ACCENT(tAvA)-причастия</summary>
-          <p>Все примеры переведены с <a href="https://uusikielemme.fi/finnish-grammar/verbs/participles/the-passive-present-participle-tehtava-luettava-sanottava">uusikielemme.fi</a></p>
-          <ol>
-            <li>Что-то происходит с предметом:
-            <br>[[Käännettävä kirja]] on pitkä. = [[Книга, которую переводят,]] длинная.
-            <br>[[Koulussa käytettävä kirja]] on vanha. = [[Используемая в школе книга]] старая.
-            <br>Olen asunut [[remontoitavassa talossa]] vuoden. = Я прожил(а) год в реновируемом доме.</li>
-            <li>Что-то можно сделать с преметом:
-            <br>[[Kannettava tietokone]] on painava. = [[Переносной компьютер]] (=ноутбук) тяжёлый.
-            <br>Se on [[ymmärrettävä selitys]]. = Это [[понятное обьяснение]].
-            <br>Se ei ole [[uskottava valhe]]. = Это не [[правдоподобная ложь]].
-            <br>Osaatko tunnistaa [[syötävät sienet]]? = Ты умеешь распозновать [[съедобные грибы]]?</li>
-            <li>Что-то нужно сделать с преметом:
-            <br>Tämä on [[aamulla otettava lääke]]. = Это [[лекарство, которое нужно принять с утра]].
-            <br>[[Arkistoitavat dokumentit]] ovat pinossa. = [[Документы, которые нужно поместить в архив,]] лежат в куче.
-            <br>Muista [[nämä lukittavat ovet]]! = Не забудь про [[эти запираемые двери]]! = Не забудь запереть эти двери!</li>
-          </ol>
-        </details>])
+    SELF_LINK(h2, p-passive-perfect, TRANS(Passiivin partisiipin perfekti, Пассивное причастие прошлого времени) ACCENT(-tU))
+    <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>U</u></p>
 
-      SELF_LINK(h2, p-passive-perfect, TRANS(Passiivin partisiipin perfekti, Пассивное причастие прошлого времени) ACCENT(-tU))
-      <p>&rarr; <a href="#stem-passive">TRANS(passiivivartalo, пассивная основа)</a> + -<u>U</u></p>
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <ol>
+        <li>oppia &rarr; opittu
+        <br>alkaa &rarr; alettu</li>
+        <li>voida &rarr; voitu</li>
+        <li>jutella &rarr; juteltu</li>
+        <li>pelätä &rarr; pelätty</li>
+        <li>tarvita &rarr; tarvittu</li>
+        <li>pidetä &rarr; pidetty</li>
+      </ol>
+    </details>
 
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <ol>
-          <li>oppia &rarr; opittu
-          <br>alkaa &rarr; alettu</li>
-          <li>voida &rarr; voitu</li>
-          <li>jutella &rarr; juteltu</li>
-          <li>pelätä &rarr; pelätty</li>
-          <li>tarvita &rarr; tarvittu</li>
-          <li>pidetä &rarr; pidetty</li>
-        </ol>
-      </details>
-
-      <details><summary>TRANS(ACCENT(tU)-partisiipin käytön esimerkit, Примеры использования ACCENT(tU)-причастия)</summary>
-        <ul>
-          <li>valittu johtaja[]TRANS(, [ (выбранный лидер)]) = johtaja, joka valittiin[]TRANS(, [ (лидер, которого выбрали)])</li>
-          <li>soitettu biisi[]TRANS(, [ (проигранная песня)]) = biisi, joka soitettiin[]TRANS(, [ (песня, которую проиграли)])</li>
-        </ul>
-      </details>
-
-      SELF_LINK(h2, p-agent, TRANS(Agenttipartisiippi, Агентное причастие) ACCENT(-mA))
-      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mA</u></p>
-
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <ol>
-          <li>oppia &rarr; oppima</li>
-          <li>juoda &rarr; juoma</li>
-          <li>purra &rarr; purema</li>
-          <li>kadota &rarr; katoama</li>
-          <li>tarvita &rarr; tarvitsema</li>
-          <li>vanheta &rarr; vanhenema</li>
-        </ol>
-      </details>
-
-      <details><summary>TRANS(ACCENT(mA)-partisiipin käytön esimerkit, Примеры использования ACCENT(mA)-причастия)</summary>
-        <ul>
-          <li>aloittamani kurssi[]TRANS(, [ (начатый мною курс)]) = kussi, jonka aloitin[]TRANS(, [ (курс, который я начал(а))])</li>
-          <li>kirjoittamani kirja[]TRANS(, [ (написанная мною книга)]) = kirja, jonka kirjoitin[]TRANS(, [ (книга, которую я написал(а))])</li>
-        </ul>
-      </details>
-
-      SELF_LINK(h2, p-negative, TRANS(Kielteinen agenttipartisiippi, Отрицательное причастие) ACCENT(-mAtOn))
-      <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mAtOn</u></p>
-
-      <details><summary>TRANS(Esimerkit, Примеры)</summary>
-        <ol>
-          <li>oppia &rarr; oppimaton</li>
-          <li>juoda &rarr; juomaton</li>
-          <li>purra &rarr; purematon</li>
-          <li>kadota &rarr; katoamaton</li>
-          <li>tarvita &rarr; tarvitsematon</li>
-          <li>vanheta &rarr; vanhenematon</li>
-        </ol>
-      </details>
-
-      SELF_LINK(h3, p-negative-declension, TRANS(, Склонение )ACCENT(mAtOn)-TRANS(partisiipin taivutus, причастия))
-      <p>TRANS(KPT-vaihtelu on aina, KPT-чередование всегда) <i>tt</i> &larr; <i>t</i></p>
-      <p>TRANS(Yksikkö, Единственное число):</p>
+    <details><summary>TRANS(ACCENT(tU)-partisiipin käytön esimerkit, Примеры использования ACCENT(tU)-причастия)</summary>
       <ul>
-        <li>TRANS(Partitiivi, Партитив): -tOn &rarr; -tOn<u>tA</u></li>
-        <li>TRANS(Illatiivi, Иллатив): -<u>tOn</u> &rarr; -<u>ttOmAAn</u></li>
-        <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>tOn</u> &rarr; -<u>ttOmA</u>- + TRANS(sijapääte, окончание)</li>
+        <li>valittu johtaja[]TRANS(, [ (выбранный лидер)]) = johtaja, joka valittiin[]TRANS(, [ (лидер, которого выбрали)])</li>
+        <li>soitettu biisi[]TRANS(, [ (проигранная песня)]) = biisi, joka soitettiin[]TRANS(, [ (песня, которую проиграли)])</li>
       </ul>
-      <p>TRANS(Monikko, Множественное число):</p>
+    </details>
+
+    SELF_LINK(h2, p-agent, TRANS(Agenttipartisiippi, Агентное причастие) ACCENT(-mA))
+    <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mA</u></p>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <ol>
+        <li>oppia &rarr; oppima</li>
+        <li>juoda &rarr; juoma</li>
+        <li>purra &rarr; purema</li>
+        <li>kadota &rarr; katoama</li>
+        <li>tarvita &rarr; tarvitsema</li>
+        <li>vanheta &rarr; vanhenema</li>
+      </ol>
+    </details>
+
+    <details><summary>TRANS(ACCENT(mA)-partisiipin käytön esimerkit, Примеры использования ACCENT(mA)-причастия)</summary>
       <ul>
-        <li>TRANS(Partitiivi, Партитив): -<u>tOn</u> &rarr; -<u>ttOmiA</u></li>
-        <li>TRANS(Genetiivi, Генетив): -<u>tOn</u> &rarr; -<u>ttOmien</u> (TRANS(harvoin, изредка) -tOn<u>ten</u>)</li>
-        <li>TRANS(Illatiivi, Иллатив): -<u>tOn</u> &rarr; -<u>ttOmiin</u></li>
-        <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>tOn</u> &rarr; -<u>ttOmi</u>- + TRANS(sijapääte, окончание)</li>
+        <li>aloittamani kurssi[]TRANS(, [ (начатый мною курс)]) = kussi, jonka aloitin[]TRANS(, [ (курс, который я начал(а))])</li>
+        <li>kirjoittamani kirja[]TRANS(, [ (написанная мною книга)]) = kirja, jonka kirjoitin[]TRANS(, [ (книга, которую я написал(а))])</li>
       </ul>
-    </article>
+    </details>
+
+    SELF_LINK(h2, p-negative, TRANS(Kielteinen agenttipartisiippi, Отрицательное причастие) ACCENT(-mAtOn))
+    <p>&rarr; <a href="#stem-strong">TRANS(vahvavartalo, сильная основа)</a> + -<u>mAtOn</u></p>
+
+    <details><summary>TRANS(Esimerkit, Примеры)</summary>
+      <ol>
+        <li>oppia &rarr; oppimaton</li>
+        <li>juoda &rarr; juomaton</li>
+        <li>purra &rarr; purematon</li>
+        <li>kadota &rarr; katoamaton</li>
+        <li>tarvita &rarr; tarvitsematon</li>
+        <li>vanheta &rarr; vanhenematon</li>
+      </ol>
+    </details>
+
+    SELF_LINK(h3, p-negative-declension, TRANS(, Склонение )ACCENT(mAtOn)-TRANS(partisiipin taivutus, причастия))
+    <p>TRANS(KPT-vaihtelu on aina, KPT-чередование всегда) <i>tt</i> &larr; <i>t</i></p>
+    <p>TRANS(Yksikkö, Единственное число):</p>
+    <ul>
+      <li>TRANS(Partitiivi, Партитив): -tOn &rarr; -tOn<u>tA</u></li>
+      <li>TRANS(Illatiivi, Иллатив): -<u>tOn</u> &rarr; -<u>ttOmAAn</u></li>
+      <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>tOn</u> &rarr; -<u>ttOmA</u>- + TRANS(sijapääte, окончание)</li>
+    </ul>
+    <p>TRANS(Monikko, Множественное число):</p>
+    <ul>
+      <li>TRANS(Partitiivi, Партитив): -<u>tOn</u> &rarr; -<u>ttOmiA</u></li>
+      <li>TRANS(Genetiivi, Генетив): -<u>tOn</u> &rarr; -<u>ttOmien</u> (TRANS(harvoin, изредка) -tOn<u>ten</u>)</li>
+      <li>TRANS(Illatiivi, Иллатив): -<u>tOn</u> &rarr; -<u>ttOmiin</u></li>
+      <li>TRANS(Muut sijamuodot, Остальные падежи): -<u>tOn</u> &rarr; -<u>ttOmi</u>- + TRANS(sijapääte, окончание)</li>
+    </ul>
   </main>
-  <form action="#"><button id="up-button" type="submit">&uarr;</button></form>
+  <!-- <form action="#"><button id="up-button" type="submit">&uarr;</button></form> -->
+  <div id="up-button">
+    <a href="#">&uarr;</a>
+  </div>
 </body>
 </html>

@@ -30,7 +30,14 @@ Issues and pull-requests are welcome :3
   - [ ] KOTUS numbering
 
 ## Building
-To build you will need [GNU M4](https://www.gnu.org/software/m4/m4.html) in your PATH.
+To build use [GNU M4](https://www.gnu.org/software/m4/m4.html)
+(I use M4 version `1.4.19`) from project root:
 ```sh
-m4 -EE build.m4
+m4 m4/build.m4
+```
+The build system is _incremental_ and compares the timestamp of output file
+with the timestamp of input file. If you wish to force a rebuild you can define
+`FORCE_REBUILD` to `1`:
+```sh
+m4 -DFORCE_REBUILD=1 m4/build.m4
 ```
