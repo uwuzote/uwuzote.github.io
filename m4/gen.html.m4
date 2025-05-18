@@ -38,6 +38,9 @@ DEFINE_PROTECTED([H5], [<h5>CONCAT($@)</h5>])
 DEFINE_PROTECTED([H6], [<h6>CONCAT($@)</h6>])
 
 DEFINE_PROTECTED([P], [<p>CONCAT($@)</p>])
+DEFINE_PROTECTED([B], [<b>CONCAT($@)</b>])
+DEFINE_PROTECTED([I], [<i>CONCAT($@)</i>])
+DEFINE_PROTECTED([DETAILS], [<details><summary>$1</summary>$2</details>])
 
 define([TRANSLATE_GADGET], [TRANS(
   [LNK([/]SELF[.ru.html], По-русски)],
@@ -63,7 +66,7 @@ _HEAD_EXTRA</head>
 ifelse(_BODY, 0, [dnl
   <header>
     <hgroup>DEREF([_HEADER])</hgroup>
-    <nav>DEREF([_NAV])</nav>
+    ifdef([_NAV], [<nav>_NAV</nav>])
   </header>
   <div class="hr-like">&#9829;</div>
   <main>DEREF([_ARTICLE])</main>

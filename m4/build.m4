@@ -27,6 +27,8 @@ BUILD_PAGE([content/404.html], [FI], [-DLANG=FI], [docs/404.html])
 
 BUILD_PAGE_FULL(index)
 # BUILD_PAGE_FULL(nouns)
+BUILD_PAGE_FULL(object)
+
 ifelse(DONT_MINIFY, 1, [], [
   CMD_LOG([minify --html-keep-comments -r docs/ -o docs/])
 ])
