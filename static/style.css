@@ -219,6 +219,24 @@ table {
   }
 }
 
+input[type="number"] {
+  border: 2px solid var(--accent-color-solid);
+  border-radius: 0.5rem;
+  padding: 0.2em;
+  cursor: pointer;
+
+  &:is(:hover, :focus) {
+    background-color: var(--accent-color-bg);
+  }
+}
+
+button {
+  border: 2px solid var(--accent-color-solid);
+  border-radius: 0.5em;
+  padding: 0.2em;
+  cursor: pointer;
+}
+
 #up-button {
   position: fixed;
   bottom: 0.75rem;

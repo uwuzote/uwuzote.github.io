@@ -1,0 +1,22 @@
+TITLE(TRANS(Numerogeneraattori, Генератор финских числительных))
+
+HEAD_EXTRA(
+  <script src="/numbers.js" defer></script>
+)
+
+HEADER(
+  H1(TRANS(Suomen numerogeneraattori, Генератор финских числительных))
+  H2(TRANS(Versio, Версия) 0.1)
+  H3(TRANSLATE_GADGET)
+)
+
+ARTICLE(
+  <label for="number">
+    TRANS(Numero, Число):
+    <input id="number" name="number" type="number" required value=10 />
+  </label>
+
+  <button onclick="entry()">TRANS(Päivitä, Обновить)</button>
+
+  <p>TRANS(Tulos, Результат): <span id="result">kymmenen</span></p>
+)
