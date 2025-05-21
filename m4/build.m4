@@ -26,6 +26,7 @@ CMD([cp -r static/* docs])
 BUILD_PAGE([content/404.html], [FI], [-DLANG=FI], [docs/404.html])
 
 BUILD_PAGE_FULL(index)
+BUILD_PAGE_FULL(verbs)
 # BUILD_PAGE_FULL(nouns)
 BUILD_PAGE_FULL(object)
 BUILD_PAGE_FULL(numbers)

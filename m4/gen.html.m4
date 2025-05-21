@@ -26,6 +26,7 @@ ifelse(
 DEFINE_PROTECTED([ACCENT], [<span class="accent">$1</span>])
 DEFINE_PROTECTED([SELF_LINK], [<$1 id="$2">$3 <a href="#$2" class="self-link">&</a></$1>])
 DEFINE_PROTECTED([LNK], [<a href="$1">$2</a>])
+DEFINE_PROTECTED([URL], [$1[]TRANS([], [.ru]).html])
 
 define([_LIST_HELPER], [ifelse($#, 0, [], $#, 1, [<li>$1</li>], [$1], [CUSTOM], [<li $2>$3</li>_LIST_HELPER(shift(shift(shift($@))))], [<li>$1</li>_LIST_HELPER(shift($@))])])
 DEFINE_PROTECTED([LIST], [<$1>_LIST_HELPER(shift($@))</$1>])dnl
@@ -46,6 +47,8 @@ define([TRANSLATE_GADGET], [TRANS(
   [LNK([/]SELF[.ru.html], По-русски)],
   [LNK([/]SELF[.html], Suomeksi)]
 )])
+
+define([SUPER_GADGET], [TRANSLATE_GADGET — LNK(URL(index), TRANS(Pääsivuun, На главную))])
 
 include(SRC)
 

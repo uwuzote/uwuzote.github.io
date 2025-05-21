@@ -66,6 +66,10 @@ header {
     > h3 {
       margin-top: 0.5rem;
     }
+
+    > h4 {
+      margin-top: 0.2rem;
+    }
   }
 
   nav {
