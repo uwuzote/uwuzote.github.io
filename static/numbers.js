@@ -30,7 +30,7 @@ const BIG_CARDINALS_NOM = [
     "sekstiljoona",
     "septiljoona",
     "oktiljoona",
-]
+];
 
 const BIG_CARDINALS_PART = [
     "",
@@ -46,7 +46,7 @@ const BIG_CARDINALS_PART = [
     SEP + "sekstiljoonaa",
     SEP + "septiljoonaa",
     SEP + "oktiljoonaa",
-]
+];
 
 const div = (a, b) => (a - a%b) / b;
 
@@ -94,7 +94,7 @@ const cardinal = (n) => {
 
         return output.reduce((a, b) => a + SEP + b);
     }
-}
+};
 
 const number_elem = document.getElementById("number");
 const result_elem = document.getElementById("result");
@@ -106,7 +106,7 @@ const entry = (_) => {
         result_elem.innerHTML = cardinal(value);
     else
         result_elem.innerHTML = "error";
-}
+};
 
 number_elem.onchange = entry;
 
