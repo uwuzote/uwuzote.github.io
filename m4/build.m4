@@ -16,14 +16,14 @@ define([BUILD_PAGE], [
 ])
 
 define([BUILD_PAGE_FULL], [
-  BUILD_PAGE([content/$1.html], [FI], [-DLANG=FI -DSELF=$1], [docs/$1.html])
-  BUILD_PAGE([content/$1.html], [RU], [-DLANG=RU -DSELF=$1], [docs/$1.ru.html])
+  BUILD_PAGE([pages/$1.html], [FI], [-DLANG=FI -DSELF=$1], [docs/$1.html])
+  BUILD_PAGE([pages/$1.html], [RU], [-DLANG=RU -DSELF=$1], [docs/$1.ru.html])
 ])
 
 CMD([mkdir -p docs])
 CMD([cp -r static/* docs])
 
-BUILD_PAGE([content/404.html], [FI], [-DLANG=FI], [docs/404.html])
+BUILD_PAGE([pages/404.html], [FI], [-DLANG=FI], [docs/404.html])
 
 BUILD_PAGE_FULL(index)
 BUILD_PAGE_FULL(verbs)
