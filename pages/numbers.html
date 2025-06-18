@@ -1,8 +1,39 @@
 TITLE(TRANS(Numerogeneraattori, Генератор финских числительных))
 
 HEAD_EXTRA(
-  <script src="/numbers.js" defer></script>
-  <script src="/numbers2.js" defer></script>
+  <script type="module" defer>
+    import * as library from "/numbers.mjs";
+
+    const generator = library.mkGenerator(library.CARDINALS);
+    const generate = n => library.mkComplex(generator(n), '¦\u200B').decline(library.CASES.nom, 1);
+
+    const number_elem = document.getElementById("number");
+    const result_elem = document.getElementById("result");
+
+    window.entry = () => {
+      const value = number_elem.value+"";
+      let filtered = "";
+
+      for (let i = 0; i < value.length; i += 1) {
+        if ("0123456789".includes(value.at(i))) {
+          filtered += value.at(i);
+          continue;
+        }
+
+        result_elem.innerHTML = "Error: unknown symbol: " + value.at(i);
+        return;
+      }
+
+      if (filtered.length == 0)
+        result_elem.innerHTML = "Error: empty";
+      else
+        result_elem.innerHTML = generate(filtered);
+    }
+
+    number_elem.onchange = entry;
+
+    entry()
+  </script>
 )
 
 HEADER(

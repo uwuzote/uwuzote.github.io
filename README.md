@@ -4,7 +4,7 @@
 Hosted with GitHub Pages at <https://uwuzote.github.io/#>.
 Issues and pull-requests are welcome :3
 
-## Verb conjugation Checklist
+## Verb conjugation checklist
 - [x] Moods
   - [x] Indicative mood (present, past, perfect, pluperfect)
   - [x] Conditional mood (present, perfect)
@@ -27,15 +27,15 @@ Issues and pull-requests are welcome :3
 
 ## Building
 To build use [GNU M4](https://www.gnu.org/software/m4/m4.html)
-(I use M4 version `1.4.19`) from project root:
+(I use M4 version `1.4.19`) from the project root:
 ```sh
-m4 m4/build.m4
+m4 -EE m4/build.m4
 ```
-The build system is _incremental_ and compares the timestamp of output file
+The build system is *incremental* and compares the timestamp of output file
 with the timestamp of input file. If you wish to force a rebuild you can define
 `FORCE_REBUILD` to `1`:
 ```sh
-m4 -DFORCE_REBUILD=1 m4/build.m4
+m4 -EE -DFORCE_REBUILD=1 m4/build.m4
 ```
 The build system also minifies output files by using [minify](https://github.com/tdewolff/minify/).
-If you don't have `minify` or wish not to minify output files, you can define `DONT_MINIFY` to `1`
+If you don't have `minify` or wish not to minify output files, you can define `DONT_MINIFY` to `1`.
