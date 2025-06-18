@@ -1,54 +1,70 @@
 TITLE(TRANS(Numerogeneraattori, Генератор финских числительных))
 
 HEAD_EXTRA(
-  <script type="module" defer>
-    import * as library from "/numbers.mjs";
-
-    const generator = library.mkGenerator(library.CARDINALS);
-    const generate = n => library.mkComplex(generator(n), '¦\u200B').decline(library.CASES.nom, 1);
-
-    const number_elem = document.getElementById("number");
-    const result_elem = document.getElementById("result");
-
-    window.entry = () => {
-      const value = number_elem.value+"";
-      let filtered = "";
-
-      for (let i = 0; i < value.length; i += 1) {
-        if ("0123456789".includes(value.at(i))) {
-          filtered += value.at(i);
-          continue;
-        }
-
-        result_elem.innerHTML = "Error: unknown symbol: " + value.at(i);
-        return;
-      }
-
-      if (filtered.length == 0)
-        result_elem.innerHTML = "Error: empty";
-      else
-        result_elem.innerHTML = generate(filtered);
+  <script>
+    const L10N = {
+      error: "TRANS(Virhe, Ошибка)",
+      result: "TRANS(Tulos, Результат)",
+      err_empty: "TRANS(tyhjä, пусто)",
+      unknown_sym: "TRANS(tuntematon merkki, неизвестный символ)",
+      err_sg_com: "TRANS(komitatiivin täytyy olla monikossa, комитатив должен быть в мн.ч.)",
+      err_sg_ins: "TRANS(instruktiivin täytyy olla monikossa, инструктив должен быть в мн.ч.)",
+      or: "TRANS(eli, или)"
     }
-
-    number_elem.onchange = entry;
-
-    entry()
   </script>
+  <script src="/numbers.js" defer></script>
 )
 
 HEADER(
   H1(TRANS(Suomen numerogeneraattori, Генератор финских числительных))
-  H2(TRANS(Beetaversio, Бета-версия) 0.1)
+  H2(TRANS(Beetaversio, Бета-версия) 0.2)
   H3(SUPER_GADGET)
 )
 
 ARTICLE(
-  <label for="number">
-    TRANS(Numero, Число):
-    <input id="number" name="number" type="number" required value=10 />
-  </label>
+  <div>
+    <label for="number">TRANS(Numero, Число):</label>
+    <input id="number" name="number" type="number" required value="10" min="0" />
+  </div>
 
-  <button onclick="entry()">TRANS(Päivitä, Обновить)</button>
+  <div>
+    <label for="type">TRANS(Lukulaji, Вид числа):</label>
+    <select id="type" name="type">
+      <option value="car">TRANS(Kardinaaliluku, Количественное)</option>
+      <option value="ord">TRANS(Järjestysluku, Порядковое)</option>
+    </select>
+  </div>
 
-  <p>TRANS(Tulos, Результат): <span id="result">kymmenen</span></p>
+
+  <div>
+    <label for="case">TRANS(Sijamuoto, Падеж):</label>
+    <select id="case" name="case">
+      <option value="nom">TRANS(Nominatiivi, Номинатив)</option>
+      <option value="gen">TRANS(Genetiivi, Генетив)</option>
+      <option value="par">TRANS(Partitiivi, Партитив)</option>
+      <option value="ine">TRANS(Inessiivi, Инессив)</option>
+      <option value="ela">TRANS(Elatiivi, Элатив)</option>
+      <option value="ill">TRANS(Illatiivi, Иллатив)</option>
+      <option value="ade">TRANS(Adessiivi, Адессив)</option>
+      <option value="abl">TRANS(Ablatiivi, Аблатив)</option>
+      <option value="all">TRANS(Allatiivi, Аллатив)</option>
+      <option value="ess">TRANS(Essiivi, Эссив)</option>
+      <option value="tra">TRANS(Translatiivi, Транслатив)</option>
+      <option value="abe">TRANS(Abessiivi, Абессив)</option>
+      <option value="ins">TRANS(Instruktiivi, Инструктив)</option>
+      <option value="com">TRANS(Komitatiivi, Комитатив)</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="gram-number">TRANS(Kieliopillinen numero, Грамматическое число):</label>
+    <select id="gram-number" name="gram-number">
+      <option value="1">TRANS(Yksikkö, Единственное)</option>
+      <option value="2">TRANS(Monikko, Множественное)</option>
+    </select>
+  </div>
+
+  <button onclick="entry()">TRANS(Päivitä, Обновить)!</button>
+
+  <p id="result">kymmenen</p>
 )

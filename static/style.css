@@ -234,7 +234,11 @@ input[type="number"] {
   }
 }
 
-button {
+label {
+  font-weight: bold;
+}
+
+button, select {
   border: 2px solid var(--accent-color-solid);
   border-radius: 0.5em;
   padding: 0.2em;

@@ -3,8 +3,9 @@ const _apl = (x, fn) => (typeof x == "string" ? fn(x) : x.map(fn));
 const _pref = (x, p) => _apl(x, (s) => p + s);
 const concat = (x, sep = "/") => (typeof x == "string" ? x : x.join(sep));
 const div = (a, b) => (a - (a % b)) / b;
+const SEPERATOR = "¦\u200B";
 
-export const CASES = {
+const CASES = {
   nom: ["n1", "w1", "", "t"],
   gen: ["w1", "g2", "n", "n"],
   par: c("p", ""),
@@ -21,7 +22,7 @@ export const CASES = {
   com: c("s", "ne"),
 };
 
-export const mkSimple = (a, n1, w1, s1, w2, s2, p1, p2, g2, i1, i2, prefix = "") => ({
+const mkSimple = (a, n1, w1, s1, w2, s2, p1, p2, g2, i1, i2, prefix = "") => ({
   a,
   n1: _pref(n1, prefix),
   w1: _pref(w1, prefix),
@@ -38,7 +39,6 @@ export const mkSimple = (a, n1, w1, s1, w2, s2, p1, p2, g2, i1, i2, prefix = "")
   decline(cs, num) {
     const over = this.check?.(cs, num);
     if (over != null) return over;
-    if ((cs === CASES.com || cs === CASES.ins) && num === 1) return [];
 
     const suffix = cs[2 + num - 1].replace("A", this.a);
 
@@ -62,7 +62,7 @@ export const mkSimple = (a, n1, w1, s1, w2, s2, p1, p2, g2, i1, i2, prefix = "")
   },
 });
 
-export const mkStr = (form) => ({
+const mkStr = (form) => ({
   form,
 
   decline(c, n) {
@@ -78,28 +78,26 @@ export const mkStr = (form) => ({
   },
 });
 
-export const EMPTY_SIMPLE = mkStr("");
+const EMPTY = mkStr("");
 
-export const mkComplex = (parts, sep = "") => ({
+const mkComplex = (parts) => ({
   parts,
-  sep,
+  sep: SEPERATOR,
 
   decline(cs, num) {
     let result = [];
 
     for (let part of this.parts) {
       if (typeof part == "string") {
-        if (part != "")
-          result.push(part);
+        if (part != "") result.push(part);
       } else {
-        if (part != EMPTY_SIMPLE)
-          result.push(concat(part.decline(cs, num)));
+        if (part != EMPTY) result.push(concat(part.decline(cs, num)));
       }
     }
 
     return result.join(this.sep);
-  }
-})
+  },
+});
 
 const format_power = (i) => {
   const dgts = "⁰¹²³⁴⁵⁶⁷⁸⁹";
@@ -112,37 +110,44 @@ const format_power = (i) => {
   return mkStr("10" + txt);
 };
 
-export const mkGenerator = (NUMBERS) => {
-  const single = (n, suffix = EMPTY_SIMPLE, small = false) => {
-    let numeral = (small? NUMBERS[n+"-small"] : null) ?? NUMBERS[n];
+const mkGenerator = (NUMBERS) => {
+  const single = (n, suffix = EMPTY, small = false) => {
+    let numeral = (small ? NUMBERS[n + "-small"] : null) ?? NUMBERS[n];
 
-    if (n == 0)
-      return [];
-    if (n == 1)
-      return suffix == EMPTY_SIMPLE? [numeral] : [suffix];
+    if (n == 0) return [];
+    if (n == 1) return suffix == EMPTY ? [numeral] : [suffix];
+    else return [numeral, suffix.as_part()];
+  };
+
+  const double = (n, suffix = EMPTY, small = false) => {
+    if (n < 10) return single(n, suffix, small);
+    if (n == 10) return [NUMBERS[10], suffix.as_part()];
+    if (n < 20) return [NUMBERS[n - 10], NUMBERS["1x"], suffix.as_part()];
     else
-      return [numeral, suffix.as_part()];
-  }
+      return [
+        NUMBERS[div(n, 10)],
+        NUMBERS[10].as_part(),
+        ...single(n % 10, EMPTY, small),
+        suffix.as_part(),
+      ];
+  };
 
-  const double = (n, suffix = EMPTY_SIMPLE, small = false) => {
-    if (n < 10)
-      return single(n, suffix, small);
-    if (n == 10)
-      return [NUMBERS[10], suffix.as_part()];
-    if (n < 20)
-      return [NUMBERS[n-10], NUMBERS["1x"], suffix.as_part()];
-    else
-      return [NUMBERS[div(n, 10)], NUMBERS[10].as_part(), ...single(n%10, EMPTY_SIMPLE, small), suffix.as_part()];
-  }
-
-  const triple = (n, suffix = EMPTY_SIMPLE, small = false) => {
-    if (n < 100)
-      return double(n, suffix, small);
+  const triple = (n, suffix = EMPTY, small = false) => {
+    if (n < 100) return double(n, suffix, small);
     if (n < 200)
-      return [NUMBERS[100], ...double(n % 100, EMPTY_SIMPLE, small && suffix == EMPTY_SIMPLE), suffix.as_part()];
+      return [
+        NUMBERS[100],
+        ...double(n % 100, EMPTY, small && suffix == EMPTY),
+        suffix.as_part(),
+      ];
     else
-      return [NUMBERS[div(n, 100)], NUMBERS[100].as_part(), ...double(n % 100, EMPTY_SIMPLE, small && suffix == EMPTY_SIMPLE), suffix.as_part()];
-  }
+      return [
+        NUMBERS[div(n, 100)],
+        NUMBERS[100].as_part(),
+        ...double(n % 100, EMPTY, small && suffix == EMPTY),
+        suffix.as_part(),
+      ];
+  };
 
   const multiple = (n, small = false) => {
     let is_zero = true;
@@ -160,18 +165,16 @@ export const mkGenerator = (NUMBERS) => {
       }
     }
 
-    if (is_zero)
-      return [NUMBERS[0]];
-    else
-      return parts.reverse().flat();
-  }
+    if (is_zero) return mkComplex([NUMBERS[0]]);
+    else return mkComplex(parts.reverse().flat());
+  };
 
   return multiple;
-}
+};
 
 ///////////////////
 
-export const KOTUS = {
+const KOTUS = {
   koira(root, a, gen_in_nom = false) {
     return mkSimple(
       a,
@@ -255,43 +258,118 @@ export const KOTUS = {
       "nsii",
       root,
     );
-  }
+  },
 };
 
-///////////////////
-
-export const CARDINALS = {
+const CARDINALS = {
   0: KOTUS.koira("noll", "a"),
   1: KOTUS.kaksi("y", "ä"),
   2: KOTUS.kaksi("ka", "a"),
-  3: mkSimple("a", "e", "e", "e", "i", "i", "ea", "ia", "ie", "ee", "ii", "kolm"),
+  3: mkSimple(
+    "a",
+    "e",
+    "e",
+    "e",
+    "i",
+    "i",
+    "ea",
+    "ia",
+    "ie",
+    "ee",
+    "ii",
+    "kolm",
+  ),
   4: KOTUS.koira("nelj", "ä"),
   5: KOTUS.käsi("vii", "ä"),
   6: KOTUS.käsi("kuu", "a"),
   7: KOTUS.koira("seitsem", "ä", true),
   8: KOTUS.koira("kahdeks", "a", true),
   9: KOTUS.koira("yhdeks", "ä", true),
-  10: mkSimple("ä", "en", "e", "e", "i", "i", "tä", "iä", ["ie", "te"], "ee", "ii", "kymmen"),
+  10: mkSimple(
+    "ä",
+    "en",
+    "e",
+    "e",
+    "i",
+    "i",
+    "tä",
+    "iä",
+    ["ie", "te"],
+    "ee",
+    "ii",
+    "kymmen",
+  ),
   "1x": mkStr("toista"),
-  100: mkSimple("a", "ta", "da", "ta", "doi", "toi", "taa", "toja", ["toje", "tai*"], "taa", "toihi", "sa"),
+  100: mkSimple(
+    "a",
+    "ta",
+    "da",
+    "ta",
+    "doi",
+    "toi",
+    "taa",
+    "toja",
+    ["toje", "tai*"],
+    "taa",
+    "toihi",
+    "sa",
+  ),
   ROW: [
-    EMPTY_SIMPLE,
-    mkSimple("a", "t", "nne", "nte", "nsi", "nsi", "tta", "nsia", ["nsie", "nte*"], "ntee", "nsii", "tuha"),
+    EMPTY,
+    mkSimple(
+      "a",
+      "t",
+      "nne",
+      "nte",
+      "nsi",
+      "nsi",
+      "tta",
+      "nsia",
+      ["nsie", "nte*"],
+      "ntee",
+      "nsii",
+      "tuha",
+    ),
     KOTUS.koira("miljoon", "a"),
-    mkSimple("a", "i", "i", "i", "ei", "ei", "ia", "eja", "ie", "ii", "eihi", "miljard")
+    mkSimple(
+      "a",
+      "i",
+      "i",
+      "i",
+      "ei",
+      "ei",
+      "ia",
+      "eja",
+      "ie",
+      "ii",
+      "eihi",
+      "miljard",
+    ),
     KOTUS.koira("biljoon", "a"),
-    mkSimple("a", "i", "i", "i", "ei", "ei", "ia", ["eita", "eja"], ["ie", "eide", "eitte"], "ii", "eihi", "biljard")
+    mkSimple(
+      "a",
+      "i",
+      "i",
+      "i",
+      "ei",
+      "ei",
+      "ia",
+      ["eita", "eja"],
+      ["ie", "eide", "eitte"],
+      "ii",
+      "eihi",
+      "biljard",
+    ),
   ],
 };
 
 CARDINALS[4].check = (cs, num) => {
-  if (cs == CASES.ins && num == 2)
-    return ["nelin", "neljin"];
-  else
-    return null;
-}
+  if (cs == CASES.ins && num == 2) return ["nelin", "neljin"];
+  else return null;
+};
 
-export const ORDINALS = {
+const ORDINALS = {
+  0: KOTUS.kahdeksas("nolla", "a"),
   1: KOTUS.kahdeksas("yhde", "ä"),
   "1-small": KOTUS.nainen("ensimmäi", "ä"),
   2: KOTUS.kahdeksas("kahde", "a"),
@@ -307,11 +385,80 @@ export const ORDINALS = {
   "1x": mkStr("toista"),
   100: KOTUS.kahdeksas("sada", "a").no_part(),
   ROW: [
-    EMPTY_SIMPLE,
+    EMPTY,
     KOTUS.kahdeksas("tuhanne", "a"),
     KOTUS.kahdeksas("miljoona", "a"),
     KOTUS.kahdeksas("miljardi", "a"),
     KOTUS.kahdeksas("biljoona", "a"),
     KOTUS.kahdeksas("biljardi", "a"),
-  ].map(x => x.no_part()),
+  ].map((x) => x.no_part()),
 };
+
+///////////////////
+
+const filter_input = (value) => {
+  let filtered = "";
+
+  for (let i = 0; i < value.length; i += 1) {
+    if ("0123456789".includes(value.at(i))) {
+      filtered += value.at(i);
+      continue;
+    }
+
+    return { ok: false, val: L10N.unknown_sym + ": '" + value.at(i) + "'" };
+  }
+
+  if (filtered.length == 0) return { ok: false, val: L10N.err_empty };
+  else return { ok: true, val: filtered };
+};
+
+const g_car = mkGenerator(CARDINALS),
+  g_ord = mkGenerator(ORDINALS);
+
+const generators = {
+  car(n, c, g) {
+    return g_car(n).decline(c, g);
+  },
+  ord(n, c, g) {
+    if (+n == 1 || +n == 2) return ORDINALS[+n + "-small"].decline(c, g);
+
+    const small = g_ord(n, true).decline(c, g),
+      big = g_ord(n, false).decline(c, g);
+
+    if (small == big) return small;
+    else return small + " " + L10N.or + " " + big;
+  },
+};
+
+const number_e = document.getElementById("number");
+const type_e = document.getElementById("type");
+const case_e = document.getElementById("case");
+const gnum_e = document.getElementById("gram-number");
+const result_e = document.getElementById("result");
+
+window.entry = () => {
+  const value = filter_input(number_e.value);
+
+  if (!value.ok) {
+    result_e.innerHTML = "<b>" + L10N.error + "</b>: " + value.val;
+    return;
+  }
+
+  if ((case_e.value == "com" || case_e.value == "ins") && gnum_e.value == "1") {
+    result_e.innerHTML =
+      "<b>" + L10N.error + "</b>: " + L10N["err_sg_" + case_e.value];
+    return;
+  }
+
+  const generator = generators[type_e.value];
+
+  result_e.innerHTML =
+    "<b>" +
+    L10N.result +
+    "</b>: " +
+    generator(value.val, CASES[case_e.value], +gnum_e.value);
+};
+
+for (let e of [number_e, type_e, case_e, gnum_e, result_e]) e.onchange = entry;
+
+entry();
