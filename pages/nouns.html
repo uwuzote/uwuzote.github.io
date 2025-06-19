@@ -1,29 +1,212 @@
-TITLE(TRANS(Nominitaivutus, Склонение в финском))
+## Exclusive article in Russian
+
+TITLE(Склонение в финском)
 
 HEADER([
-  H1(TRANS(Nominitaivutus suomen kielessä, Склонение в финком языке))
-  H2(Versio 0.1)
+  H1(Склонение в финком языке)
+  H2(Бета-версия 0.1)
   H3(SUPER_GADGET)
 ])
 
-NAV([
-  <p>Navigation panel -- in progress...</p>
-])
+## NAV([
+##   <p>Navigation panel -- in progress...</p>
+## ])
 
-define([LOREM], [<p>Ex quisquam atque dolores dolorem consequatur nesciunt quae. Sapiente rerum beatae rerum rerum. Tempora quidem tenetur ACCENT(nesciunt) maxime eos vel neque.</p><p>In fuga ut quia distinctio et eaque beatae. Voluptate impedit vitae fuga dolorum non pariatur adipisci. Et sint voluptatem ex animi consequatur eos est. Ipsam ex enim ACCENT(cupiditate) cumque illo eum.</p>])
+define([POSS], <abbr title="притяжательный суффикс">ПС</abbr>)
+define([W1], [<abbr title="слабая основа ед.ч.">I([[W1]])</abbr>])
+define([W2], [<abbr title="слабая основа мн.ч.">I([[W2]])</abbr>])
+define([W12], [<abbr title="слабая основа в соот. числе">I([[W1/2]])</abbr>])
+define([S1], [<abbr title="сильная основа ед.ч.">B([[S1]])</abbr>])
+define([S2], [<abbr title="сильная основа мн.ч.">B([[S2]])</abbr>])
+define([S12], [<abbr title="сильная основа в соот. числе">B([[S1/2]])</abbr>])
+define([STAR], &#9733;)
 
 ARTICLE([
-  H1(Ensimmäinen ACCENT(1:nen)) LOREM
-  H2(Toinen ACCENT(2:nen)) LOREM
-  H3(Kolmas ACCENT(3:s)) LOREM
-  H4(Neljäs ACCENT(4:s)) LOREM
-  H5(Viides ACCENT(5:s)) LOREM
-  H6(Kuudes ACCENT(6:s)) LOREM
+  H1(Введение)
+  P(Финский язык имеет сложную систему склонения именных частей речи. В целом, склонение может быть сведено к четырём основам: W1, W2, S1, S2. Я предлагаю следующую классификацию падежей:)
+  <table>
+    <caption>Падежи</caption>
+    <thead>
+      <tr>
+        <th colspan="2" rowspan="2">Падеж</th>
+        <th colspan="2">Основа</th>
+        <th colspan="2">Окончание</th>
+        <th rowspan="2"><abbr title="краткий притяжательный суффикс">КПС</abbr>?</th>
+        <th rowspan="2">Комментарий</th>
+      </tr>
+      <tr>
+        <th>Ед.ч.</th>
+        <th>Мн.ч.</th>
+        <th>Ед.ч.</th>
+        <th>Мн.ч.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="2">Номинатив</th>
+        <th>Без POSS</th>
+        <td>STAR</td>
+        <td>W1</td>
+        <td>∅</td>
+        <td>t</td>
+        <td rowspan="2">нет</td>
+        <td rowspan="2">особая форма в ед.ч.</td>
+      </tr>
+      <tr>
+        <th>С POSS</th>
+        <td colspan="2">S1</td>
+        <td colspan="2">∅</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Генетив</th>
+        <th>Без POSS</th>
+        <td>W1</td>
+        <td rowspan="2">STAR</td>
+        <td>n</td>
+        <td>∅</td>
+        <td rowspan="2">нет</td>
+        <td rowspan="2">особая форма во мн.ч.</td>
+      </tr>
+      <tr>
+        <th>С POSS</th>
+        <td>S1</td>
+        <td>∅</td>
+        <td>S(n)¹</td>
+      </tr>
+      <tr>
+        <th colspan="2">Партитив</th>
+        <td colspan="2">STAR</td>
+        <td colspan="2">∅</td>
+        <td>да</td>
+        <td>особые формы; КПС, когда не заканчивается на -AA</td>
+      </tr>
+      <tr>
+        <th colspan="2">Аккузатив</th>
+        <td colspan="6">I(Совпадает с <abbr title="номинатив">ном.</abbr> или <abbr title="генетив">ген.</abbr>) (см. LNK(/object.ru.html, объект))</td>
+      </tr>
+      <tr>
+        <th colspan="2">Инессив</th>
+        <td colspan="2">W12</td>
+        <td colspan="2">ssA</td>
+        <td>да</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <th colspan="2">Элатив</th>
+        <td colspan="2">W12</td>
+        <td colspan="2">stA</td>
+        <td>да</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Иллатив</th>
+        <th>Без POSS</th>
+        <td colspan="2" rowspan="2">STAR</td>
+        <td colspan="2">∅</td>
+        <td rowspan="2">нет</td>
+        <td rowspan="2">особые формы</td>
+      </tr>
+      <tr>
+        <th>С POSS</th>
+        <td colspan="2">S(n)¹</td>
+      </tr>
+      <tr>
+        <th colspan="2">Адессив</th>
+        <td colspan="2">W12</td>
+        <td colspan="2">llA</td>
+        <td>да</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <th colspan="2">Аблатив</th>
+        <td colspan="2">W12</td>
+        <td colspan="2">ltA</td>
+        <td>да</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <th colspan="2">Аллатив</th>
+        <td colspan="2">W12</td>
+        <td colspan="2">lle</td>
+        <td>да</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <th colspan="2">Эссив</th>
+        <td colspan="2">S12</td>
+        <td colspan="2">nA</td>
+        <td>да</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Транслатив</th>
+        <th>Без POSS</th>
+        <td colspan="2" rowspan="2">W12</td>
+        <td colspan="2">ksi</td>
+        <td rowspan="2">да</td>
+        <td rowspan="2">—</td>
+      </tr>
+      <tr>
+        <th>С POSS</th>
+        <td colspan="2">kse</td>
+      </tr>
+      <tr>
+        <th colspan="2">Абессив</th>
+        <td colspan="2">W12</td>
+        <td colspan="2">ttA</td>
+        <td>да</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <th>Инструктив</th>
+        <th>Без POSS</th>
+        <td>∅</td>
+        <td>W2</td>
+        <td colspan="2">n</td>
+        <td>нет</td>
+        <td>только во мн.ч. без POSS</td>
+      </tr>
+      <tr>
+        <th colspan="2">Комитатив</th>
+        <td>∅</td>
+        <td>S2</td>
+        <td colspan="2">ne</td>
+        <td>да</td>
+        <td>только во мн.ч.; сущ. требуют POSS</td>
+      </tr>
+    </tbody>
+  </table>
+  P(S(n)¹ — необходима убрать -U(n) с конца перед POSS.)
 
-  H1(Ensimmäinen ACCENT(1:nen))
-  H2(Toinen ACCENT(2:nen))
-  H3(Kolmas ACCENT(3:s))
-  H4(Neljäs ACCENT(4:s))
-  H5(Viides ACCENT(5:s))
-  H6(Kuudes ACCENT(6:s))
+  <table>
+    <caption>Притяжательные суффиксы</caption>
+    <thead>
+      <tr>
+        <th>Лицо</th>
+        <th>Ед.ч.</th>
+        <th>Мн.ч.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1.</th>
+        <td>-ni</td>
+        <td>-mme</td>
+      </tr>
+      <tr>
+        <th>2.</th>
+        <td>-si</td>
+        <td>-nne</td>
+      </tr>
+      <tr>
+        <th>3.</th>
+        <td colspan="2">-nsA (длинный),
+        <br>-Vn (краткий)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  H1(Типы склонения)
+
+  P(Институт исконных языков Финляндии (<abbr title="Kotimaisten kielten keskus">Kotus</abbr>) представил разделение всех имён на 51 тип склонения. Каждый тип представляет из себя правила образования следующих особых форм: номинатив ед.ч., генетив мн.ч., партитив, иллатив, W1, W2 и S1, S2)
 ])

@@ -41,12 +41,11 @@ DEFINE_PROTECTED([H6], [<h6>CONCAT($@)</h6>])
 DEFINE_PROTECTED([P], [<p>CONCAT($@)</p>])
 DEFINE_PROTECTED([B], [<b>CONCAT($@)</b>])
 DEFINE_PROTECTED([I], [<i>CONCAT($@)</i>])
+DEFINE_PROTECTED([S], [<s>CONCAT($@)</s>])
+DEFINE_PROTECTED([U], [<u>CONCAT($@)</u>])
 DEFINE_PROTECTED([DETAILS], [<details><summary>$1</summary>$2</details>])
 
-define([TRANSLATE_GADGET], [TRANS(
-  [LNK([/]SELF[.ru.html], По-русски)],
-  [LNK([/]SELF[.html], Suomeksi)]
-)])
+define([TRANSLATE_GADGET], [TRANS([LNK([/]SELF[.ru.html], По-русски)], [LNK([/]SELF[.html], Suomeksi)])])
 
 define([SUPER_GADGET], [TRANSLATE_GADGET — LNK(URL(index), TRANS(Pääsivuun, На главную))])
 
