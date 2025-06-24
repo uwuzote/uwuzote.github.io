@@ -3,14 +3,40 @@
 TITLE(Склонение в финском)
 
 HEADER([
-  H1(Склонение в финком языке)
+  H1(Склонение в финском языке)
   H2(Бета-версия 0.1)
-  H3(SUPER_GADGET)
+  H3(LNK(URL(index), На главную))
 ])
 
-## NAV([
-##   <p>Navigation panel -- in progress...</p>
-## ])
+NAV([
+  H1(Содержание)
+  LIST(menu,
+    [LNK(#intro, Введение)
+    LIST(menu,
+      [LNK(#intro-notation, Лингвистическая нотация)],
+      [LNK(#intro-harmony, Гармония гласных)],
+      [LNK(#intro-gradation, Чередование согласных)],
+      [LNK(#intro-possessive, Притяжательные суффиксы)],
+      [LNK(#intro-algorithm, Алгоритм склонения)]
+    )],
+    [LNK(#families, Семьи типов склонения)
+    LIST(menu,
+      [LNK(#family-0, Исключения и важные случаи)],
+      [LNK(#family-1, I. Согласная надсемья)],
+      [LNK(#family-2, II. Гласная надсемья)],
+      [LNK(#family-3, III. Семья ACCENT(hamsteri))],
+      [LNK(#family-4, IV. Семья ACCENT(pöllö))],
+      [LNK(#family-5, V. Семья ACCENT(koira))],
+      [LNK(#family-6, VI. Семья ACCENT(kissa))],
+      [LNK(#family-7, VII. Семья ACCENT(haltija))],
+      [LNK(#family-8, VIII. Семья ACCENT(hanhi))],
+      [LNK(#family-9, IX. Семья ACCENT(kääpiö))],
+      [LNK(#family-10, X. Семья ACCENT(kyy))],
+      [LNK(#family-tree, Дерево определения семей)]
+    )
+    ]
+  )
+])
 
 define([POSS], <abbr title="притяжательный суффикс">ПС</abbr>)
 define([W1], [<abbr title="слабая основа ед.ч.">I([[W1]])</abbr>])
@@ -19,11 +45,100 @@ define([W12], [<abbr title="слабая основа в соот. числе">I
 define([S1], [<abbr title="сильная основа ед.ч.">B([[S1]])</abbr>])
 define([S2], [<abbr title="сильная основа мн.ч.">B([[S2]])</abbr>])
 define([S12], [<abbr title="сильная основа в соот. числе">B([[S1/2]])</abbr>])
-define([STAR], &#9733;)
+define([STAR], [&#9733;])
+define([FAM], [B(LNK(#family-$1, $2)/$3)])
+define([EXAMPLE], [
+  <table>
+    ifelse($2, [], [], [$1])
+    <thead>
+      <tr>
+        <th colspan="4">ед.ч.</th>
+        <th colspan="4">мн.ч.</th>
+        ifelse($2, [], [], [<th rowspan="2">комментарий</th>])
+      </tr>
+      <tr>
+        <th><abbr title="номинатив">ном.</abbr></th>
+        <th><abbr title="генетив">ген.</abbr></th>
+        <th><abbr title="партитив">пар.</abbr></th>
+        <th><abbr title="иллатив">илл.</abbr></th>
+        <th><abbr title="эссив">эсс.</abbr></th>
+        <th><abbr title="генетив">ген.</abbr></th>
+        <th><abbr title="партитив">пар.</abbr></th>
+        <th><abbr title="иллатив">илл.</abbr></th>
+      </tr>
+    </thead>
+    <tbody>
+      ifelse($2, [], [$1], [$2])
+    </tbody>
+  </table>
+])
+define([ROW], [<tr><th>$1</th><td>$2</td><td>$3</td><td>$4</td><td>$5</td><td>$6</td><td>$7</td><td>$8</td></tr>ifelse([$9], [], [], [<td[]ifelse([$10], [], [], [ rowspan="$10"])>[$9]</td>])])
 
 ARTICLE([
-  H1(Введение)
-  P(Финский язык имеет сложную систему склонения именных частей речи. В целом, склонение может быть сведено к четырём основам: W1, W2, S1, S2. Я предлагаю следующую классификацию падежей:)
+  SELF_LINK(h1, intro, Введение)
+  P(Финский язык имеет сложную систему склонения именных частей речи: два грамматических числа и пятнадцать падежей. Однако, большинство падежей образуются от одинаковых основ. При этом происходят два два важных фонологических процесса: чередование согласных и гармония гласных. Также необходимо понимать, что такое притяжательные суффиксы и общий процес склонения существительного.)
+
+  SELF_LINK(h2, intro-notation, Лингвистическая нотация)
+  LIST(ul,
+    [B(A), B(O), B(U) обозначают B(a) или B(ä), B(o) или B(ö), B(u) или B(y) соответсвенно;],
+    [B(V) обозначает в общем случае гласную, или, если используется в окончании или т.п., последнюю гласную. Например, koti + -Vn = kotiin.],
+    [B(K) обозначает согласную.],
+    [Другие большие буквы могут обозначать другие переменные сочетания букв, зависит от контекста],
+    [Число в квадратных скобках обозначает слово из n слогов. Например, [[1]] — односложное слово, [[2]] — двухсложное, [[3+]] — «длинное» слово (трёх и более слогов)],
+    [Буквы в круглых скобках через слэш означают несколько вариантов. Например, «U(-O/U)» означает «U(-O) или U(-U)», т.е. «U(-o), U(-ö), U(-u) или U(-y)»],
+    [Буквы в круглых скобках (без слешей) обозначают опциональные или частые элементы. Например, «-(tA)Va-причастие» означает «активное или пассивное причастие настоящего времени», или «слово на -(U)US» означает «слово, которое заканчивается на U(-Us), хотя для него будет типично заканчиваться на U(-UUs)»]
+  )
+
+  SELF_LINK(h2, intro-harmony, Гармония гласных)
+  P(Гармония гласных (или сингармонизм) — явление, состоящее в уподоблении гласных в пределах одного слова. Финский выделяет три группы гласных: «задние» гласные B(a), B(o), B(u), «передние» B(ä), B(ö), B(y) и «нейтральные» B(i), B(e). В одном слове не могут сочетаться «задние» и «передние» гласные, а «нейтральные» гласные сочетаются с любыми, причём если слово состоит исключительно из «нейтральных» гласных, оно считается «передней» гармонии (однако есть пару сууфиксов, которые при этом сохраняют «заднюю» гармонию).)
+  P(В лингвистической нотации B(A) обозначает B(a) или B(ä) и т.д. для B(O) и B(U). Например, valo + -ssA = valossa, peili + -ssA = peilissä, äiti + -ssA = äidissä.)
+
+  SELF_LINK(h2, intro-gradation, Чередование согласных)
+  <!-- TODO: make into a table -->
+  P(Чередование согласных — это процесс упрощение начальной согласной в закрытом слоге. Выделяют две группы мутаций: количественные и качественные. К количественным относят чередования B(kk-k) (Kotus: A), B(pp-p) (B), B(tt-t) (C). Этот вид чередования остаётся продуктивным, и в менее формальной речи возможно чередование и других взрывных согласных, например, B(gg-g), B(bb-b), B(dd-d). К качественным чередованиям относят чередования B(k-∅) (D, в некоторых случаях B(k-’)), B(p-v) (E), B(t-d) (F), B(nk-ng) (G, /ŋk/-/ŋː/), B(mp-mm) (H), B(lt-ll) (I), B(nt-nn) (J), B(rt-rr) (K), B(k-j) (L, обычно в B(lke), B(rke)), B(k-v) (M, обычно в B(uku), B(yky)). Эти чередования уже не так продуктивны и не всегда распространяются на заимствования.)
+  P(Например: pakko + -n = pakon, kauppa + -n = kaupan, matto + -n = maton, minä + blogata = bloggaan/blogaan (обратное чередование), minä + lobata = lobbaan/lobaan (обр.), vedda + -n = vedan, näky + -n = näyn, ikä + -issä = i’issä, apu + -n = avun, äiti + -n = äidin, kenkä + -n = kengän, minä + ampua = ammun, silta + -n = sillan, kanto + -n = kannon, porras + -n = portaan (обр.), jälki + -n = jäljen, puku + -n = puvun.)
+  P(Процесс чередования согласных грамматикализован, поэтому слабая ступень может встретиться в открытом слоге, а сильная — в закрытом. В частности, слаб номинатив слов типа LNK(#family-2, II).v/sade, а также некоторые формы глаголов.)
+
+  SELF_LINK(h2, intro-possessive, Притяжательные суффиксы)
+  <table>
+    <!-- <caption>Притяжательные суффиксы</caption> -->
+    <thead>
+      <tr>
+        <th>Лицо</th>
+        <th>Ед.ч.</th>
+        <th>Мн.ч.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1.</th>
+        <td>-ni</td>
+        <td>-mme</td>
+      </tr>
+      <tr>
+        <th>2.</th>
+        <td>-si</td>
+        <td>-nne</td>
+      </tr>
+      <tr>
+        <th>3.</th>
+        <td colspan="2">-nsA,
+        <br>-Vn (краткий)</td>
+      </tr>
+    </tbody>
+  </table>
+  P(В финском существуют притяжательные суффиксы. Это маркеры, стоящие после окончания существительного, заменяющие притяжательные местоимения. Например, minun kirja = kirjani = minun kirjani. POSS'ы исользуются преимущественно в литературном языке. Суффиксы различают лицо и число B(обладателя), но не самого существительного, но в третьем лице нет различия по числу, поэтому местоимение нельзя опустить: hänen kirja = hänen kirjansa. Без местоимения в третьем лице суффикс обладает возвратным значением, например, Hän lukee hänen kirjaansa — Он/она читает его/её (т.е. чужую) книгу, Hän lukee kirjaansa — Он/она читает свою книгу. Краткий POSS может быть использован в косвенных падежах после U(-A) или U(-e). Когда есть притяжательный суффикс, номинатив ед. и мн.ч., генетив ед.ч. совпадают.)
+
+  SELF_LINK(h2, intro-algorithm, Алгортим склонения)
+  P(Общий процесс склонения таков:)
+  LIST(ol,
+    [Определить необходимое число, падеж, будет ли использоваться притяжательный суффикс.],
+    [Определить тип склонения слова],
+    [Построить основу требуемого числа. В целом, основа мн.ч. получается из ед.ч добавлением маркера U(-i-), который мутирует в U(-j-) между гласными.],
+    [Добавить падежное окончание (чередование согласных!)],
+    [Добавить притяжательный суффикс]
+  )
+  P(Иначе говоря, зная четыре основы W1, W2, S1, S2 можно построить большинство падежей:)
   <table>
     <caption>Падежи</caption>
     <thead>
@@ -65,20 +180,20 @@ ARTICLE([
         <td>n</td>
         <td>∅</td>
         <td rowspan="2">нет</td>
-        <td rowspan="2">особая форма во мн.ч.</td>
+        <td rowspan="2">особая форма во мн.ч.;<br>окончания мн.ч.: U(-en), U(-den/tten), U(-ten)</td>
       </tr>
       <tr>
         <th>С POSS</th>
         <td>S1</td>
         <td>∅</td>
-        <td>S(n)¹</td>
+        <td>S(n)<sup>1</sup></td>
       </tr>
       <tr>
         <th colspan="2">Партитив</th>
         <td colspan="2">STAR</td>
         <td colspan="2">∅</td>
         <td>да</td>
-        <td>особые формы; КПС, когда не заканчивается на -AA</td>
+        <td>особые формы; КПС, когда не заканчивается на -AA;<br>окончания: U(-A), U(-tA)</td>
       </tr>
       <tr>
         <th colspan="2">Аккузатив</th>
@@ -104,11 +219,11 @@ ARTICLE([
         <td colspan="2" rowspan="2">STAR</td>
         <td colspan="2">∅</td>
         <td rowspan="2">нет</td>
-        <td rowspan="2">особые формы</td>
+        <td rowspan="2">особые формы; окончания: U(-(h)Vn), U(-seen) (ед.ч.), U(-siin) (мн.ч.)</td>
       </tr>
       <tr>
         <th>С POSS</th>
-        <td colspan="2">S(n)¹</td>
+        <td colspan="2">S(n)<sup>1</sup></td>
       </tr>
       <tr>
         <th colspan="2">Адессив</th>
@@ -176,37 +291,252 @@ ARTICLE([
       </tr>
     </tbody>
   </table>
-  P(S(n)¹ — необходима убрать -U(n) с конца перед POSS.)
+  P(S(n)<sup>1</sup> — необходимо убрать -U(n) с конца перед POSS.)
 
-  <table>
-    <caption>Притяжательные суффиксы</caption>
-    <thead>
-      <tr>
-        <th>Лицо</th>
-        <th>Ед.ч.</th>
-        <th>Мн.ч.</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>1.</th>
-        <td>-ni</td>
-        <td>-mme</td>
-      </tr>
-      <tr>
-        <th>2.</th>
-        <td>-si</td>
-        <td>-nne</td>
-      </tr>
-      <tr>
-        <th>3.</th>
-        <td colspan="2">-nsA (длинный),
-        <br>-Vn (краткий)</td>
-      </tr>
-    </tbody>
-  </table>
+  SELF_LINK(h1, families, Семьи типов склонения)
+  P(Институт исконных языков Финляндии (фин. Kotus, Kotimaisten kielten keskus) представил разделение всех имён на 51 тип склонения. Каждый тип представляет из себя правила образования следующих особых форм: номинатива ед.ч., генетива мн.ч., партитива, иллатива, основ единственного и множественного числа.)
+  P(Это моё разделение этих типов на 10 семей. Они получены пересечением позволительных для каждого типа форм, поэтому, например, возможный мн. ген. слова nainen, naisten, никак не показан, поэтому данная классификация разработана как подспорье лишь в B(образовании) грамматических верных форм.)
+  P(Везде подразумевается, что слова двух или более слогов, если не сказано иначе.)
 
-  H1(Типы склонения)
+  EXAMPLE(
+    <caption>Обзор семей</caption>,
+    ROW(FAM(1, I.i, hiiri), hiire[]B(n), hiir[]B(tä), hiire[]B(en), hiir[]U(i)B(nä), hiir[]U(i)B(en), hiir[]U(i)B(ä), hiir[]U(i)B(in), -(h/l/n/r/s)i; -l/n/r/s)
+    ROW(FAM(2, II.i, lammas), lampaa[]B(n), lammas[]B(ta), lampaa[]B(seen), lampa[]U(i)B(na), lampa[]U(i)B(den)<br>lampa[]U(i)B(tten), lampa[]U(i)B(ta), lampa[]U(i)B(siin), -s/t/e; -eA/oa, 2)
+    ROW(FAM(2, II.ii, olut), olue[]B(n), olut[]B(ta), olue[]B(en), olu[]U(i)B(na), olu[]U(i)B(den)<br>olu[]U(i)B(tten), olu[]U(i)B(ta), olu[]U(i)B(siin))
+    ROW(FAM(3, III, hamsteri), hamsteri[]B(n), hamsteri[]B(a), hamsteri[]B(in), hamstere[]U(i)B(na), hamsteri[]B(en), hamstere[]U(j)B(a), hamstere[]U(i)B(hin), -(i))
+    ROW(FAM(4, IV, pöllö), pöllö[]B(n), pöllö[]B(ä), pöllö[]B(ön), pöllö[]U(i)B(nä), pöllö[]U(j)B(en), pöllö[]U(j)B(ä), pöllö[]U(i)B(hin), -O/U; (-e))
+    ROW(FAM(5, V, koira), koira[]B(n), koira[]B(a), koira[]B(an), koir[]U(i)B(na), koir[]U(i)B(en), koir[]U(i)B(a), koir[]U(i)B(in), [[[2]]] -A; -(V)jA; дл. прил.; -mpi)
+    ROW(FAM(6, VI, kissa), kissa[]B(n), kissa[]B(a), kissa[]B(an), kisso[]U(i)B(na), kisso[]U(j)B(en), kisso[]U(j)B(a), kisso[]U(i)B(hin), [[[2]]] a/e/i...-a)
+    ROW(FAM(7, VII, haltija), haltija[]B(n), haltija[]B(a), haltija[]B(an), haltijo[]U(i)B(na), haltijo[]U(i)B(den)<br>haltijo[]U(i)B(tten), haltijo[]U(i)B(ta), haltijo[]U(i)B(hin), [[[3+]]] -A: -(i)jA; дл. сущ.)
+    ROW(FAM(8, VIII, hanhi), hanhe[]B(n), hanhe[]B(a), henhe[]B(en), hanh[]U(i)B(na), hanh[]U(i)B(en), hanh[]U(i)B(a), hanh[]U(i)B(in), [[[2]]] -i)
+    ROW(FAM(9, IX, kääpiö), kääpiö[]B(n), kääpiö[]B(tä), kääpiö[]B(ön), kääpiö[]U(i)B(nä), kääpiö[]U(i)B(den)<br>kääpiö[]U(i)B(tten), kääpiö[]U(i)B(tä), kääpiö[]U(i)B(hin), -VO/Ve)
+    ROW(FAM(10, X, kyy), kyy[]B(n), kyy[]B(tä), kyy[]B(hyn), ky[]U(i)B(nä), ky[]U(i)B(den)<br>ky[]U(i)B(tten), ky[]U(i)B(tä), ky[]U(i)B(hin), [[[1]]]; иностр.)
+  )
 
-  P(Институт исконных языков Финляндии (<abbr title="Kotimaisten kielten keskus">Kotus</abbr>) представил разделение всех имён на 51 тип склонения. Каждый тип представляет из себя правила образования следующих особых форм: номинатив ед.ч., генетив мн.ч., партитив, иллатив, W1, W2 и S1, S2)
+  SELF_LINK(h2, family-0, 0. Исключения и важные случаи)
+  P(Я рассматриваю как исключения как действительно исключения из собственных типов, так типы, состоящие из отдельных слов, целиком.)
+  LIST(ul,
+    [Kotus 29 — lapsi и др. — FAM(1, I, [[[[Ksi,Kse,s,Ks]]]]), или (кроме lapsi) склонение FAM(8, VIII, hanhi) (LNK(https://en.wiktionary.org/wiki/Category:Finnish_lapsi-type_nominals, список))],
+    [Kotus 30 — veitsi, peitsi и др. — FAM(1, I, [[[[tsi,tse,s,ts]]]]) (LNK(https://en.wiktionary.org/wiki/Category:Finnish_veitsi-type_nominals, список))],
+    [Kotus 31 — yksi, kaksi, haaksi и oksi — FAM(1, I, [[[[ksi,kte,h,ks]]]])],
+    [Kotus 35 — lämmin, hapan — FAM(1, I, [[[[n,mA,n,m]]]])],
+    [Kotus 37 — vasen — FAM(1, I, [[[[n,mpA,n,mp]]]])],
+    [Kotus 42 — mies — FAM(1, I, [[[[s,he,s,h]]]])],
+    [Kotus 44 — kevät, säynät, venät и др. — FAM(2, II, [[[[Vt,VV,Vt]]]]) (LNK(https://en.wiktionary.org/wiki/Category:Finnish_kev%C3%A4t-type_nominals, список))],
+    [Kotus 46 — tuhat — FAM(1, I, [[[[t,nte,t,ns]]]])],
+    [Kotus 49 — некоторые слова на U(-(l/n/r)(e)) — как FAM(1, I.iii, ahven) или FAM(2, II.v, sade) (LNK(https://en.wiktionary.org/wiki/Category:Finnish_askel-type_nominals, список))],
+    [Слова meri, veri, принадлежащие типу FAM(1, I.i, hiiri), имеют формы ед. пар.: mert[]B(a), vert[]B(a) (но: merell[]B(ä))],
+    [Слово paras, принадлежащее типу FAM(2, II.i, lammas), имеет уникальное чередование B(h-∅)],
+    [Слово veli склоняется как I(*velji) типа FAM(8, VIII, hanhi)],
+    [Слово kolme склоняется как I(*kolmi) типа FAM(8, VIII, hanhi)],
+    [Слово neljä, принадлежащее типу FAM(5, V, koira), имеет вторую форму инструктива nelin],
+    [Слова seitsemän, kahdeksan и yhdeksän, принадлежащие типу FAM(5, V, koira), имееют идентичную форму ном. и ген. ед.ч.],
+    [Существуют слова типа FAM(2, II.iv, sade), у которых другая гласная в корне, например, ori (ед. ген. oriin)],
+    [Слова типа FAM(1, I.vii, muurahainen) имееют специальную комбинирующую форму на U(-s). Например, nainen + asia = naisasia]
+  )
+
+  SELF_LINK(h2, family-1, I. Согласная надсемья (B(23), 24, 26-40, 42, 45, 46, 49))
+  P(Обширная семья слов с основами на короткий гласный, выпадающий перед U(-i-) во мн.ч., возможно чередование согласных, в т.ч. обратное. Характеризуются четырьмя базовыми мутациями: B(N) (конец номинатива), B(S) (конец основы в ед.ч., включая гласную), B(P) (конец слова перед окончанием партитива ед.ч.), B(M) (конец основы множественного числа, не включая маркер U(-i-)).)
+  P(Ед. пар. U(-tA), мн. пар. U(-A), мн. ген. U(-en), илл. U(-Vn))
+  P(Подсемьи (в скобках указаны B([[N,S,P,M]])):)
+  <ol class="list-lower-roman">
+    <li>ACCENT(hiiri) — двухсложные слова на U(-hi/li/ni/ri/si) (B([[i,e,∅,∅]]))</li>
+    <li>ACCENT(susi) — двухсложные слова на U(-si) (B([[si,te,t,si]]))</li>
+    <li>ACCENT(ahven) — слова на U(-l/n/r) (B([[∅,e,∅,∅]]))</li>
+    <li>ACCENT(eläin) — слова на U(-n), обычно U(-in) (B([[n,me,n,m]]))</li>
+    <li>ACCENT(mieletön) — слова на U(-tOn) (B([[n,mA,n,m]]))</li>
+    <li>ACCENT(isoin) — превосходная степень сравнения прилагательных на U(-in) (B([[n,mpA,n,mp]]))</li>
+    <li>ACCENT(muurahainen) — слова на U(-nen) (B([[nen,se,s,s]]))</li>
+    <li>ACCENT(jänis) — слова на U(-s), обычно U(-(O/U)s) (B([[s,kse,s,ks]]))</li>
+    <li>ACCENT(hulluus) — слова на U(-(U)Us) (B([[s,te,t,ks]]))</li>
+    <li>ACCENT(kolmas) — порядковые числительные на U(-s) (B([[s,nte,t,ns]]))</li>
+  </ol>
+  EXAMPLE(
+    ROW(...N, ...Sn, ...PtA, ...SVn, ...MinA, ...Mien, ...MiA, ...Miin)
+    ROW((i) tiili, tiilen, tiiltä, tiileen, tiilinä, tiilien, tiiliä, tiiliin)
+    ROW((i) uni, unen, unta, uneen, unina, unien, unia, uniin)
+    ROW((i) ääni, äänen, ääntä, ääneen, ääninä, äänien, ääniä, ääniin)
+    ROW((ii) susi, suden, sutta, suteen, susina, susien, susia, susiin)
+    ROW((ii) kynsi, kynnen, kynttä, kynteen, kynsinä, kynsiä, kynsien, kynsiin)
+    ROW((iii) tytär, tyttären, tytärtä, tyttäreen, tyttärinä, tyttärien, tyttäriä, tyttäriin)
+    ROW((iii) ien, ikenen, ientä, ikeneen, ikeninä, ikenien, ikeniä, ikeniin)
+    ROW((iv) avain, avaimen, avainta, avaimeen, avaimina, avaimien, avaimia, avaimiin)
+    ROW((v) joeton, joettoman, joetonta, joettomaan, joettomina, joettomien, joettomia, joettomiin)
+    ROW((vi) sisin, sisimmän, sisintä, sisimpään, sisimpinä, sisimpien, sisimpiä, sisimpiin)
+    ROW((vii) nainen, naisen, naista, naiseen, naisina, naisien, naisia, naisiin)
+    ROW((viii) tulos, tuloksen, tulosta, tulokseen, tuloksina, tuloksien, tuloksia, tuloksiin)
+    ROW((ix) terveys, terveyden, terveyttä, terveyteen, terveyksinä, terveyksien, terveysksiä, terveyksiin)
+    ROW((x) kolmas, kolmannen, kolmatta, kolmanteen, kolmansina, kolmansien, kolmansia, kolmansiin)
+  )
+
+  SELF_LINK(h2, family-2, II. Гласная надсемья (15, 17, 20, B(41), 43, 44, 47-49))
+  P(Обширная семья слов с основами на две гласные, вторая из которых выпадает перед U(-i-) во мн.ч., возможно чередование согласных, в т.ч. обратное. Характеризуется тремя базовыми мутациями: B(N) (конец номинатива), B(S) (конец основы ед.ч. со обеими гласными), B(P) (конец слова перед окончанием партитива ед.ч.). Символ B(S<sup>1</sup>) обозначает B(S) без последней гласной.)
+  P(Пар. U(-tA), мн. ген. U(-den), ед. илл. U(-seen) (если осн. заканчивается на длинную гласную) или U(-Vn) (иначе), мн. илл. U(-siin).)
+  P(Подсемьи (в скобках указаны B(NSP)):)
+  <ol class="list-lower-roman">
+    <li>ACCENT(lammas) — слова на U(-Vs), обычно U(-(A/i)s) (B([[Vs,VV,Vs]]))</li>
+    <li>ACCENT(olut) — малое количесвто слов на U(-Ut) (B([[Ut,Ue,Ut]]))</li>
+    <li>ACCENT(purrut) — ACCENT(-nUt)-причастия (B([[Ut,ee,Ut]]))</li>
+    <li>ACCENT(sade) — слова на U(-e) (B([[e,ee,et]]))</li>
+    <li>ACCENT(suklaa) — слова на длинный гласный или дифтонг U(-eA/oa)</li>
+  </ol>
+  EXAMPLE(
+    ROW(...N, ...Sn, ...PtA, ...S[]B(seen)<br>или<br>...S[]B(Vn), ...S<sup>1</sup>inA, ...S<sup>1</sup>iden<br>...S<sup>1</sup>itten, ...S<sup>1</sup>itA, ...S<sup>1</sup>isiin)
+    ROW((i) vieras, vieraan, vierasta, vieraa[]B(seen), vieraina, vieraiden<br>vieraitten, vieraita, vieraisiin)
+    ROW((i) rynnäs, ryntään, rynnästä, ryntää[]B(seen), ryntäinä, ryntäiden<br>ryntäitten, ryntäitä, ryntäisiin)
+    ROW((ii) ohut, ohuen, ohutta, ohue[]B(en), ohuina, ohuiden<br>ohuitten, ohuita, ohuisiin)
+    ROW((iii) ollut, olleen, ollutta, ollee[]B(seen), olleina, olleiden<br>olleitten, olleita, olleisiin)
+    ROW((iv) sade, sateen, sadetta, satee[]B(seen), sateina, sateiden<br>sateitten, sateita, sateisiin)
+    ROW((iv) pide, piteen, pidettä, pitee[]B(seen), piteinä, piteiden<br>piteitten, piteitä, piteisiin)
+    ROW((v) korkea, korkean, korkeata, korkeaan, korkeina, korkeiden<br>korkeitten, korkeita, korkeisiin)
+    ROW((v) ainoa, ainoan, ainoata, ainoaan, ainoina, ainoiden<br>ainoitten, ainoita, ainoisiin)
+    ROW((v) vapaa, vapaan, vapaata, vapaaseen, vapaina, vapaiden<br>vapaitten, vapaita, vapaisiin)
+    ROW((v) miljöö, miljöön, miljöötä, miljööseen, miljöinä, miljöiden<br>miljöitten, miljöitä, miljöisiin)
+  )
+
+  SELF_LINK(h2, family-3, III. Семья ACCENT(hamsteri) (B(5), 6))
+  P(Слова на U(-i) (возможно отбрасываемой в ном. в случае некоторых заимствований и имён), возможно чередование согласных.)
+  P(Пар. U(-(j)A), мн. ген. U(-en), ед. илл. U(-Vn), мн. илл. U(-hin). Мутация: U(-i-) → U(-e-) перед U(-i-) кроме генетива.)
+  EXAMPLE(
+    ROW(koti, kodin, kotia, kotiin, koteina, kotien, koteja, koteihin)
+    ROW(pelti, pellin, peltiä, peltiin, pelteinä, peltien, peltejä, pelteihin)
+    ROW(Eerin, Eerinin, Eeriniä, Eeriniin, Eerineinä, Eerinien, Eerinejä, Eerineihin)
+  )
+
+  SELF_LINK(h2, family-4, IV. Семья ACCENT(pöllö) (B(1), 2, 4, 8))
+  P(Слова на U(-U/O), ACCENT(tU)-причастия, а также некоторые слова на U(-e) (обычно существительные, обозначающие людей, в т.ч. имена), возможно чередование согласных.)
+  P(Пар. U(-(j)A), мн. ген. U(-(j)en), ед. илл. U(-Vn), мн. илл. U(-hin))
+  EXAMPLE(
+    ROW(oltu, ollun, oltua, oltuun, oltuina, oltujen, oltuja, oltuihin)
+    ROW(jäätelö, jäätelön, jäätelöä, jäätelöön, jäätelöinä, jäätelöjen, jäätelöjä, jäätelöihin)
+    ROW(laatikko, laatikon, laatikkoa, laatikkoon, laatikkoina, laatikkojen, laatikkoja, laatikkoihin)
+    ROW(pelle, pellen, pelleä, pelleen, pelleinä, pellejen, pellejä, pelleihin)
+  )
+
+  SELF_LINK(h2, family-5, V. Семья ACCENT(koira) (B(10), 16))
+  P(Двухсложные слова на U(-A), не входящие в семью FAM(6, VI, kissa), слова образованные суффиксом U(-jA) (перед которым не стоит U(-i-)), длинные прилагательные, ACCENT((tA)vA)- и ACCENT(mA)-причастия. Возможно чередование согласных.)
+  P(Пар. U(-A), мн. ген. U(-en), илл. U(-Vn) Мутация: U(-A-) → U(-∅-) перед U(-i-).)
+  P(Также этой семье принадлежат прилагательные в сравнительной степени с суффиком U(-mpA-) (→ U(-mpi) в ном.):)
+  EXAMPLE(
+    ROW(koira, koiran, koiraa, koiraan, koirina, koirien, koiria, koiriin)
+    ROW(opettaja, opettajan, opettajaa, opettajaan, opettajina, opettajien, opettajia, opettajiin)
+    ROW(pöytä, pöydän, pöytää, pöytään, pöytinä, pöytien, pöytiä, pöytiin)
+    ROW(alempi, alemman, alempaa, alempaan, alempina, alempien, alempia, alempiin)
+  )
+  P(Склонение похоже на FAM(1, I, [[[[A,A,A,∅]]]]), но ед. пар. через окончание U(-A).)
+
+  SELF_LINK(h2, family-6, VI. Семья ACCENT(kissa) (B(9)))
+  P(Двухсложные слова с U(a/e/i) в первом слоге на U(-a), а также слова, образованные суффиком U(-ntA), возможно чередование согласных.)
+  P(Пар. U(-(j)A), мн. ген. U(-(j)en), илл. ед. U(-Vn), мн. U(-hin). Мутация: U(-A-) → U(-O-) перед U(-i-).)
+  EXAMPLE(
+    ROW(ilta, illan, iltaa, iltaan, iltoina, iltojen, iltoja, iltoihin)
+    ROW(itsintä, etsinnän, etsintää, etsintään, etsintöinä, etsintöjen, etsintöjä, etsintöihin)
+  )
+
+  SELF_LINK(h2, family-7, VII. Семья ACCENT(haltija) (11, B(12), 13, 14))
+  P(Длинные существительные на U(-A) и слова, образованные суффиксом U(-jA), перед которым стоит U(-i-). Возможно чередование согласных.)
+  P(Ед. пар. U(-A), мн. пар. U(-tA), мн. ген. U(-den)/U(-tten), мн. илл. U(-hin). Мутация: U(-A-) → U(-O-) перед U(-i-).)
+  EXAMPLE(
+    ROW(omena, omenan, omenaa, omenaan, omenoina, omenoiden<br>omenoitten, omenoita, omenoihin)
+    ROW(mäkärä, mäkärän, mäkärää, mäkärään, mäkäröinä, mäkäröiden<br>mäkäröitten, mäkäröitä, mäkäröihin)
+    ROW(opiskelija, opiskelijan, opiskelijaa, opiskelijaan, opiskelijoina, opiskelijoiden<br>opiskelijoitten, opiskelijoita, opiskelijoihin)
+    ROW(pähkinä, pähkinän, pähkinää, pähkinään, pähkinöinä, pähkinöiden<br>pähkinöitten, pähkinöitä, pähkinöihin)
+    ROW(maailma, maailman, maailmaa, maailmaan, maailmoina, maailmoiden<br>maailmoitten, maailmoita, maailmoihin)
+    ROW(kännykkä, kännykän, kännykkää, kännykkään, kännykköinä, kännyköiden<br>kännyköitten, kännykköitä, kännykköihin)
+  )
+
+  SELF_LINK(h2, family-8, VIII. Семья ACCENT(hanhi) (B(7), 25))
+  P(Двухсложные слова на U(-i) (обычно U(-(k/m/p/t/v)i)), возможно чередование согласных.)
+  P(Пар. U(-A), мн. ген. U(-en), илл. U(-Vn). Мутация: U(-i) → U(-e-) в ед.)
+  EXAMPLE(
+    ROW(joki, joen, jokea, jokeen, jokina, jokien, jokia, jokiin)
+    ROW(liemi, liemen, liemeä, liemeen, lieminä, liemien, liemiä, liemiin)
+  )
+  P(Склонение пожоже на FAM(1, I, [[[[i,e,e,∅]]]]), но ед. пар. через U(-A).)
+
+  SELF_LINK(h2, family-9, IX. Семья ACCENT(kääpiö) (B(3)))
+  P(Слова на U(-ao/eo/iO/ie/oe) (иначе говоря, дифтонги на U(-O/e)), отсутсвует чередование согласных.)
+  P(Пар. U(-tA), мн. ген. U(-den), ед. илл. U(-Vn), мн. илл. U(-hin).)
+  EXAMPLE(
+    ROW(valtio, valtion, valtiota, valtioon, valtioina, valtioiden<br>valtioitten, valtioita, valtioihin)
+    ROW(häiriö, häiriön, häiriötä, häiriöön, häiriöinä, häiriöiden<br>häiriöitten, häiriöitä, häiriöihin)
+    ROW(aaloe, aaloen, aaloeta, aaloeen, aaloeina, aaloeiden<br>aaloeitten, aaloeita, aaloihin)
+  )
+
+  SELF_LINK(h2, family-10, X. Семья ACCENT(kyy) (18, B(19), 21, 22))
+  P(Односложные слова, заканчивающиеся на длинную гласную или дифтонг. Отсутсвует чередование согласных. Если последняя гласная — U(-i), то основы ед. и мн. совпадают., иначе выпадает B(первая) гласная перед U(-i-).)
+  P(Пар. U(-tA), мн. ген. U(-den), илл. U(-hVn).)
+  P(Также в эту семью входят неадаптированные заимствования, которые заканчиваются на гласную. При этом изменений на конце слова не будет. Если последняя буква — согласная, то перед окончанием пишется апостроф ( B(’) ).)
+  EXAMPLE(
+    ROW(maa, maan, maata, maahan, maina, maiden<br>maitten, maita, maihin)
+    ROW(voi, voin, voita, voihin, voina, voiden<br>voitten, voita, voihin)
+    ROW(suo, suon, suota, suohon, soina, soiden<br>soitten, soita, soihin)
+    ROW(tie, tien, tietä, tiehen, teinä, teiden<br>teitten, teitä, teihin)
+    ROW(rosé<br>(rosee), rosén, roséta, roséhen, roséina, roséiden<br>roséitten, roséita, roséihin)
+    ROW(bébé<br>(bebee), bébén, bébétä, bébéhen, bébéinä, bébéiden<br>bébéitten, bébéitä, bébéihin)
+    ROW(bordeaux<br>(bordoo), bordeaux’n, bordeaux’ta, bordeaux’hon, bordeaux’ina, bordeaux’iden<br>bordeaux’itten, bordeaux’ita, bordeaux’ihin)
+  )
+  P(Обратите внимание, что в некоторых сложных словах, например, myrsky-yö, может при склонении пропадать дефис (показывавший, что это две гласные, а не одна длинная): myrsyöitä.)
+
+  SELF_LINK(h2, family-tree, Дерево определения семей)
+  P(См. LNK(#family-0, слова-исключения).)
+  LIST(ul,
+    [заимствованные слова:
+    LIST(ul,
+      [(на конце согласный звук и накоторые на U(-i)) → FAM(3, III, hamsteri)],
+      [(если на конце другой гласный звук) → FAM(10, X, kyy)]
+    )],
+    [[[1]] → FAM(10, X, kyy)],
+    [U(-K)
+    LIST(ul,
+      [U(-l/r/n) → FAM(1, I.iii, ahven)],
+      [U(-n)
+      LIST(ul,
+        [U(-(i)n) → FAM(1, I.iv, eläin)],
+        [превосходная степень на U(-in) → FAM(1, I.vi, isoin)],
+        [U(-nen) → FAM(1, I.vii, muurahainen)],
+        [U(-tOn) → FAM(1, I.v, mieletön)]
+      )],
+      [U(-s)
+      LIST(ul,
+        [порядковые числительные на U(-s) → FAM(1, I.x, kolmas)],
+        [(обычно U(-Us/Os)) → FAM(1, I.viii, jänis)],
+        [(обычно U(-As/is)) → FAM(2, II.i, lammas)],
+        [(обычно абстрактные) U(-(U)Us) → FAM(1, I.ix, hulluus)]
+      )],
+      [U(-t)
+      LIST(ul,
+        [ACCENT(nUt)-причастия → FAM(2, II.iii, purrut)],
+        [(малое количество слов) U(-Ut) → FAM(2, II.ii, olut)]
+      )]
+    )],
+    [U(-VV)
+    LIST(ul,
+      [длинный гласный, U(-eA), U(-oa) → FAM(2, II.v, suklaa)],
+      [U(-VO/Ve) → FAM(9, IX, kääpiö)]
+    )],
+    [U(-V)
+    LIST(ul,
+      [U(-O/U) → FAM(4, IV, pöllö)],
+      [U(-i)
+      LIST(ul,
+        [→ FAM(3, III, hamsteri)],
+        [[[2]] U(-si) → FAM(1, I.ii, susi)],
+        [[[2]] U(-(h/l/n/r/s)i) → FAM(1, I.i, hiiri)],
+        [[[2]] (обычно U(-(k/m/p/t/v)i)) → FAM(8, VIII, hanhi)],
+        [сравнительная степень на U(-mpi) → FAM(5, V, koira)]
+      )],
+      [U(-e)
+      LIST(ul,
+        [→ FAM(2, II.iv, sade)],
+        [(малое количество слов, обозначающих людей) → FAM(4, IV, pöllö)]
+      )],
+      [U(-A)
+      LIST(ul,
+        [[[2]] U(-A), дл. прилагательные, U(-VjA), U(-(tA)vA), U(-mA) → FAM(5, V, koira)],
+        [[[2]] a/e/i...U(-a); U(-ntA) → FAM(6, VI, kissa)],
+        [дл. существительные, U(-ijA) → FAM(7, VII, haltija)]
+      )]
+    )]
+  )
 ])
