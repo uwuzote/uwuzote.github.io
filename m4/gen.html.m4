@@ -23,7 +23,8 @@ ifelse(
   [errprint(Unknown language: "LANG")m4exit(1)]
 )
 
-DEFINE_PROTECTED([ACCENT], [<span class="accent">$1</span>])
+DEFINE_PROTECTED([ACCENT], [<mark>$1</mark>])
+DEFINE_PROTECTED([IPA], [[<span class="ipa">$1</span>]])
 DEFINE_PROTECTED([SELF_LINK], [<$1 id="$2">$3 <a href="#$2" class="self-link">&</a></$1>])
 DEFINE_PROTECTED([LNK], [<a href="$1">$2</a>])
 DEFINE_PROTECTED([URL], [$1[]TRANS([], [.ru]).html])

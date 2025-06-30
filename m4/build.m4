@@ -30,6 +30,7 @@ BUILD_PAGE_FULL(verbs)
 BUILD_PAGE_FULL(object)
 BUILD_PAGE_FULL(numbers)
 BUILD_PAGE([pages/nouns.html], [-DLANG=RU -DSELF=nouns], [docs/nouns.ru.html])
+## BUILD_PAGE([pages/orthography.html], [-DLANG=RU -DSELF=orthography], [docs/orthography.ru.html])
 
 ifelse(DONT_MINIFY, 1, [], [
   CMD_LOG([minify --html-keep-comments -r docs/ -o docs/])
