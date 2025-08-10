@@ -1,1 +1,1 @@
--- return { "ru" }
+return { "ru" }

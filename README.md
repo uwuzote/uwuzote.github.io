@@ -9,6 +9,7 @@ Issues and pull-requests are welcome :3
  * Object rules
  * Number generator
  * Nominal declension (formation of all forms)
+ * Orthograpy (beta)
 
 ## Building
 To build use execute `./build.lua` from the project root. It uses

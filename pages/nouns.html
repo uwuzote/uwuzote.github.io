@@ -72,7 +72,7 @@ define([EXAMPLE], [
     </tbody>
   </table>
 ])
-define([ROW], [<tr><th>$1</th><td>$2</td><td>$3</td><td>$4</td><td>$5</td><td>$6</td><td>$7</td><td>$8</td></tr>ifelse([$9], [], [], [<td[]ifelse([$10], [], [], [ rowspan="$10"])>[$9]</td>])])
+define([ROW], [<tr><th>$1</th><td>$2</td><td>$3</td><td>$4</td><td>$5</td><td>$6</td><td>$7</td><td>$8</td>ifelse([$9], [], [], [<td[]ifelse([$10], [], [], [ rowspan="$10"])>[$9]</td>])</tr>])
 
 ARTICLE([
   SELF_LINK(h1, intro, Введение)
