@@ -51,4 +51,4 @@ build_full_page("numbers")
 build_page("pages/nouns.html", "-DLANG=RU -DSELF=nouns", "docs/nouns.ru.html")
 -- build_page("pages/orthography.html", "-DLANG=RU -DSELF=orthography", "docs/orthography.ru.html")
 
-execute("minify --html-keep-comments -r docs/ -o docs/")
+execute("minify --html-keep-comments --html-keep-document-tags --html-keep-end-tags -r docs/ -o docs/")
