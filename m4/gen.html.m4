@@ -1,9 +1,7 @@
 include(m4/common.m4)
 changecom([##])
 
-DEREF([DATETIME])
-DEREF([LANG])
-DEREF([SRC])
+DEREF([DATETIME]) DEREF([LANG]) DEREF([SRC])
 
 DEFINE_PROTECTED([TITLE], [define([_TITLE], [CONCAT($@)])])
 
