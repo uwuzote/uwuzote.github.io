@@ -39,3 +39,5 @@ m4 -EE -DFORCE_REBUILD=1 m4/build.m4
 ```
 The build system also minifies output files by using [minify](https://github.com/tdewolff/minify/).
 If you don't have `minify` or wish not to minify output files, you can define `DONT_MINIFY` to `1`.
+
+<!-- TODO: build sitemap -->

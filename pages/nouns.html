@@ -584,64 +584,81 @@ ARTICLE([
   )
   P(Обратите внимание, что в некоторых сложных словах, например, myrsky-yö, может при склонении пропадать дефис (показывавший, что это две гласные, а не одна длинная): myrsyöitä.)
 
+  SELF_LINK(h2, family-a-types, Определение типа слов на U(-A))
+  P(Слова, заканчивающиеся на одиночный гласный U(-A) могут принадлежать семьям FAM(5, V, koira), FAM(6, VI, kissa) или FAM(7, VII, haltija). Для определения типа предлагаю воспользоваться диаграммой:)
+  P(I(Сколько в слове слогов?))
+  LIST(ul,
+    [2 ⇒ I(Какие гласные в слове?)
+      LIST(ul,
+        [a/e/i...a ⇒ FAM(6, VI, kissa)],
+        [Другие ⇒ FAM(5, V, koira)]
+      )
+    ],
+    [3+ ⇒ I(Выполняется ли одно из следующих условий:)
+      LIST(ul,
+        [Заначивается на -vA, -mA, -VjA (V≠i), прилагательное ⇒ FAM(5, V, koira)],
+        [Иначе (в т.ч. на -ijA) ⇒ FAM(7, VII, haltija)]
+      )
+    ])
+
   SELF_LINK(h2, family-tree, Дерево определения семей)
   P(См. LNK(#family-0, слова-исключения).)
   LIST(ul,
     [заимствованные слова:
     LIST(ul,
-      [(на конце согласный звук и накоторые на U(-i)) → FAM(3, III, hamsteri)],
-      [(если на конце другой гласный звук) → FAM(10, X, kyy)]
+      [(на конце согласный звук и накоторые на U(-i)) ⇒ FAM(3, III, hamsteri)],
+      [(если на конце другой гласный звук) ⇒ FAM(10, X, kyy)]
     )],
-    [[[1]] → FAM(10, X, kyy)],
+    [[[1]] ⇒ FAM(10, X, kyy)],
     [U(-K)
     LIST(ul,
-      [U(-l/r/n) → FAM(1, I.iii, ahven)],
+      [U(-l/r/n) ⇒ FAM(1, I.iii, ahven)],
       [U(-n)
       LIST(ul,
-        [U(-(i)n) → FAM(1, I.iv, eläin)],
-        [превосходная степень на U(-in) → FAM(1, I.vi, isoin)],
-        [U(-nen) → FAM(1, I.vii, muurahainen)],
-        [U(-tOn) → FAM(1, I.v, mieletön)]
+        [U(-(i)n) ⇒ FAM(1, I.iv, eläin)],
+        [превосходная степень на U(-in) ⇒ FAM(1, I.vi, isoin)],
+        [U(-nen) ⇒ FAM(1, I.vii, muurahainen)],
+        [U(-tOn) ⇒ FAM(1, I.v, mieletön)]
       )],
       [U(-s)
       LIST(ul,
-        [порядковые числительные на U(-s) → FAM(1, I.x, kolmas)],
-        [(обычно U(-Us/Os)) → FAM(1, I.viii, jänis)],
-        [(обычно U(-As/is)) → FAM(2, II.i, lammas)],
-        [(обычно абстрактные) U(-(U)Us) → FAM(1, I.ix, hulluus)]
+        [порядковые числительные на U(-s) ⇒ FAM(1, I.x, kolmas)],
+        [(обычно U(-Us/Os)) ⇒ FAM(1, I.viii, jänis)],
+        [(обычно U(-As/is)) ⇒ FAM(2, II.i, lammas)],
+        [(обычно абстрактные) U(-(U)Us) ⇒ FAM(1, I.ix, hulluus)]
       )],
       [U(-t)
       LIST(ul,
-        [ACCENT(nUt)-причастия → FAM(2, II.iii, purrut)],
-        [(малое количество слов) U(-Ut) → FAM(2, II.ii, olut)]
+        [ACCENT(nUt)-причастия ⇒ FAM(2, II.iii, purrut)],
+        [(малое количество слов) U(-Ut) ⇒ FAM(2, II.ii, olut)]
       )]
     )],
     [U(-VV)
     LIST(ul,
-      [длинный гласный, U(-eA), U(-oa) → FAM(2, II.v, suklaa)],
-      [U(-ao/eo/iO/ie/oe) → FAM(9, IX, kääpiö)]
+      [длинный гласный, U(-eA), U(-oa) ⇒ FAM(2, II.v, suklaa)],
+      [U(-ao/eo/iO/ie/oe) ⇒ FAM(9, IX, kääpiö)]
     )],
     [U(-V)
     LIST(ul,
-      [U(-O/U) → FAM(4, IV, pöllö)],
+      [U(-O/U) ⇒ FAM(4, IV, pöllö)],
       [U(-i)
       LIST(ul,
-        [→ FAM(3, III, hamsteri)],
-        [[[2]] U(-si) → FAM(1, I.ii, susi)],
-        [[[2]] U(-(h/l/n/r/s)i) → FAM(1, I.i, hiiri)],
-        [[[2]] (обычно U(-(k/m/p/t/v)i)) → FAM(8, VIII, hanhi)],
-        [сравнительная степень на U(-mpi) → FAM(5, V, koira)]
+        [⇒ FAM(3, III, hamsteri)],
+        [[[2]] U(-si) ⇒ FAM(1, I.ii, susi)],
+        [[[2]] U(-(h/l/n/r/s)i) ⇒ FAM(1, I.i, hiiri)],
+        [[[2]] (обычно U(-(k/m/p/t/v)i)) ⇒ FAM(8, VIII, hanhi)],
+        [сравнительная степень на U(-mpi) ⇒ FAM(5, V, koira)]
       )],
       [U(-e)
       LIST(ul,
-        [→ FAM(2, II.iv, käärme)],
-        [(малое количество слов, обозначающих людей) → FAM(4, IV, pöllö)]
+        [⇒ FAM(2, II.iv, käärme)],
+        [(малое количество слов, обозначающих людей) ⇒ FAM(4, IV, pöllö)]
       )],
       [U(-A)
       LIST(ul,
-        [[[2]] U(-A), дл. прилагательные, U(-VjA), U(-(tA)vA), U(-mA) → FAM(5, V, koira)],
-        [[[2]] a/e/i...U(-a); U(-ntA) → FAM(6, VI, kissa)],
-        [дл. существительные, U(-ijA) → FAM(7, VII, haltija)]
+        [[[2]] U(-A), дл. прилагательные, U(-VjA), U(-(tA)vA), U(-mA) ⇒ FAM(5, V, koira)],
+        [[[2]] a/e/i...U(-a); U(-ntA) ⇒ FAM(6, VI, kissa)],
+        [дл. существительные, U(-ijA) ⇒ FAM(7, VII, haltija)]
       )]
     )]
   )
