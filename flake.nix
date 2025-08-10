@@ -10,7 +10,7 @@
     in {
       devShells.${system}.default = pkgs.mkShellNoCC {
         packages = with pkgs; [
-          gnum4 minify luajit
+          gnum4 minify luajit stylua
         ];
       };
     };

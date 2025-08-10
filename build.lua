@@ -3,6 +3,11 @@
 assert(jit and jit.os == "Linux") -- Only LuaJIT on Linux
 assert(os.execute()) -- Shell must be accessible
 
+local LANGUAGES = {
+  fi = { macro = "FI", ext = "" },
+  ru = { macro = "RU", ext = ".ru" },
+}
+
 local datetime
 
 local function execute(cmd)
@@ -16,7 +21,8 @@ local function execute(cmd)
 end
 
 local function get_timestamp(file)
-  local handle = io.popen("test -f '" .. file .. "' && stat --printf %Y '" .. file .. "' || echo 0")
+  local handle =
+    io.popen("test -f '" .. file .. "' && stat --printf %Y '" .. file .. "' || echo 0")
   local result = handle:read("*n")
   handle:close()
   return result
@@ -29,12 +35,18 @@ local function edge(input, output, cmd)
 end
 
 local function build_page(input, params, output)
-  edge(input, output, "m4 -EE -DDATETIME='" .. datetime .. "' -DSRC=" .. input .. " " .. params .. " m4/gen.html.m4 > " .. output)
-end
-
-local function build_full_page(id)
-  build_page("pages/" .. id .. ".html", "-DLANG=FI -DSELF=" .. id, "docs/" .. id .. ".html")
-  build_page("pages/" .. id .. ".html", "-DLANG=RU -DSELF=" .. id, "docs/" .. id .. ".ru.html")
+  edge(
+    input,
+    output,
+    "m4 -EE -DDATETIME='"
+      .. datetime
+      .. "' -DSRC="
+      .. input
+      .. " "
+      .. params
+      .. " m4/gen.html.m4 > "
+      .. output
+  )
 end
 
 datetime = os.date("!%Y-%m-%d %H:%M:%S")
@@ -42,13 +54,34 @@ datetime = os.date("!%Y-%m-%d %H:%M:%S")
 execute("mkdir -p docs")
 execute("cp -r static/* docs")
 
-build_page("pages/404.html", "-DLANG=FI", "docs/404.html")
+for file in io.popen("find pages/ -type f -name '*.lua'"):lines() do
+  local name = file:sub(7, -5)
+  local module = require("pages." .. name)
 
-build_full_page("index")
-build_full_page("verbs")
-build_full_page("object")
-build_full_page("numbers")
-build_page("pages/nouns.html", "-DLANG=RU -DSELF=nouns", "docs/nouns.ru.html")
--- build_page("pages/orthography.html", "-DLANG=RU -DSELF=orthography", "docs/orthography.ru.html")
+  if type(module) == "table" then
+    for _, lang_id in ipairs(module) do
+      local lang = LANGUAGES[lang_id]
+      local input = "pages/" .. name .. ".html"
+      local output = "docs/" .. name .. lang.ext .. ".html"
 
-execute("minify --html-keep-comments --html-keep-document-tags --html-keep-end-tags -r docs/ -o docs/")
+      edge(
+        input,
+        output,
+        "m4 -EE -DDATETIME='"
+          .. datetime
+          .. "' -DSRC="
+          .. input
+          .. " -DLANG="
+          .. lang.macro
+          .. " -DSELF="
+          .. name
+          .. " m4/gen.html.m4 > "
+          .. output
+      )
+    end
+  end
+end
+
+execute(
+  "minify -q --html-keep-comments --html-keep-document-tags --html-keep-end-tags -r docs/ -o docs/"
+)
